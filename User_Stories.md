@@ -1,47 +1,35 @@
-# Landing Page User Stories
+# Feature: Landing Page Functionality and Layout
+  - As a user, I want to view and interact with the landing page, So that I can navigate the store and discover products
 
-## Scenario 1: Header Navigation and Localization
-### Then the user should be able to see the following header elements:
+  ## Background:
+    - Given I navigate to the store URL
+    - and the homepage loads successfully 
 
-- Currency Selector: A dropdown menu to switch between currencies (e.g., US Dollar).
+  ### Scenario: Verify header navigation elements are visible
+    When I view the page header
+    Then I should see a currency selector dropdown
+    And I should see a search bar with search button
+    And I should see "Register" and "Log in" links
+    And I should see "Wishlist" and "Shopping Cart" links
 
-- Search Bar: A text field with a "Search" button to find products.
+  ### Scenario: Verify promotional slider functionality
+    When I view the main promotional slider
+    Then I should see promotional images rotating
+    And each promotion should have a "Learn More" button
+    When I click "Learn More" for iPhone promotion
+    Then I should be redirected to iPhone product page
 
-- Account Links as guest: Access points for "Register" and "Log in".
+  #### Scenario: Verify product categorization sections
+    When I scroll to the main content area
+    Then I should see top menu with categories
+    And I should see category grid with thumbnails
+    And I should see featured products section
+    And each product should display price, rating, and "Add to cart" button
 
-- Account Links as customer: Access points for "My account" and "log out".
-
-- Shopping Tools: Links to "Wishlist" and "Shopping Cart" with item counts.
-
-## Scenario 2: Main Promotional Content (The Slider)
-### Then the user should see a dynamic banner (Slider) displaying:
-
-- Promotional images for products like iPhone 16 and Galaxy S24.
-
-- A "Learn More" action for each promotion to view product details.
-
-## Scenario 3: Product Discovery and Categorization
-### Then the user should see the following sections in the main body:
-
-- Top Menu: Main categories (Computers, Electronics, Apparel, etc.).
-
-- Category Grid: Visual thumbnails for top categories.
-
-- Featured Products: A section showing specific products with their prices, ratings, and "Add to cart" buttons.
-
-## Scenario 4: User Engagement and Updates
-### Then the user should be able to interact with:
-
-- News Section: The latest three blog posts or announcements about the store.
-
-- Community Poll: A section to vote on store-related questions (e.g., "Do you like nopCommerce?").
-
-## Scenario 5: Footer Information Architecture
-### When the user scrolls to the bottom of the page Then they should see the Footer organized into:
-
-- Information & Customer Service: Links to Search, News, Blog, etc.
-
-- My Account: Links to Orders, Addresses, and Wishlist.
-
-- Social & Newsletter: Links to social media (Facebook, Twitter) and an email subscription field.
-
+  ### Scenario: Verify footer information is complete
+    When I scroll to the bottom of the page
+    Then I should see footer divided into sections
+    And I should see "Information & Customer Service" links
+    And I should see "My Account" links
+    And I should see social media icons
+    And I should see newsletter subscription field
