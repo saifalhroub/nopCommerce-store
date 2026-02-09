@@ -1,42 +1,45 @@
 # User Stories
 
-### 1- As a user, I want a Landingpage, so I can understand the store logic
-1.1 Given the user navigates to the website
-When the page loads 
-Then the user will see the landing page
+## Scenario 1: Header Navigation and Localization
+### Then the user should be able to see the following header elements:
 
-1.2 Given the user is on the landing page
-Then the user will see all product categories
+- Currency Selector: A dropdown menu to switch between currencies (e.g., US Dollar).
 
-1.3 Given the user is on the landing page
-When the user is not registered
-Then a register option is placed on the page
+- Search Bar: A text field with a "Search" button to find products.
 
-1.4 Given the user is on the landing page
-When the user is not logged in
-Then the user can login via the login option
+- Account Links: Access points for "Register" and "Log in".
 
-1.5 Given the user is on the landing page
-Then the user will see a brief introduction of the website
+- Shopping Tools: Links to "Wishlist" and "Shopping Cart" with item counts.
 
-1.6 Given the user is on the landing page
-Then the user will see a featured products section
+## Scenario 2: Main Promotional Content (The Slider)
+### Then the user should see a dynamic banner (Slider) displaying:
 
-1.7 Given the user is on the landing page
-Then the user will see a news section
+- Promotional images for products like iPhone 16 and Galaxy S24.
 
-1.8 Given the user is on the landing page
-Then the user will be asked to rate the store
+- A "Learn More" action for each promotion to view product details.
 
-1.9 Given the user is on the landing page
-When the user navigates to the bottom of the screen
-Then the user will see the footer section
+## Scenario 3: Product Discovery and Categorization
+### Then the user should see the following sections in the main body:
 
-1.1.0 Given the user is on the landing page
-When the user is looking for a specific product
-Then the user can look after it using the search bar
+- Top Menu: Main categories (Computers, Electronics, Apparel, etc.).
 
-1.1.1 Given the user is on the landing page
-When the user wants to view the products in a specific currency 
-Then the user will be able to change the currency from the currency drop list
+- Category Grid: Visual thumbnails for top categories.
+
+- Featured Products: A section showing specific products with their prices, ratings, and "Add to cart" buttons.
+
+## Scenario 4: User Engagement and Updates
+### Then the user should be able to interact with:
+
+- News Section: The latest three blog posts or announcements about the store.
+
+- Community Poll: A section to vote on store-related questions (e.g., "Do you like nopCommerce?").
+
+## Scenario 5: Footer Information Architecture
+### When the user scrolls to the bottom of the page Then they should see the Footer organized into:
+
+- Information & Customer Service: Links to Search, News, Blog, etc.
+
+- My Account: Links to Orders, Addresses, and Wishlist.
+
+- Social & Newsletter: Links to social media (Facebook, Twitter) and an email subscription field.
 
