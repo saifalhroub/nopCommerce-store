@@ -13,11 +13,11 @@ execution logic related to other pages (e.g. login validation, checkout flow).
 As a visitor, I want to view the landing page so that I can understand what the store offers and decide whether to continue browsing.
 
 ### Acceptance Criteria (BDD)
-Given the visitor navigates to the website URL
-When the page finishes loading
-Then the landing page is displayed successfully
-And all main sections are visible
-And no broken layout or empty content is shown
+- Given the visitor navigates to the website URL
+- When the page finishes loading
+- Then the landing page is displayed successfully
+- And all main sections are visible
+- And no broken layout or empty content is shown
 
 ---
 
@@ -27,10 +27,10 @@ And no broken layout or empty content is shown
 As a visitor, I want to see a hero section with promotional content so that I can quickly understand current offers.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is on the landing page
-Then the hero section is displayed at the top of the page
-And promotional banners are visible
-And images are clear and readable
+- Given the visitor is on the landing page
+- Then the hero section is displayed at the top of the page
+- And promotional banners are visible
+- And images are clear and readable
 
 ---
 
@@ -40,10 +40,10 @@ And images are clear and readable
 As a visitor, I want to control the promotional slider so that I can view offers at my own pace.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is viewing the hero slider
-When the visitor clicks next or previous controls
-Then the slider navigates to the corresponding slide
-And the displayed content updates correctly
+- Given the visitor is viewing the hero slider
+- When the visitor clicks next or previous controls
+- Then the slider navigates to the corresponding slide
+- And the displayed content updates correctly
 
 ---
 
@@ -53,10 +53,10 @@ And the displayed content updates correctly
 As a visitor, I want to see a welcome message so that I can understand the store’s purpose and value.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is on the landing page
-Then a welcome message is visible
-And the message clearly explains the store purpose
-And the text does not overlap other elements
+- Given the visitor is on the landing page
+- Then a welcome message is visible
+- And the message clearly explains the store purpose
+- And the text does not overlap other elements
 
 ---
 
@@ -66,10 +66,10 @@ And the text does not overlap other elements
 As a visitor, I want to see a clear call-to-action button so that I can start exploring the store.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is on the landing page
-Then a CTA button is visible
-When the visitor clicks the CTA button
-Then the user is navigated to the intended page
+- Given the visitor is on the landing page
+- Then a CTA button is visible
+- When the visitor clicks the CTA button
+- Then the user is navigated to the intended page
 
 ---
 
@@ -79,10 +79,10 @@ Then the user is navigated to the intended page
 As a visitor, I want to use the header navigation menu so that I can easily navigate between pages.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is on the landing page
-Then the header navigation menu is visible
-When the visitor clicks any menu item
-Then the corresponding page is opened
+- Given the visitor is on the landing page
+- Then the header navigation menu is visible
+- When the visitor clicks any menu item
+- Then the corresponding page is opened
 
 ---
 
@@ -92,11 +92,11 @@ Then the corresponding page is opened
 As a visitor, I want to see product categories so that I can browse items by category.
 
 ### Acceptance Criteria (BDD)
-Given the visitor scrolls the landing page
-Then the categories section is visible
-And each category has a clear label
-When the visitor selects a category
-Then the category page is opened
+- Given the visitor scrolls the landing page
+- Then the categories section is visible
+- And each category has a clear label
+- When the visitor selects a category
+- Then the category page is opened
 
 ---
 
@@ -106,11 +106,11 @@ Then the category page is opened
 As a visitor, I want to see featured products so that I can discover highlighted items.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is on the landing page
-Then the featured products section is visible
-And each product displays an image and name
-When the visitor clicks a product
-Then the product details page is opened
+- Given the visitor is on the landing page
+- Then the featured products section is visible
+- And each product displays an image and name
+- When the visitor clicks a product
+- Then the product details page is opened
 
 ---
 
@@ -120,10 +120,10 @@ Then the product details page is opened
 As a visitor, I want to access a search option so that I can quickly find products.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is on the landing page
-Then the search option is visible
-When the visitor clicks the search input
-Then the search page or results view is opened
+- Given the visitor is on the landing page
+- Then the search option is visible
+- When the visitor clicks the search input
+- Then the search page or results view is opened
 
 ---
 
@@ -133,10 +133,10 @@ Then the search page or results view is opened
 As a new visitor, I want to see a register link so that I can create an account.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is on the landing page
-Then the register link is visible
-When the visitor clicks the register link
-Then the registration page is opened
+- Given the visitor is on the landing page
+- Then the register link is visible
+- When the visitor clicks the register link
+- Then the registration page is opened
 
 ---
 
@@ -146,10 +146,10 @@ Then the registration page is opened
 As a visitor, I want to see a login link so that I can access the store using my credentials.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is on the landing page
-Then the login link is visible
-When the visitor clicks the login link
-Then the login page is opened
+- Given the visitor is on the landing page
+- Then the login link is visible
+- When the visitor clicks the login link
+- Then the login page is opened
 
 ---
 
@@ -159,12 +159,12 @@ Then the login page is opened
 As a logged-in user, I want to see a logout link so that I can end my session.
 
 ### Acceptance Criteria (BDD)
-Given the user is logged in
-And the user is on the landing page
-Then the logout link is visible
-When the user clicks the logout link
-Then the user session ends
-And the landing page is displayed
+- Given the user is logged in
+- And the user is on the landing page
+- Then the logout link is visible
+- When the user clicks the logout link
+- Then the user session ends
+- And the landing page is displayed
 
 ---
 
@@ -174,11 +174,11 @@ And the landing page is displayed
 As a logged-in user, I want to see a My Account link so that I can manage my account information.
 
 ### Acceptance Criteria (BDD)
-Given the user is logged in
-And the user is on the landing page
-Then the My Account link is visible
-When the user clicks the My Account link
-Then the account page is opened
+- Given the user is logged in
+- And the user is on the landing page
+- Then the My Account link is visible
+- When the user clicks the My Account link
+- Then the account page is opened
 
 ---
 
@@ -188,10 +188,10 @@ Then the account page is opened
 As a visitor, I want to see a cart icon so that I can access my selected items.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is on the landing page
-Then the cart icon is visible
-When the visitor clicks the cart icon
-Then the cart page is opened
+- Given the visitor is on the landing page
+- Then the cart icon is visible
+- When the visitor clicks the cart icon
+- Then the cart page is opened
 
 ---
 
@@ -201,10 +201,10 @@ Then the cart page is opened
 As a visitor, I want to see a wishlist icon so that I can access saved items.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is on the landing page
-Then the wishlist icon is visible
-When the visitor clicks the wishlist icon
-Then the wishlist page is opened
+- Given the visitor is on the landing page
+- Then the wishlist icon is visible
+- When the visitor clicks the wishlist icon
+- Then the wishlist page is opened
 
 ---
 
@@ -214,10 +214,10 @@ Then the wishlist page is opened
 As a visitor, I want to see a currency selector so that I can view prices in my preferred currency.
 
 ### Acceptance Criteria (BDD)
-Given the visitor is on the landing page
-Then the currency selector is visible
-When the visitor selects a currency
-Then prices are displayed in the selected currency
+- Given the visitor is on the landing page
+- Then the currency selector is visible
+- When the visitor selects a currency
+- Then prices are displayed in the selected currency
 
 ---
 
@@ -227,9 +227,9 @@ Then prices are displayed in the selected currency
 As a visitor, I want to view the footer so that I can access additional information.
 
 ### Acceptance Criteria (BDD)
-Given the visitor scrolls to the bottom of the landing page
-Then the footer is displayed
-And footer links are visible and readable
+- Given the visitor scrolls to the bottom of the landing page
+- Then the footer is displayed
+- And footer links are visible and readable
 
 ---
 
@@ -239,9 +239,9 @@ And footer links are visible and readable
 As a visitor, I want the landing page to be responsive so that I can browse the store on any device.
 
 ### Acceptance Criteria (BDD)
-Given the visitor opens the landing page on different screen sizes
-Then the layout adapts correctly
-And no content overlaps or breaks
+- Given the visitor opens the landing page on different screen sizes
+- Then the layout adapts correctly
+- And no content overlaps or breaks
 
 ---
 
@@ -251,7 +251,7 @@ And no content overlaps or breaks
 As a visitor with accessibility needs, I want the landing page to be accessible so that I can use it without difficulty.
 
 ### Acceptance Criteria (BDD)
-Given the visitor navigates using keyboard or assistive tools
-Then all main content and interactive elements are accessible
+- Given the visitor navigates using keyboard or assistive tools
+- Then all main content and interactive elements are accessible
 
 ---
