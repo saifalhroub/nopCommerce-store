@@ -1,4 +1,4 @@
-# User Stories
+# Landing Page User Stories
 
 ## Scenario 1: Header Navigation and Localization
 ### Then the user should be able to see the following header elements:
@@ -7,7 +7,9 @@
 
 - Search Bar: A text field with a "Search" button to find products.
 
-- Account Links: Access points for "Register" and "Log in".
+- Account Links as guest: Access points for "Register" and "Log in".
+
+- Account Links as customer: Access points for "My account" and "log out".
 
 - Shopping Tools: Links to "Wishlist" and "Shopping Cart" with item counts.
 
