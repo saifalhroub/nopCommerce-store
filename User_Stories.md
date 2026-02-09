@@ -33,3 +33,22 @@
     And I should see "My Account" links
     And I should see social media icons
     And I should see newsletter subscription field
+---------------
+
+As a user, I want a login link, so I can use the store with my credentials
+
+As a user, I want a register link, so I can use the store with my credentials 
+
+As a user, I want a search bar, so I can look for specific products
+
+As a user, I want a watchlist link, so I can addmy fav products to it
+
+As a user, I want a shopping cart link, so I can take a look at my selected products
+
+As a user, I want a landing page, so I can know the store logic
+
+As a user, I want a currency selector, so I can change the product's value view currency
+
+
+
+    
