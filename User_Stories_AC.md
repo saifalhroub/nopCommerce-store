@@ -7,7 +7,7 @@ execution logic related to other pages (e.g. login validation, checkout flow).
 
 ---
 
-## 1. View Landing Page
+## 1.0 View Landing Page
 
 ### User Story
 As a visitor, I want to view the landing page so that I can understand what the store offers and decide whether to continue browsing.
@@ -21,7 +21,7 @@ As a visitor, I want to view the landing page so that I can understand what the 
 
 ---
 
-## 2. Hero Section / Promotional Slider
+## 1.1 Hero Section / Promotional Slider
 
 ### User Story
 As a visitor, I want to see a hero section with promotional content so that I can quickly understand current offers.
@@ -34,7 +34,7 @@ As a visitor, I want to see a hero section with promotional content so that I ca
 
 ---
 
-## 3. Slider Navigation Controls
+## 1.2 Slider Navigation Controls
 
 ### User Story
 As a visitor, I want to control the promotional slider so that I can view offers at my own pace.
@@ -47,7 +47,7 @@ As a visitor, I want to control the promotional slider so that I can view offers
 
 ---
 
-## 4. Welcome Message
+## 1.3 Welcome Message
 
 ### User Story
 As a visitor, I want to see a welcome message so that I can understand the store’s purpose and value.
@@ -60,7 +60,7 @@ As a visitor, I want to see a welcome message so that I can understand the store
 
 ---
 
-## 5. Call To Action (CTA)
+## 1.4 Call To Action (CTA)
 
 ### User Story
 As a visitor, I want to see a clear call-to-action button so that I can start exploring the store.
@@ -73,7 +73,7 @@ As a visitor, I want to see a clear call-to-action button so that I can start ex
 
 ---
 
-## 6. Header Navigation Menu
+## 1.5 Header Navigation Menu
 
 ### User Story
 As a visitor, I want to use the header navigation menu so that I can easily navigate between pages.
@@ -86,7 +86,7 @@ As a visitor, I want to use the header navigation menu so that I can easily navi
 
 ---
 
-## 7. Product Categories Section
+## 1.6 Product Categories Section
 
 ### User Story
 As a visitor, I want to see product categories so that I can browse items by category.
@@ -100,7 +100,7 @@ As a visitor, I want to see product categories so that I can browse items by cat
 
 ---
 
-## 8. Featured Products Section
+## 1.7 Featured Products Section
 
 ### User Story
 As a visitor, I want to see featured products so that I can discover highlighted items.
@@ -114,7 +114,7 @@ As a visitor, I want to see featured products so that I can discover highlighted
 
 ---
 
-## 9. Search Access
+## 1.8 Search Access
 
 ### User Story
 As a visitor, I want to access a search option so that I can quickly find products.
@@ -127,7 +127,7 @@ As a visitor, I want to access a search option so that I can quickly find produc
 
 ---
 
-## 10. Register Link Visibility
+## 1.9 Register Link Visibility
 
 ### User Story
 As a new visitor, I want to see a register link so that I can create an account.
@@ -140,7 +140,7 @@ As a new visitor, I want to see a register link so that I can create an account.
 
 ---
 
-## 11. Login Link Visibility
+## 1.10 Login Link Visibility
 
 ### User Story
 As a visitor, I want to see a login link so that I can access the store using my credentials.
@@ -153,7 +153,7 @@ As a visitor, I want to see a login link so that I can access the store using my
 
 ---
 
-## 12. Logout Link (Logged-in State)
+## 1.11 Logout Link (Logged-in State)
 
 ### User Story
 As a logged-in user, I want to see a logout link so that I can end my session.
@@ -168,7 +168,7 @@ As a logged-in user, I want to see a logout link so that I can end my session.
 
 ---
 
-## 13. My Account Link (Logged-in State)
+## 1.12 My Account Link (Logged-in State)
 
 ### User Story
 As a logged-in user, I want to see a My Account link so that I can manage my account information.
@@ -182,7 +182,7 @@ As a logged-in user, I want to see a My Account link so that I can manage my acc
 
 ---
 
-## 14. Cart Icon Visibility
+## 1.13 Cart Icon Visibility
 
 ### User Story
 As a visitor, I want to see a cart icon so that I can access my selected items.
@@ -195,7 +195,7 @@ As a visitor, I want to see a cart icon so that I can access my selected items.
 
 ---
 
-## 15. Wishlist Icon Visibility
+## 1.14 Wishlist Icon Visibility
 
 ### User Story
 As a visitor, I want to see a wishlist icon so that I can access saved items.
@@ -208,7 +208,7 @@ As a visitor, I want to see a wishlist icon so that I can access saved items.
 
 ---
 
-## 16. Currency Selector
+## 1.15 Currency Selector
 
 ### User Story
 As a visitor, I want to see a currency selector so that I can view prices in my preferred currency.
@@ -221,7 +221,7 @@ As a visitor, I want to see a currency selector so that I can view prices in my 
 
 ---
 
-## 17. Footer Section
+## 1.16 Footer Section
 
 ### User Story
 As a visitor, I want to view the footer so that I can access additional information.
@@ -233,7 +233,7 @@ As a visitor, I want to view the footer so that I can access additional informat
 
 ---
 
-## 18. Responsive Design
+## 1.17 Responsive Design
 
 ### User Story
 As a visitor, I want the landing page to be responsive so that I can browse the store on any device.
@@ -245,7 +245,7 @@ As a visitor, I want the landing page to be responsive so that I can browse the 
 
 ---
 
-## 19. Accessibility
+## 1.18 Accessibility
 
 ### User Story
 As a visitor with accessibility needs, I want the landing page to be accessible so that I can use it without difficulty.
