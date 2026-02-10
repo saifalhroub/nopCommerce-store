@@ -7,7 +7,7 @@ execution logic related to other pages (e.g. login validation, checkout flow).
 
 ---
 
-## 1.0 View Landing Page
+## US1.0 View Landing Page
 
 ### User Story
 As a visitor, I want to view the landing page so that I can understand what the store offers and decide whether to continue browsing.
@@ -21,7 +21,7 @@ As a visitor, I want to view the landing page so that I can understand what the 
 
 ---
 
-## 1.1 Hero Section / Promotional Slider
+## US1.1 Hero Section / Promotional Slider
 
 ### User Story
 As a visitor, I want to see a hero section with promotional content so that I can quickly understand current offers.
@@ -76,12 +76,12 @@ As a visitor, I want to see a clear call-to-action button so that I can start ex
 ## 1.5 Header Navigation Menu
 
 ### User Story
-As a visitor, I want to use the header navigation menu so that I can easily navigate between pages.
+As a visitor, I want to use the header navigation menu to navigate between pages easily.
 
 ### Acceptance Criteria (BDD)
 - Given the visitor is on the landing page
 - Then the header navigation menu is visible
-- When the visitor clicks any menu item
+- When the visitor clicks on any menu item
 - Then the corresponding page is opened
 
 ---
