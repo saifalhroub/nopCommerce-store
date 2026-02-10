@@ -1,9 +1,9 @@
 # Functional Testing 
- ## Valid
+ - ## Valid
  -
- ## Invalid
+ - ## Invalid
  -
- ## Edge
+ - ## Edge
  -
 # Usability Testing
 -
