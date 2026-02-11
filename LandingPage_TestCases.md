@@ -1,199 +1,162 @@
-# Functional Testing 
+# ✅ Landing Page – Test Cases (Manual QA)
 
-   ## Valid
-   
- - US1.2
-    - Validate moving through hero slides
-    - Validate redirected to product details page when clicking on learn more
+---
 
- - US1.6:
-    - Validate Navigating to category pages
-      
- - US1.7:
-    - Validate the add to cart button functionality
-      
- - US1.8:
-    - Validate searching for a product using its name
-    - Validate searching for a product using its category name
-  
- - US1.9:
-    - Verify redirected to the Register page when clicking on the register link
-  
- - US1.10:
-    - Verify redirected to the login page when clicking on the login link
+## 🔹 Functional Testing (Landing Page Scope)
 
- - US1.11:
-    - Verify logging out when clicking on the logout link
+### US1.0 – View Landing Page
+- Verify navigating to the landing page using the website URL
+- Verify landing page loads successfully
+- Verify all main sections are visible
+- Verify no broken layout or missing content
 
- - US1.12:
-    - Verify redirected to account information when clicking on my account link
-      
- - US1.13:
-    - Validate redirecting to the cart page when clicking on the cart icon
- 
- - US1.14:
-    - Validate redirecting to the watchlist page when clicking on the watchlist icon
-  
- - US1.15:
-    - Validate changing currency using the currency selector
-       
-   ## Invalid
-   
-  - US1.8:
-    - Validate searching for a product in another language
-    - Validate leaving the search bar empty
-      
+---
 
-      
-   ## Edge
-   
- - US1.0:
-    - Verify navigating to the store landing page while no internet connection
-    - Verify navigating to the store landing page at the same time from two tabs
-      
- - US1.2:
-    - Validate clicking on learn more while no internet connection
-    - Validate clicking too many times on learn more
-    - Validate navigating to the product details page by using the open in new link navigation
-      
- - US1.6:
-    - Validate Navigating to category pages while no internet connection
-      
- - US1.7:
-    - Validate add to cart featured product while no internet connection
- 
- - US1.8:
-    - Validate searching for a product with its description
-    - Validate searching for a product while no internet connection 
-    - Validate the copy and paste the product name in the search bar
-    - Validate refreshing the page while the search bar is active
-    - Validate filling the search bar and refreshing the page before submitting the search
+### US1.1 – Hero Section Visibility
+- Validate hero section is displayed at the top of the page
+- Validate promotional images are visible and clear
 
-  - US1.11:
-     - Validate logging out while no internet connection
-   
- - US1.12:
-     - Validate navigating to my account while no internet connection
-  
- - US1.13:
-     - Validate navigating to the cart while no internet connection
-     - Validate adding products to the cart while no internet connection
-     
- - US1.14:
-     - Validate navigating to the watchlist while no internet connection
-     - Validate adding products to the watchlist while no internet connection
-  
- - US1.15:
-    - Validate changing the currency while no internet connectionis  established
-      
-# Usability Testing
+---
 
- - ALL US:
-    - Validate the user can navigate through the page using the keyboard 
+### US1.2 – Hero Slider Controls
+- Validate slider auto-rotation
+- Validate navigating between slides using controls
+- Validate slider indicators reflect the current slide
 
- - US1.0:
-    - Verify Landing Page layout and Design (Priority: High)
-    - Verify the Landing page visual as a guest
-    - Verify the Landing page visual as a customer
-    - Validate the landing page visual consistency when changing modes (Dark/Light)
-    - Validate the landing page's visual consistency when changing screen orientation on a mobile phone
- 
- - US1.2:
-    - Validate hero image ratio change according to different screen dimensions
-    - Validate moving through hero slides using different devices
- 
- - US1.3:
-    - Validate welcome message text is correct
- 
- - US1.6:
-    - Verify category page layout and design
- 
- - US1.7:
-    - Validate featured products have the right details
- 
- - US1.8:
-    - Validate search bar functionality through different devices
-    - Validate confirm search using the enter key
-    - Validate confirming search by clicking on the search icon
-    - Validate typing cursor appears when clicking inside the search bar
-    - Validate the search borders are highlighted when clicking inside the search bar
+---
 
- - US1.9:
-    - Validate the register link appears when you are not logged in
- 
- - US1.10:
-    - Validate the login link appears when you are not logged in
+### US1.3 – Welcome Message
+- Validate welcome message is visible
+- Validate text clearly explains the store purpose
+- Validate text does not overlap other UI elements
 
- - US1.11:
-    - Validate the logout link appears when you are logged in
-    - Validate the logout link state changes to login after logout
-    - Validate my account link changes to register after logout
+---
 
- - US1.12:
-    - Validate my account link appears when you are logged in
+### US1.4 – Call To Action (CTA)
+- Validate CTA button is visible
+- Validate CTA button is clickable
+- Validate CTA button has clear text
 
- - US1.13:
-    - Validate that the number of items appears on the cart changes accordingly when adding productsto the cart
-  
-- US1.14:
-    - Validate that the number of items appears on the watchlist changes accordingly when adding products to the watchlist
+---
 
-- US1.15:
-   - Validate product price changes according to the currency chosen
-      
-# Performance Testing
+### US1.5 – Header Navigation Menu
+- Validate header menu is visible
+- Validate menu items are readable
+- Validate menu is accessible on different screen sizes
 
-- US1.0:
-    - Validate landing page loading response time
+---
 
- - US1.2:
-    - Validate moving through sliders' response time
- 
- - US1.6:
-    - Validate navigating to category pages' response time
- 
- - US1.8:
-    - Validate searching for a product response time
+### US1.6 – Categories Section
+- Validate categories section visibility
+- Validate each category has a clear label
+- Validate category cards are clickable
 
- - US1.9:
-    - Validate navigating to the register page response time
+---
 
- - US1.10:
-    - Validate navigating to the login page response time
+### US1.7 – Featured Products Section
+- Validate featured products section visibility
+- Validate each product displays image and name
+- Validate products are clickable
 
- - US1.11:
-    - Validate logout response time
-  
- - US1.12:
-    - Validate navigating to my account page response time
-  
- - US1.13:
-    - Validate navigating to the cart page response time
-  
-- US1.13:
-    - Validate navigating to the watchlist page response time
-           
-# Security Testing
+---
 
- - US1.8:
-    - 
- - US1.11:
-    - Validate navigating back session using the browser back button after logout 
-      
-# API Testing
+### US1.8 – Search Bar Visibility
+- Validate search bar is visible
+- Validate search input is clickable
+- Validate placeholder text is displayed
 
- - US1.8:
-    - Validate searching for a product on the store
+---
 
-# Compatibility Testing
- 
- - ALL US:
-    - Validate store pages' compatibility with different devices
-    - Validate opening the store using different internet connections
-    - Validate using the store through different softwares
-    - Validate using the store using different internet connections
- 
+### US1.9 – Register Link Visibility
+- Validate register link is visible for guest users
+- Validate register link text is clear
 
+---
 
-    
+### US1.10 – Login Link Visibility
+- Validate login link is visible for guest users
+- Validate login link text is clear
 
+---
+
+### US1.11 – Logout Link Visibility
+- Validate logout link is visible for logged-in users
+- Validate logout link is hidden for guest users
+
+---
+
+### US1.12 – My Account Link Visibility
+- Validate My Account link is visible for logged-in users
+- Validate My Account link is hidden for guest users
+
+---
+
+### US1.13 – Cart Icon Visibility
+- Validate cart icon is visible
+- Validate cart icon is clickable
+
+---
+
+### US1.14 – Wishlist Icon Visibility
+- Validate wishlist icon is visible
+- Validate wishlist icon is clickable
+
+---
+
+### US1.15 – Currency Selector (Landing Page Scope)
+- Validate currency selector is visible
+- Validate currency dropdown opens
+- Validate user can select a currency option
+- Validate selected currency label updates in header
+
+---
+
+### US1.16 – Footer Section
+- Validate footer is visible at the bottom of the page
+- Validate footer links are readable
+- Validate footer does not overlap page content
+
+---
+
+## ⚠️ Edge Cases (Landing Page Only)
+
+### US1.0
+- Verify landing page behavior with no internet connection
+- Verify opening landing page in multiple browser tabs
+
+---
+
+### US1.2 – Slider
+- Validate rapid clicking on slider controls
+- Validate opening slider links in a new tab
+
+---
+
+### US1.8 – Search Bar
+- Validate clicking search bar and refreshing page
+- Validate copy & paste inside search bar
+
+---
+
+## ♿ Usability & Accessibility
+
+### All User Stories
+- Validate navigation using keyboard only
+- Validate tab order is logical
+- Validate focus indicator is visible
+
+---
+
+### Accessibility
+- Validate images include alt text
+- Validate sufficient contrast ratio
+- Validate screen reader can read main sections
+
+---
+
+## 📱 Responsive Design
+
+- Validate landing page layout on desktop
+- Validate landing page layout on tablet
+- Validate landing page layout on mobile
+- Validate layout consistency on orientation change
