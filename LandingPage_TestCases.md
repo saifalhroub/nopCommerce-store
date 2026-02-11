@@ -1,175 +1,408 @@
-# ✅ Landing Page – Traceable & Comprehensive Test Cases
+# Landing Page – Test Cases (Grouped by User Story & Test Type)
 
-Each User Story (US) contains all relevant test types: Functional, UI/Usability, Edge, Performance, Security, API, and Compatibility.  
-Each Test Case has a unique **TC-ID** for traceability.
+---
+
+## US1.0 – View Landing Page
+
+### Functional Testing
+
+#### TC-FUNC-US1.0-01 – Validate landing page loads successfully
+- **Priority:** High
+- **Preconditions:** User has a valid internet connection
+- **Test Steps:**
+  1. Navigate to website URL
+- **Expected Result:** Landing page loads without errors
+- **Actual Result:** ______
+
+### UI / Usability Testing
+
+#### TC-UI-US1.0-01 – Validate layout consistency
+- **Priority:** Medium
+- **Preconditions:** Landing page is loaded
+- **Test Steps:**
+  1. Observe page layout and sections
+- **Expected Result:** No broken layout or empty sections
+- **Actual Result:** ______
+
+### Performance Testing
+
+#### TC-PERF-US1.0-01 – Validate page load time
+- **Priority:** High
+- **Preconditions:** Stable internet connection
+- **Test Steps:**
+  1. Load landing page
+- **Expected Result:** Page loads within acceptable time (≤3s)
+- **Actual Result:** ______
+
+### Compatibility Testing
+
+#### TC-COMP-US1.0-01 – Validate landing page across browsers
+- **Priority:** Medium
+- **Preconditions:** Multiple browsers available
+- **Test Steps:**
+  1. Open landing page in Chrome, Firefox, Edge
+- **Expected Result:** Page works correctly on all browsers
+- **Actual Result:** ______
+
+---
+
+## US1.1 – Hero Section / Promotional Slider
+
+### Functional Testing
+
+#### TC-FUNC-US1.1-01 – Validate hero section visibility
+- **Priority:** High
+- **Preconditions:** User is on landing page
+- **Test Steps:**
+  1. Observe top section of page
+- **Expected Result:** Hero section is displayed
+- **Actual Result:** ______
+
+### UI / Usability Testing
+
+#### TC-UI-US1.1-01 – Validate banner readability
+- **Priority:** Medium
+- **Preconditions:** Hero section is visible
+- **Test Steps:**
+  1. Check text and images clarity
+- **Expected Result:** Text and images are clear and readable
+- **Actual Result:** ______
 
 ---
 
 ## US1.2 – Hero Slider Controls
 
-### Functional
-- TC-FUNC-US1.2-01: Validate manual navigation between hero slides using arrows (Next/Previous).
-- TC-FUNC-US1.2-02: Validate that clicking slider indicators (dots) navigates to the corresponding slide.
-- TC-FUNC-US1.2-03: Validate redirection to product/promotion page when clicking **Learn More**.
+### Functional Testing
 
-### UI / Usability
-- TC-UI-US1.2-01: Validate slider visuals across different devices.
-- TC-UI-US1.2-02: Validate hero image ratio across different screen dimensions.
+#### TC-FUNC-US1.2-01 – Navigate slides using arrows
+- **Priority:** High
+- **Preconditions:** Hero slider is visible
+- **Test Steps:**
+  1. Click Next arrow
+  2. Click Previous arrow
+- **Expected Result:** Slider moves correctly
+- **Actual Result:** ______
 
-### Edge
-- TC-EDGE-US1.2-01: Validate clicking **Learn More** with no internet connection.
-- TC-EDGE-US1.2-02: Validate excessive clicking on **Learn More**.
-- TC-EDGE-US1.2-03: Validate opening product details using **Open in New Tab**.
+### UI / Usability Testing
 
-### Performance
-- TC-PERF-US1.2-01: Validate slider response time.
+#### TC-UI-US1.2-01 – Validate slider appearance on devices
+- **Priority:** Medium
+- **Preconditions:** Access to different screen sizes
+- **Test Steps:**
+  1. Open page on mobile and desktop
+- **Expected Result:** Slider adapts correctly
+- **Actual Result:** ______
 
-### Security
-*(No specific security test for US1.2)*
+### Edge Testing
 
-### API
-*(No specific API test for US1.2)*
+#### TC-EDGE-US1.2-01 – Excessive clicking on slider controls
+- **Priority:** Medium
+- **Preconditions:** Slider visible
+- **Test Steps:**
+  1. Click arrows rapidly
+- **Expected Result:** No crash or UI break
+- **Actual Result:** ______
 
-### Compatibility
-- TC-COMP-US1.2-01: Validate slider works correctly across browsers and devices.
+### Performance Testing
+
+#### TC-PERF-US1.2-01 – Slider response time
+- **Priority:** High
+- **Preconditions:** Slider loaded
+- **Test Steps:**
+  1. Click navigation control
+- **Expected Result:** Slide changes within 1s
+- **Actual Result:** ______
+
+### Compatibility Testing
+
+#### TC-COMP-US1.2-01 – Slider across browsers
+- **Priority:** Medium
+- **Preconditions:** Multiple browsers available
+- **Test Steps:**
+  1. Test slider in different browsers
+- **Expected Result:** Slider works everywhere
+- **Actual Result:** ______
+
+---
+
+## US1.3 – Welcome Message
+
+### Functional Testing
+
+#### TC-FUNC-US1.3-01 – Validate welcome message visibility
+- **Priority:** Medium
+- **Preconditions:** Landing page loaded
+- **Test Steps:**
+  1. Scroll landing page
+- **Expected Result:** Welcome message is visible
+- **Actual Result:** ______
+
+### UI / Usability Testing
+
+#### TC-UI-US1.3-01 – Validate text alignment
+- **Priority:** Low
+- **Preconditions:** Welcome message displayed
+- **Test Steps:**
+  1. Observe spacing and overlap
+- **Expected Result:** No overlap with other elements
+- **Actual Result:** ______
+
+---
+
+## US1.4 – Call To Action (CTA)
+
+### Functional Testing
+
+#### TC-FUNC-US1.4-01 – CTA navigation
+- **Priority:** High
+- **Preconditions:** CTA button visible
+- **Test Steps:**
+  1. Click CTA button
+- **Expected Result:** User navigates to intended page
+- **Actual Result:** ______
+
+### UI / Usability Testing
+
+#### TC-UI-US1.4-01 – CTA visibility
+- **Priority:** Medium
+- **Preconditions:** Landing page loaded
+- **Test Steps:**
+  1. Observe CTA color and placement
+- **Expected Result:** CTA is clearly visible
+- **Actual Result:** ______
+
+---
+
+## US1.5 – Header Navigation Menu
+
+### Functional Testing
+
+#### TC-FUNC-US1.5-01 – Navigate using header menu
+- **Priority:** High
+- **Preconditions:** Header menu visible
+- **Test Steps:**
+  1. Click each menu item
+- **Expected Result:** Correct pages open
+- **Actual Result:** ______
+
+### Compatibility Testing
+
+#### TC-COMP-US1.5-01 – Header menu on mobile
+- **Priority:** Medium
+- **Preconditions:** Mobile device
+- **Test Steps:**
+  1. Open hamburger menu
+- **Expected Result:** Menu works correctly
+- **Actual Result:** ______
 
 ---
 
 ## US1.6 – Product Categories
 
-### Functional
-- TC-FUNC-US1.6-01: Validate navigating to category pages.
+### Functional Testing
 
-### UI / Usability
-- TC-UI-US1.6-01: Verify category page layout and design.
+#### TC-FUNC-US1.6-01 – Open category page
+- **Priority:** High
+- **Preconditions:** Categories visible
+- **Test Steps:**
+  1. Click a category
+- **Expected Result:** Category page opens
+- **Actual Result:** ______
 
-### Edge
-- TC-EDGE-US1.6-01: Validate navigating to category pages with no internet connection.
+### UI / Usability Testing
 
-### Performance
-- TC-PERF-US1.6-01: Validate category navigation response time.
-
-### Security
-*(No specific security test for US1.6)*
-
-### API
-*(No specific API test for US1.6)*
-
-### Compatibility
-- TC-COMP-US1.6-01: Validate category page works across browsers and devices.
-
----
-
-## US1.7 – Featured Products & Add to Cart
-
-### Functional
-- TC-FUNC-US1.7-01: Validate **Add to Cart** button functionality.
-- TC-FUNC-US1.7-02: Validate featured products show correct details.
-
-### UI / Usability
-- TC-UI-US1.7-01: Verify featured products display correct images, names, and prices.
-
-### Edge
-- TC-EDGE-US1.7-01: Validate adding a featured product to cart with no internet connection.
-
-### Performance
-- TC-PERF-US1.7-01: Validate add to cart response time.
-
-### Security
-*(No specific security test for US1.7)*
-
-### API
-*(No specific API test for US1.7)*
-
-### Compatibility
-- TC-COMP-US1.7-01: Validate featured products functionality across browsers/devices.
+#### TC-UI-US1.6-01 – Category labels clarity
+- **Priority:** Medium
+- **Preconditions:** Categories displayed
+- **Test Steps:**
+  1. Review labels
+- **Expected Result:** Labels are readable
+- **Actual Result:** ______
 
 ---
 
-## US1.8 – Search Functionality
+## US1.7 – Featured Products
 
-### Functional
-- TC-FUNC-US1.8-01: Validate searching for a product using its name.
-- TC-FUNC-US1.8-02: Validate searching for a product using its category name.
-- TC-FUNC-US1.8-03: Validate pressing **Enter** triggers the search.
-- TC-FUNC-US1.8-04: Validate search with empty input displays validation message.
-- TC-FUNC-US1.8-05: Validate searching in another language.
+### Functional Testing
 
-### UI / Usability
-- TC-UI-US1.8-01: Validate search bar usability across devices.
-- TC-UI-US1.8-02: Validate cursor appears when clicking search input.
-- TC-UI-US1.8-03: Validate search bar border highlights on focus.
-- TC-UI-US1.8-04: Validate search submission by clicking search icon.
+#### TC-FUNC-US1.7-01 – Open featured product
+- **Priority:** High
+- **Preconditions:** Featured products visible
+- **Test Steps:**
+  1. Click product
+- **Expected Result:** Product details page opens
+- **Actual Result:** ______
 
-### Edge
-- TC-EDGE-US1.8-01: Validate searching using product description.
-- TC-EDGE-US1.8-02: Validate searching with no internet connection.
-- TC-EDGE-US1.8-03: Validate copy-pasting product name in search bar.
-- TC-EDGE-US1.8-04: Validate refreshing page while search bar is active.
-- TC-EDGE-US1.8-05: Validate refreshing page after filling search bar before submitting.
+### Performance Testing
 
-### Performance
-- TC-PERF-US1.8-01: Validate search response time.
-
-### Security
-- TC-SEC-US1.8-01: Validate search bar handles special characters safely.
-
-### API
-- TC-API-US1.8-01: Validate product search API response from store.
-
-### Compatibility
-- TC-COMP-US1.8-01: Validate search functionality across browsers and devices.
+#### TC-PERF-US1.7-01 – Product page load
+- **Priority:** Medium
+- **Preconditions:** Product clicked
+- **Test Steps:**
+  1. Measure load time
+- **Expected Result:** Loads within acceptable time
+- **Actual Result:** ______
 
 ---
 
-## US1.9 – Register
+## US1.8 – Search Access
 
-### Functional
-- TC-FUNC-US1.9-01: Verify redirection to **Register** page when clicking register link.
+### Functional Testing
 
-### UI / Usability
-- TC-UI-US1.9-01: Validate register link visibility when logged out.
+#### TC-FUNC-US1.8-01 – Open search
+- **Priority:** High
+- **Preconditions:** Search icon visible
+- **Test Steps:**
+  1. Click search input
+- **Expected Result:** Search view opens
+- **Actual Result:** ______
 
-### Edge
-*(No specific edge test for US1.9)*
+### Security Testing
 
-### Performance
-- TC-PERF-US1.9-01: Validate register page navigation response time.
-
-### Security
-*(No specific security test for US1.9)*
-
-### API
-*(No specific API test for US1.9)*
-
-### Compatibility
-- TC-COMP-US1.9-01: Validate register page works across browsers and devices.
-
----
-
-## US1.10 – Login
-
-### Functional
-- TC-FUNC-US1.10-01: Verify redirection to **Login** page when clicking login link.
-
-### UI / Usability
-- TC-UI-US1.10-01: Validate login link visibility when logged out.
-
-### Edge
-*(No specific edge test for US1.10)*
-
-### Performance
-- TC-PERF-US1.10-01: Validate login page navigation response time.
-
-### Security
-*(No specific security test for US1.10)*
-
-### API
-*(No specific API test for US1.10)*
-
-### Compatibility
-- TC-COMP-US1.10-01: Validate login page works across browsers and devices.
+#### TC-SEC-US1.8-01 – Special characters handling
+- **Priority:** Medium
+- **Preconditions:** Search input active
+- **Test Steps:**
+  1. Enter special characters
+- **Expected Result:** No crash or injection
+- **Actual Result:** ______
 
 ---
 
-*(ويمكنني أكمل لك بقية US1.11 إلى US1.15 بنفس النمط مع كل Test Case مفصل لكل نوع فحص)*  
+## US1.9 – Register Link
+
+### Functional Testing
+
+#### TC-FUNC-US1.9-01 – Navigate to register page
+- **Priority:** High
+- **Preconditions:** User logged out
+- **Test Steps:**
+  1. Click Register link
+- **Expected Result:** Register page opens
+- **Actual Result:** ______
+
+---
+
+## US1.10 – Login Link
+
+### Functional Testing
+
+#### TC-FUNC-US1.10-01 – Navigate to login page
+- **Priority:** High
+- **Preconditions:** User logged out
+- **Test Steps:**
+  1. Click Login link
+- **Expected Result:** Login page opens
+- **Actual Result:** ______
+
+---
+
+## US1.11 – Logout Link
+
+### Functional Testing
+
+#### TC-FUNC-US1.11-01 – Logout successfully
+- **Priority:** High
+- **Preconditions:** User logged in
+- **Test Steps:**
+  1. Click Logout
+- **Expected Result:** User session ends
+- **Actual Result:** ______
+
+---
+
+## US1.12 – My Account Link
+
+### Functional Testing
+
+#### TC-FUNC-US1.12-01 – Open My Account
+- **Priority:** High
+- **Preconditions:** User logged in
+- **Test Steps:**
+  1. Click My Account
+- **Expected Result:** Account page opens
+- **Actual Result:** ______
+
+---
+
+## US1.13 – Cart Icon
+
+### Functional Testing
+
+#### TC-FUNC-US1.13-01 – Open cart
+- **Priority:** High
+- **Preconditions:** Cart icon visible
+- **Test Steps:**
+  1. Click cart icon
+- **Expected Result:** Cart page opens
+- **Actual Result:** ______
+
+---
+
+## US1.14 – Wishlist Icon
+
+### Functional Testing
+
+#### TC-FUNC-US1.14-01 – Open wishlist
+- **Priority:** Medium
+- **Preconditions:** Wishlist icon visible
+- **Test Steps:**
+  1. Click wishlist icon
+- **Expected Result:** Wishlist page opens
+- **Actual Result:** ______
+
+---
+
+## US1.15 – Currency Selector
+
+### Functional Testing
+
+#### TC-FUNC-US1.15-01 – Change currency
+- **Priority:** Medium
+- **Preconditions:** Currency selector visible
+- **Test Steps:**
+  1. Select different currency
+- **Expected Result:** Prices update correctly
+- **Actual Result:** ______
+
+---
+
+## US1.16 – Footer Section
+
+### UI / Usability Testing
+
+#### TC-UI-US1.16-01 – Footer visibility
+- **Priority:** Low
+- **Preconditions:** Page scrolled to bottom
+- **Test Steps:**
+  1. Observe footer
+- **Expected Result:** Footer fully visible
+- **Actual Result:** ______
+
+---
+
+## US1.17 – Responsive Design
+
+### Compatibility Testing
+
+#### TC-COMP-US1.17-01 – Responsive layout
+- **Priority:** High
+- **Preconditions:** Different screen sizes
+- **Test Steps:**
+  1. Resize screen
+- **Expected Result:** Layout adapts correctly
+- **Actual Result:** ______
+
+---
+
+## US1.18 – Accessibility
+
+### Accessibility Testing
+
+#### TC-A11Y-US1.18-01 – Keyboard navigation
+- **Priority:** High
+- **Preconditions:** Keyboard only
+- **Test Steps:**
+  1. Navigate using Tab key
+- **Expected Result:** All interactive elements accessible
+- **Actual Result:** ______
