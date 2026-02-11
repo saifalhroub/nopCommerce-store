@@ -26,7 +26,8 @@
 
 ### Performance Testing
 
-#### TC-PERF-US1.0-01 – Validate page load time
+
+#### TC-PERF-US1.0-01 – Validate page load time with 2.4G connection
 - **Priority:** High
 - **Preconditions:** Stable internet connection
 - **Test Steps:**
@@ -40,10 +41,25 @@
 - **Priority:** Medium
 - **Preconditions:** Multiple browsers available
 - **Test Steps:**
-  1. Open landing page in Chrome, Firefox, Edge
+  1. Open the landing page in Chrome, Firefox, and Edge
 - **Expected Result:** Page works correctly on all browsers
 - **Actual Result:** ______
 
+#### TC-COMP-US1.0-02 – Validate landing page across devices
+- **Priority:** high
+- **Preconditions:** Multiple devices available
+- **Test Steps:**
+  1. Open the landing page in Pc, Tablet, and mobile phone
+- **Expected Result:** Page works correctly on all devices
+- **Actual Result:** ______
+
+#### TC-COMP-US1.0-03 – Validate landing page across different internet connections
+- **Priority:** high
+- **Preconditions:** Multiple devices available
+- **Test Steps:**
+  1. Open the landing page in Pc, Tablet, and mobile phone
+- **Expected Result:** Page works correctly on all devices
+- **Actual Result:** ______
 ---
 
 ## US1.1 – Hero Section / Promotional Slider
@@ -70,7 +86,7 @@
 
 ---
 
-## US1.2 – Hero Slider Controls
+## US1.2 – Slider Navigation Controls
 
 ### Functional Testing
 
@@ -171,29 +187,7 @@
 - **Expected Result:** CTA is clearly visible
 - **Actual Result:** ______
 
----
 
-## US1.5 – Header Navigation Menu
-
-### Functional Testing
-
-#### TC-FUNC-US1.5-01 – Navigate using header menu
-- **Priority:** High
-- **Preconditions:** Header menu visible
-- **Test Steps:**
-  1. Click each menu item
-- **Expected Result:** Correct pages open
-- **Actual Result:** ______
-
-### Compatibility Testing
-
-#### TC-COMP-US1.5-01 – Header menu on mobile
-- **Priority:** Medium
-- **Preconditions:** Mobile device
-- **Test Steps:**
-  1. Open hamburger menu
-- **Expected Result:** Menu works correctly
-- **Actual Result:** ______
 
 ---
 
@@ -209,6 +203,17 @@
 - **Expected Result:** Category page opens
 - **Actual Result:** ______
 
+### Edge Testing
+
+#### TC-Edge-US1.5-01 – open category page while no internet connection
+- **Priority:** low
+- **Preconditions:** Cargories Visible
+- **Test Steps:**
+  1. Turn off the network connection
+  2. Click a category
+- **Expected Result:** Redirected to no internet connection page
+- **Actual Result:** ______
+
 ### UI / Usability Testing
 
 #### TC-UI-US1.6-01 – Category labels clarity
@@ -217,6 +222,16 @@
 - **Test Steps:**
   1. Review labels
 - **Expected Result:** Labels are readable
+- **Actual Result:** ______
+
+### Performance Testing
+
+#### TC-Edge-US1.6-01 – validate open category page load time while connecting to 2.4G internet
+- **Priority:** high
+- **Preconditions:** Cargories Visible, connected to 2.4G internet 
+- **Test Steps:**
+  1. Click a category
+- **Expected Result:** Page load time <3s
 - **Actual Result:** ______
 
 ---
@@ -232,6 +247,16 @@
   1. Click product
 - **Expected Result:** Product details page opens
 - **Actual Result:** ______
+
+### UI / Usability Testing
+
+#### TC-UI-US1.7-01 – featured products layout and design
+- **Priority:** Medium
+- **Preconditions:** Categories displayed
+- **Test Steps:**
+  1. Review featured products
+- **Expected Result:** Featured products should have (Name, image, price, add to cart button, add to watchlist button)
+- **Actual Result:**
 
 ### Performance Testing
 
