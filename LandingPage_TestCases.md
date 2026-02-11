@@ -1,3 +1,213 @@
+# Landing Page – Testing Coverage
+Based on **Landing Page – User Stories & Acceptance Criteria (BDD)**
+
+---
+
+## Functional Testing
+
+### ✅ Valid Scenarios
+
+**US1.2**
+- Validate moving through hero slides
+- Validate redirection to product details page when clicking on **Learn More**
+
+**US1.6**
+- Validate navigating to category pages
+
+**US1.7**
+- Validate the **Add to Cart** button functionality
+
+**US1.8**
+- Validate searching for a product using its name
+- Validate searching for a product using its category name
+
+**US1.9**
+- Verify redirection to the **Register** page when clicking on the register link
+
+**US1.10**
+- Verify redirection to the **Login** page when clicking on the login link
+
+**US1.11**
+- Verify logging out when clicking on the logout link
+
+**US1.12**
+- Verify redirection to **My Account** when clicking on the account link
+
+**US1.13**
+- Validate redirection to the **Cart** page when clicking on the cart icon
+
+**US1.14**
+- Validate redirection to the **Wishlist** page when clicking on the wishlist icon
+
+**US1.15**
+- Validate changing currency using the currency selector
+
+---
+
+### ❌ Invalid Scenarios
+
+**US1.8**
+- Validate searching for a product in another language
+- Validate leaving the search bar empty
+
+---
+
+### ⚠️ Edge Cases
+
+**US1.0**
+- Verify navigating to the store landing page with no internet connection
+- Verify opening the landing page simultaneously from two tabs
+
+**US1.2**
+- Validate clicking **Learn More** with no internet connection
+- Validate excessive clicking on **Learn More**
+- Validate opening product details page using **Open in New Tab**
+
+**US1.6**
+- Validate navigating to category pages with no internet connection
+
+**US1.7**
+- Validate adding a featured product to cart with no internet connection
+
+**US1.8**
+- Validate searching using product description
+- Validate searching with no internet connection
+- Validate copy & paste of product name into search bar
+- Validate refreshing the page while the search bar is active
+- Validate refreshing after filling the search bar before submitting
+
+**US1.11**
+- Validate logging out with no internet connection
+
+**US1.12**
+- Validate navigating to **My Account** with no internet connection
+
+**US1.13**
+- Validate navigating to the cart with no internet connection
+- Validate adding products to cart with no internet connection
+
+**US1.14**
+- Validate navigating to the wishlist with no internet connection
+- Validate adding products to wishlist with no internet connection
+
+**US1.15**
+- Validate changing currency while no internet connection is established
+
+---
+
+## Usability Testing
+
+### ALL User Stories
+- Validate navigation using keyboard only
+
+**US1.0**
+- Verify landing page layout and design (Priority: High)
+- Verify landing page visuals as a guest
+- Verify landing page visuals as a logged-in user
+- Validate visual consistency between Dark / Light modes
+- Validate visual consistency when rotating mobile screen
+
+**US1.2**
+- Validate hero image ratio across different screen sizes
+- Validate slider navigation across different devices
+
+**US1.3**
+- Validate welcome message text correctness
+
+**US1.6**
+- Verify category page layout and design
+
+**US1.7**
+- Validate featured products show correct details
+
+**US1.8**
+- Validate search bar usability across devices
+- Validate confirming search using **Enter**
+- Validate confirming search using search icon
+- Validate cursor appearance inside search bar
+- Validate search bar border highlighting on focus
+
+**US1.9**
+- Validate register link visibility when logged out
+
+**US1.10**
+- Validate login link visibility when logged out
+
+**US1.11**
+- Validate logout link visibility when logged in
+- Validate logout link changes to login after logout
+- Validate **My Account** link changes to register after logout
+
+**US1.12**
+- Validate **My Account** link visibility when logged in
+
+**US1.13**
+- Validate cart item count updates correctly when adding products
+
+**US1.14**
+- Validate wishlist item count updates correctly when adding products
+
+**US1.15**
+- Validate product prices update based on selected currency
+
+---
+
+## Performance Testing
+
+**US1.0**
+- Validate landing page load time
+
+**US1.2**
+- Validate slider response time
+
+**US1.6**
+- Validate category navigation response time
+
+**US1.8**
+- Validate search response time
+
+**US1.9**
+- Validate register page navigation response time
+
+**US1.10**
+- Validate login page navigation response time
+
+**US1.11**
+- Validate logout response time
+
+**US1.12**
+- Validate **My Account** page navigation response time
+
+**US1.13**
+- Validate cart page navigation response time
+
+**US1.14**
+- Validate wishlist page navigation response time
+
+---
+
+## Security Testing
+
+**US1.11**
+- Validate session termination when navigating back using browser back button after logout
+
+---
+
+## API Testing
+
+**US1.8**
+- Validate product search API response from the store
+
+---
+
+## Compatibility Testing
+
+### ALL User Stories
+- Validate compatibility across different devices
+- Validate opening the store using different internet connections
+- Validate usage across different browsers and operating systems
+
+
 # ✅ Landing Page – Test Cases (Manual QA)
 
 ---
