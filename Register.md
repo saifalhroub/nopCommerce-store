@@ -9,7 +9,7 @@
 ---
 
 ## Acceptance Criteria (BDD)
-
+1-
 - Given the user is on the Register page  
 - When the user enters valid data in all mandatory fields  
 - And clicks on the Register button  
@@ -18,6 +18,13 @@
 - And the user is redirected to the homepage  
 - And the user record is saved in the database  
 
+2-
+- Given the user is on the Register page
+- When the user enters invalid data
+- And clicks on the Register button
+- Then no account is created
+- And a validation error message appears depending on the field type
+  
 ---
 
 # Test Cases
