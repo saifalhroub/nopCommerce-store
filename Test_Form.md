@@ -1,122 +1,116 @@
-# Landing Page – Test Cases Template
-*Grouped by User Story → Test Type → Test Cases*
+# Feature: <Feature Name>
 
 ---
 
-## USX.X – <User Story Title>
-
-### User Story
-As a <user type>, I want to <goal> so that <reason>.
-
-### Acceptance Criteria (BDD)
-- Given <precondition>
-- When <action>
-- Then <expected behavior>
+# 1️⃣ User Story
+As a <type of user>,  
+I want to <action>,  
+So that <benefit>.
 
 ---
 
-### Functional Testing
+# 2️⃣ Acceptance Criteria (BDD)
 
-#### TC-FUNC-USX.X-01 – <Test Case Title>
-- **Priority:** High / Medium / Low
-- **Preconditions:**
-  - <Precondition 1>
-  - <Precondition 2>
-- **Test Steps:**
-  1. <Step 1>
-  2. <Step 2>
-- **Expected Result:** <Expected system behavior>
-- **Actual Result:** ______
+## AC1 – Happy Path
+Given  
+When  
+Then  
 
----
+## AC2 – Validation
+Given  
+When  
+Then  
 
-### UI / Usability Testing
-
-#### TC-UI-USX.X-01 – <Test Case Title>
-- **Priority:** High / Medium / Low
-- **Preconditions:**
-  - <Precondition>
-- **Test Steps:**
-  1. <Step>
-- **Expected Result:** <UI behaves as expected>
-- **Actual Result:** ______
+## AC3 – System Behavior
+Given  
+When  
+Then  
 
 ---
 
-### Edge Case Testing
-
-#### TC-EDGE-USX.X-01 – <Test Case Title>
-- **Priority:** High / Medium / Low
-- **Preconditions:**
-  - <Precondition>
-- **Test Steps:**
-  1. <Edge action>
-- **Expected Result:** <System handles edge case gracefully>
-- **Actual Result:** ______
+# 3️⃣ Test Cases
 
 ---
 
-### Performance Testing
+## Functional – Valid Scenarios
 
-#### TC-PERF-USX.X-01 – <Test Case Title>
-- **Priority:** High / Medium / Low
-- **Preconditions:**
-  - <Stable / limited network, etc.>
-- **Test Steps:**
-  1. <Action>
-- **Expected Result:** <Response time / performance requirement>
-- **Actual Result:** ______
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-FUNCV-01 | | | |
 
----
+**Steps:**
+1.  
+2.  
 
-### Security Testing
-
-#### TC-SEC-USX.X-01 – <Test Case Title>
-- **Priority:** High / Medium / Low
-- **Preconditions:**
-  - <User state / input available>
-- **Test Steps:**
-  1. <Security-related action>
-- **Expected Result:** <No vulnerability / safe behavior>
-- **Actual Result:** ______
+**Expected Result:**
+-  
+-  
 
 ---
 
-### API Testing
+## Functional – Invalid Scenarios
 
-#### TC-API-USX.X-01 – <Test Case Title>
-- **Priority:** High / Medium / Low
-- **Preconditions:**
-  - <API available>
-- **Test Steps:**
-  1. <Send request>
-- **Expected Result:** <Valid API response>
-- **Actual Result:** ______
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-FUNCINV-01 | | | |
 
----
+**Steps:**
+1.  
+2.  
 
-### Compatibility Testing
-
-#### TC-COMP-USX.X-01 – <Test Case Title>
-- **Priority:** High / Medium / Low
-- **Preconditions:**
-  - <Device / browser / OS>
-- **Test Steps:**
-  1. <Action>
-- **Expected Result:** <Works consistently across environments>
-- **Actual Result:** ______
+**Expected Result:**
+-  
+-  
 
 ---
 
-### Accessibility Testing (Optional)
+## Boundary Value Testing
 
-#### TC-A11Y-USX.X-01 – <Test Case Title>
-- **Priority:** High / Medium / Low
-- **Preconditions:**
-  - <Keyboard / screen reader>
-- **Test Steps:**
-  1. <Accessibility action>
-- **Expected Result:** <Accessible behavior>
-- **Actual Result:** ______
+| Field | Min | Max | Tested Value | Expected |
+|-------|-----|-----|-------------|----------|
 
 ---
+
+## Edge Cases
+
+| TC ID | Scenario | Expected Result |
+|-------|----------|----------------|
+
+---
+
+## Security Testing
+
+| TC ID | Attack Type | Expected Result |
+|-------|------------|----------------|
+
+---
+
+## UI Testing
+
+- Layout validation  
+- Field alignment  
+- Button state  
+- Error message placement  
+
+---
+
+## Usability Testing
+
+- Keyboard navigation  
+- Field focus behavior  
+- Error clarity  
+- Mandatory indicators  
+
+---
+
+## API Testing (If applicable)
+
+### Valid Request
+- Status Code:
+- Response Body:
+- Database Check:
+
+### Invalid Request
+- Status Code:
+- Error Message:
+- Data Integrity:
