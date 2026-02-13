@@ -88,11 +88,6 @@
 
 ---
 
----
-
-## User Story: Registration Validation
-
-**As a user, I want the system to validate my registration input so that incorrect or incomplete data is not accepted.**
 
 ---
 
@@ -113,7 +108,7 @@
 
 ##  Functional Tests – Invalid Scenarios
 
-### TC-FUNCINV-US2.0-01 – Password shorter than minimum length
+### TC-FUNCINV-US1.0-01 – Password shorter than minimum length
 - **Priority:** Medium  
 - **Preconditions:** User is on the Register page  
 
@@ -131,7 +126,7 @@
 
 ---
 
-### TC-FUNCINV-US2.0-02 – Password exceeds maximum length (65 characters)
+### TC-FUNCINV-US1.0-02 – Password exceeds maximum length (65 characters)
 - **Priority:** Medium  
 
 **Test Steps:**
@@ -148,7 +143,7 @@
 
 ---
 
-### TC-FUNCINV-US2.0-03 – Submit with all fields empty
+### TC-FUNCINV-US1.0-03 – Submit with all fields empty
 - **Priority:** High  
 
 **Test Steps:**
@@ -164,7 +159,7 @@
 
 ---
 
-### TC-FUNCINV-US2.0-04 – Password and Confirm Password mismatch
+### TC-FUNCINV-US1.0-04 – Password and Confirm Password mismatch
 - **Priority:** High  
 
 **Test Steps:**
@@ -181,7 +176,7 @@
 
 ---
 
-### TC-FUNCINV-US2.0-05 – No internet connection during submission
+### TC-FUNCINV-US1.0-05 – No internet connection during submission
 - **Priority:** Medium  
 
 **Test Steps:**
@@ -199,7 +194,7 @@
 
 ---
 
-### TC-FUNCINV-US2.0-06 – Register with already registered email
+### TC-FUNCINV-US1.0-06 – Register with already registered email
 - **Priority:** High  
 
 **Test Steps:**
@@ -216,7 +211,7 @@
 
 ---
 
-### TC-FUNCINV-US2.0-07 – Invalid email format
+### TC-FUNCINV-US1.0-07 – Invalid email format
 - **Priority:** Medium  
 
 **Test Steps:**
@@ -233,7 +228,7 @@
 
 ---
 
-### TC-FUNCINV-US2.0-08 – Leave email field empty
+### TC-FUNCINV-US1.0-08 – Leave email field empty
 - **Priority:** High  
 
 **Test Steps:**
@@ -250,7 +245,7 @@
 
 ---
 
-### TC-FUNCINV-US2.0-09 – Leave First Name empty
+### TC-FUNCINV-US1.0-09 – Leave First Name empty
 - **Priority:** Medium  
 
 **Test Steps:**
@@ -267,7 +262,7 @@
 
 ---
 
-### TC-FUNCINV-US2.0-10 – Leave Last Name empty
+### TC-FUNCINV-US1-0-10 – Leave Last Name empty
 - **Priority:** Medium  
 
 **Test Steps:**
