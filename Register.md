@@ -383,6 +383,35 @@
 
 **Actual Result:** ______  
 
+-------
+
+### TC-UI-US1.0-04 – Validate that focusing is appointed on the field with the wrong data
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Fill a mandatory field with invalid data
+2. Fill the rest of the mandatory fields with valid data
+3. Click on register
+
+**Expected Result:**
+- Registration request is rejected
+- No account is created
+- Focusing is appointed on the targeted field with invalid data
+
+**Actual Result:** ______  
+
+### TC-UI-US1.0-04 – Validate the state of a mandatory field with invalid data after correcting it
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Correct the mandatory field data
+2. Observe the field's state
+
+**Expected Result:**
+- The focusing disappears from the field
+- No Validation error appears
+
+**Actual Result:** ______ 
 -----------------------------------
 
 ## Usability Tests
