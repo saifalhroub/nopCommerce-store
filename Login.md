@@ -55,7 +55,7 @@ Then
 | TC-FUNCV-1.1 | Validate remember me checkbox functionality | High  | User is on registration page, and all fields are filled with valid data |
 
 **Steps:**
-1.  Click on remember me checkbox
+1.  Check the Remember me checkbox
 2.  logout
 3.  Click inside the email field
 5.  Select the email suggested to you
@@ -75,15 +75,16 @@ Then
 
 | TC ID | Title | Priority | Preconditions |
 |-------|-------|----------|---------------|
-| TC-FUNCINV-1.0 | Validate leaving all fields empty | | |
+| TC-FUNCINV-1.0 | Validate leaving all fields empty | Medium | User is on login page |
 
 **Steps:**
-1.  
-2.  
+1.  Leave all fields empty
+2.  Click on the login button
 
 **Expected Result:**
--  
--  
+-  The login request is rejected
+-  The user remains on the login page
+-  A validation error for both email and password
 
 ---
 
@@ -91,15 +92,17 @@ Then
 
 | TC ID | Title | Priority | Preconditions |
 |-------|-------|----------|---------------|
-| TC-FUNCINV-1.1 | Validate leaving the password field empty | | |
+| TC-FUNCINV-1.1 | Validate leaving the password field empty | High | User is on the login page, and the email field is filled |
 
 **Steps:**
-1.  
-2.  
+1.  Leave the password field empty
+2.  Click on the login button
 
 **Expected Result:**
--  
--  
+-  The login request is rejected
+-  The user remains on the login page
+-  A password validation error appears  
+  
 
 ---
 
@@ -107,15 +110,16 @@ Then
 
 | TC ID | Title | Priority | Preconditions |
 |-------|-------|----------|---------------|
-| TC-FUNCINV-1.2 | Validate using an un-registered email | | |
+| TC-FUNCINV-1.2 | Validate using an un-registered email | High | User is on the login page |
 
 **Steps:**
-1.  
-2.  
+1.  Fill the email field unregistered email and the right format email
+2.  Fill in the password with a password that meets the restrictions
 
 **Expected Result:**
--  
--  
+-  Login request is rejected
+-  The user remains on the login page
+-  A validation error appears saying "no account exists."
 
 ---
 
@@ -130,47 +134,51 @@ Then
 
 | TC ID | Title | Priority | Preconditions |
 |-------|-------|----------|---------------|
-| TC-FUNCINV-1.3 | Validate email format mistake | | |
+| TC-FUNCINV-1.3 | Validate email format mistake | High | User is on the login page and has a registered account |
 
 **Steps:**
-1.  
-2.  
+1.  Fill in the email field with a wrong format "@@."
+2.  Fill in the password field
+3.  Click on the login button
 
 **Expected Result:**
--  
--  
-
+- The login request is rejected
+- The user remains on the login page
+-  A validation error message appears notifying the user, "Wrong email format."
 ---
 
 ## Functional – Invalid Scenarios
 
 | TC ID | Title | Priority | Preconditions |
 |-------|-------|----------|---------------|
-| TC-FUNCINV-1.4 | Validate a mistake in the password | | |
+| TC-FUNCINV-1.4 | Validate a mistake in the password | High | User is on the login page |
 
 **Steps:**
-1.  
-2.  
+1.  Fill the email field with a valid registered email
+2.  Fill the password field with a mistaken password
+3.  Click on the login button
 
 **Expected Result:**
--  
--  
+- The login request is rejected
+- The user remains on the login page
+-  A validation error message appears notifying the user, "Wrong Password."
 
 ---
 ## Functional – Invalid Scenarios
 
 | TC ID | Title | Priority | Preconditions |
 |-------|-------|----------|---------------|
-| TC-FUNCINV-1.5 | Validate no internet connection logging in | | |
+| TC-FUNCINV-1.5 | Validate no internet connection logging in | medium | User is on the login page |
 
 **Steps:**
-1.  
-2.  
+1.  Fill both the email and password fields with valid data
+2.  Cut-off the internet connection
+3.  Click on the login button
 
 **Expected Result:**
--  
--  
-
+- The user is redirected to no internet connection page
+- The login request is rejected
+- No session is recorded in the database
 ---
 ## Edge Cases
  many time wrong pass / spam click on login button / use space / copy paste data / login from two devices at the same time / using capital letters in email
