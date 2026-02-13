@@ -332,6 +332,9 @@
 
 **Actual Result:** ______  
 
+
+
+
 -------------------------------
 
 ## UI Tests
@@ -363,6 +366,20 @@
 - Button color contrasts with background.  
 - Button text is readable.  
 - Button has consistent styling.  
+
+**Actual Result:** ______  
+
+### TC-UI-US1.0-03 – Correct validation error message when leaving a mandatory field
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Fill a mandatory field with invalid data
+2. Click on register
+
+**Expected Result:**
+- Registration request is rejected
+- No account is created
+- Validation error message, content depends on the field 
 
 **Actual Result:** ______  
 
@@ -414,6 +431,23 @@
 
 **Actual Result:** ______  
 
+### TC-USE-US1.0-04 – Mandatory field state changes when leaving it empty / using invalid data
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Leave any mandatory field empty
+2. Fill all other fields
+3. Click on register
+4. Repeat this for all mandatory fields  
+
+**Expected Result:**
+- Then register request is rejected
+- No account has been created
+- Validation error message 
+- The field is highlighted
+- The cursor is placed inside the field
+
+**Actual Result:** ______  
 ----------------------------------
 
 ## Performance Tests
@@ -481,6 +515,21 @@
 
 **Actual Result:** ______  
 
+### TC-SEC-US1.0-02 – No account Id reveal when registering with an already registered account
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Fill the email field with a registered email 
+2. Fill in the other required fields  
+3. Click Register  
+
+**Expected Result:**
+- Register request is rejected
+- No account has been created
+- Validation error message with context of "We detected a registered account linked to this email."
+- No Id Account is revealed
+
+**Actual Result:** ______  
 -------------------------------------
 
 ## API Tests
@@ -526,7 +575,31 @@
 
 **Actual Result:** ______  
 
+---
 
+### TC-API-US1.0-04 – response code when using invalid data (empty/wrong data)
+- **Priority:** Medium  
 
+**Test Steps:**
+1. Send a post request using the with invalid data
+**Expected Result:**
+- Response code is 400 (bad request).  
+- Response indicates no user has been created  
+
+**Actual Result:** ______  
+
+---
+
+### TC-API-US1.0-04 – creating multiple invalid requests at the same time
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Send a post request using the with invalid data multiple times
+**Expected Result:**
+- Response code is 400 (bad request).  
+- Response indicates no user has been created
+- System does not crash 
+
+**Actual Result:** ______  
 
  
