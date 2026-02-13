@@ -1,388 +1,532 @@
-s# Register Functionality US, AC, TC
-------
-## User Story: Register with valid data
+# Register Functionality – US, AC, TC
 
-### AC:
+---
+
+## User Story:
+
+**As a user, I want to register an account so that I can shop faster**
+
+---
+
+## Acceptance Criteria (BDD)
+
 - Given the user is on the Register page  
-- When the user enters valid registration data  
+- When the user enters valid data in all mandatory fields  
 - And clicks on the Register button  
 - Then the account is created successfully  
-- And the user is redirected to the homepage / login page
+- And a success message is displayed  
+- And the user is redirected to the homepage  
+- And the user record is saved in the database  
 
-  -------
-### TC:
- - Functional Test
-  - **Valid**
-    
-    #### TC-FUNCV-US1.0-01 – Validate register using valid data
-    - **Priority:** High
-    - **Preconditions:** User is on the register page
-    - **Test Steps:**
-     1. Fill all mandatory fields with valid data
-     2. Click on the register button
-    - **Expected Result:** Registeration is successful
-    - **Actual Result:** ______
+---
 
-    #### TC-FUNCV-US1.0-02 – Validate using minimum allowed password length
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled except password
-    - **Test Steps:**
-     1. Fill the password with a minimum of 6 characters
-     2. Click on the register button
-    - **Expected Result:** Registeration is successful
-    - **Actual Result:** ______
+# Test Cases
 
-    #### TC-FUNCV-US1.0-03 – Validate using maximum allowed password length
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled except password
-    - **Test Steps:**
-     1. Fill the password with a maximum of 64 characters
-     2. Click on the register button
-    - **Expected Result:** Registeration is successful
-    - **Actual Result:** ______
+----------------------------
 
- - Edge
+## Functional Tests – Valid Scenarios
 
-    #### TC-Edge-US1.0-01 – Validate clicking on the register button multiple times
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled 
-    - **Test Steps:**
-     1. Spam click on the register button 
-    - **Expected Result:**
-      - The Register button should be disabled after the first click.
-      - Only one registration request should be sent to the server.
-      - The user account should be created only once.
-      - No duplicate accounts should be created.
-      - The system should remain responsive without errors or crashes.
-    - **Actual Result:** ______
+### TC-FUNCV-US1.0-01 – Register using valid data
+- **Priority:** High  
+- **Preconditions:** User is on the Register page  
 
-    #### TC-Edge-US1.0-02 – Validate creating two accounts with the same email at the same time
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page in both devices/browsers/tabs & All mandatory fields are filled 
-    - **Test Steps:**
-     1. Click on create account at the same time for both requests
-    - **Expected Result:**
-      - Only one registration request should be sent to the server.
-      - The user account should be created only once.
-      - No duplicate accounts should be created.
-      - The system should remain responsive without errors or crashes.
-    - **Actual Result:** ______
+**Test Steps:**
+1. Fill all mandatory fields with valid data  
+2. Click on the Register button  
 
-    #### TC-Edge-US1.0-03 – Validate filling all fields and submit it after a long time
-    - **Priority:** low
-    - **Preconditions:** User on the register page & All mandatory fields are filled 
-    - **Test Steps:**
-     1. Wait for two hours
-     2. Click on create account 
-    - **Expected Result:**
-      - Create account request is rejected
-      - No account is created
-      - All fields are empty
-      - Validation error message must appear telling the user "session ended."
-    - **Actual Result:** ______
-  
- - UI
+**Expected Result:**
+- The account is created successfully.  
+- A success confirmation message is displayed.  
+- The user is redirected to the homepage.  
+- The new user record is stored in the database.  
+- The user session is initiated.  
 
-    #### TC-UI-US1.0-00 – Validate the register page layout and design 
-    - **Priority:** high
-    - **Preconditions:** User on the register page
-    - **Test Steps:**
-     1. Observe the page layout and design  
-    - **Expected Result:**
-      - All elements appear correctly without any overlapping
-      - All text has the same language
-      - All text has the right font size
-    - **Actual Result:** ______
-  
-      #### TC-UI-US1.0-01 – Validate the register button layout and design
-    - **Priority:** medium
-    - **Preconditions:** User on the register page  
-    - **Test Steps:**
-     1. Observe the register button layout and design
-    - **Expected Result:**
-      - The register button has a different color compared to the register page
-      - The "register" text color is different than the button color
-    - **Actual Result:** ______
-      
- - Usability Test
+**Actual Result:** ______  
 
-     #### TC-USE-US1.0-00 – Validate the cursor state when hovering on the register button
-    - **Priority:** low
-    - **Preconditions:** User on the register page  
-    - **Test Steps:**
-     1. Hover over the register button
-    - **Expected Result:**
-      - The register cursor state changes to pointer
-    - **Actual Result:** ______
+---
 
-    #### TC-USE-US1.0-01 – Validate the page supports screen reader apps
-    - **Priority:** high
-    - **Preconditions:** User on the register page
-    - **Test Steps:**
-     1. Launch the screen reader app
-     2. scroll through the page
-    - **Expected Result:**
-      - The user can hear the app describing the page
-    - **Actual Result:** ______
-  
-    #### TC-USE-US1.0-02 – Validate the page clarity and it's easy to understand
-    - **Priority:** high
-    - **Preconditions:** User on the register page  
-    - **Test Steps:**
-     1. Observe the page design
-    - **Expected Result:**
-      - The page is easy to use and easy to self-explore
-    - **Actual Result:** ______
-  
-     #### TC-USE-US1.0-03 – Validate navigating through page elements using keyboard navigation keys
-    - **Priority:** low
-    - **Preconditions:** User on the register page  
-    - **Test Steps:**
-     1. Press the tap to move to the next field
-     2. Press Shift + tap to go back to the previous field
-    - **Expected Result:**
-      - The register cursor state changes to pointer
-    - **Actual Result:** ______
-  
-    
- - Performance Test
+### TC-FUNCV-US1.0-02 – Register using minimum allowed password length (6 characters)
+- **Priority:** Medium  
+- **Preconditions:** User is on the Register page  
 
-     #### TC-PFM-US1.0-00 – Validate the registration response time  (Ignore this test case)
-    - **Priority:** medium
-    - **Preconditions:** User on the register page  
-    - **Test Steps:**
-     1. Fill all mandatory fields
-     2. Click on the registration button
-    - **Expected Result:**
-      - response time is < 3s
-    - **Actual Result:** ______
-  
-     #### TC-PFM-US1.0-01 – Validate the registration response time using 2.4G internet connection
-    - **Priority:** high
-    - **Preconditions:** User on the register page  
-    - **Test Steps:**
-     1. Fill all mandatory fields
-     2. Click on the registration button
-    - **Expected Result:**
-      - response time is < 3s
-    - **Actual Result:** ______
-  
-  
- - Compatibility Test
+**Test Steps:**
+1. Enter a password with exactly 6 characters  
+2. Fill other mandatory fields with valid data  
+3. Click Register  
 
-     #### TC-CMB-US1.0-00 – Validate opening the registration page using different devices
-    - **Priority:** medium
-    - **Preconditions:** User has access to the page from different devices (PC / Tablet / Mobile)
-    - **Test Steps:**
-     1. Navigate to the registration page 
-    - **Expected Result:**
-      - Page works normally on different devices
-    - **Actual Result:** ______
+**Expected Result:**
+- Registration is successful.  
+- No validation errors are displayed.  
+- The account is created successfully.  
 
-    #### TC-CMB-US1.0-01 – Validate opening the registration page via different browsers
-    - **Priority:** medium
-    - **Preconditions:** User has access to the page from different browsers (Chrome / Edge / Firefox)
-    - **Test Steps:**
-     1. Navigate to the registration page via all browsers 
-    - **Expected Result:**
-      - Page works normally on different browsers
-    - **Actual Result:** ______
-  
-    #### TC-CMB-US1.0-02 – Validate opening the registration page using different internet connections
-    - **Priority:** medium
-    - **Preconditions:** User has access to the page from different devices (Ethernet / Wifi / Mobile data)
-    - **Test Steps:**
-     1. Navigate to the registration page using an Ethernet connection
-     2. Navigate to the registration page using wifi connection
-     3. Navigate to the registration page using a mobile data connection
-    - **Expected Result:**
-      - Page works normally on different devices
-    - **Actual Result:** ______
-    
- - Security
+**Actual Result:** ______  
 
-    #### TC-SEC-US1.0-00 – Validate using SQL injection in the form's fields
-    - **Priority:** medium
-    - **Preconditions:** User has access to the page from different devices (Ethernet / Wifi / Mobile data)
-    - **Test Steps:**
-     1. Navigate to the registration page using an Ethernet connection
-     2. Navigate to the registration page using wifi connection
-     3. Navigate to the registration page using a mobile data connection
-    - **Expected Result:**
-      - Page works normally on different devices
-    - **Actual Result:** ______
-    
-    - API
+---
 
-      #### TC-API-US1.0-00 – Validate the response code when registering
-    - **Priority:** medium
-    - **Preconditions:** 
-    - **Test Steps:**
-     1. Navigate to Postman
-     2. Create a new post request
-     3. fill all required fields
-     4. Click on send
-     5. Observe the response code
-    - **Expected Result:**
-      - Account is created successfully
-      - Response code is 200
-    - **Actual Result:** ______
-  
-     #### TC-API-US1.0-01 – Validate creating account through API
-    - **Priority:** medium
-    - **Preconditions:** User is on postman
-    - **Test Steps:**
-     1. Create a new post request
-     2. fill all required fields
-     3. Click on send
-    - **Expected Result:**
-      - Account is created successfully
-      - Response code is 200
-    - **Actual Result:** ______
-  
-     #### TC-API-US1.0-02 – Validate deleting account through API
-    - **Priority:** medium
-    - **Preconditions:** User is on postman
-    - **Test Steps:**
-     1. Create a new delete request
-     2. Use the account id in the query params
-     3. Click on send
-    - **Expected Result:**
-      - Account is deleted successfully
-      - Response code is 400
-    - **Actual Result:** ______
-  
-       #### TC-API-US1.0-02 – Validate deleting account response code via API
-    - **Priority:** medium
-    - **Preconditions:** User is on postman
-    - **Test Steps:**
-     1. Create a new delete request
-     2. Use the account id in the query params
-     3. Click on send
-     4. Observe response code
-    - **Expected Result:**
-      - Account is deleted successfully
-      - Response code is 400
-    - **Actual Result:** ______
+### TC-FUNCV-US1.0-03 – Register using maximum allowed password length (64 characters)
+- **Priority:** Medium  
+- **Preconditions:** User is on the Register page  
 
-     #### TC-API-US1.0-02 – Validate get deleted account through API
-    - **Priority:** medium
-    - **Preconditions:** User is on postman
-    - **Test Steps:**
-     1. Create a new delete request
-     2. Use the account id in the query params
-     3. Click on send
-     4. Create a new GET request
-     5. Use the account id in the query params
-     6. Fill all required fields
-     7. Click on send
-    - **Expected Result:**
-      - Response body is empty
-      - Response code is 404
-    - **Actual Result:** ______
-## User Story: Registration validation
+**Test Steps:**
+1. Enter a password with 64 characters  
+2. Fill other mandatory fields with valid data  
+3. Click Register  
 
-### AC:
+**Expected Result:**
+- Registration is successful.  
+- The password is accepted within allowed limits.  
+- No truncation or system errors occur.  
+
+**Actual Result:** ______  
+
+---
+
+---
+
+## User Story: Registration Validation
+
+**As a user, I want the system to validate my registration input so that incorrect or incomplete data is not accepted.**
+
+---
+
+## Acceptance Criteria (BDD)
+
 - Given the user is on the Register page  
-- When the user submits the form with missing or invalid data
+- When the user submits the form with missing or invalid data  
+- Then validation error messages are displayed below the corresponding fields  
+- And the form submission is prevented  
+- And no account is created  
+- And no user record is stored in the database  
 
-  -------
-### TC:
- - Functional Test
-  - Valid
-  - Invalid
+---
 
-   **Expected results**:
-    - The system should display a required field validation message for the empty field.
-    - The error message should be displayed below the corresponding input field.
-    - The registration form should not be submitted.
-    - The user account should not be created.    
+# Test Cases
 
-   #### TC-FUNCIV-US1.0-01 – Validate using one-character password
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled except password
-    - **Test Steps:**
-     1. Fill the password with a minimum of 5 characters
-     2. Click on the register button
-    - **Actual Result:** ______
+--------------------
 
-   #### TC-FUNCINV-US1.0-02 – Validate using 65-character password
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled except password
-    - **Test Steps:**
-     1. Fill the password with a maximum of 65 characters
-     2. Click on the register button
-    - **Actual Result:** ______
+##  Functional Tests – Invalid Scenarios
 
-    #### TC-FUNCINV-US1.0-03 – Validate leaving all fields empty
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page 
-    - **Test Steps:**
-     1. Leave all fields empty
-     2. Click on the register button
-    - **Actual Result:** ______
+### TC-FUNCINV-US2.0-01 – Password shorter than minimum length
+- **Priority:** Medium  
+- **Preconditions:** User is on the Register page  
 
-    #### TC-FUNCINV-US1.0-04 – Validate using non-symmetric passwords
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled except password
-    - **Test Steps:**
-     1. Fill the password fields with different password
-     2. Click on the register button
-    - **Actual Result:** ______
-  
-    #### TC-FUNCINV-US1.0-05 – Validate register while no internet connection established
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled
-    - **Test Steps:**
-     1. Cut off the internet connection
-     2. Click on the register button
-    - **Expected Result:** Unsuccessful registration, user is redirected to no internet connection 404 page
-    - **Actual Result:** ______
+**Test Steps:**
+1. Enter a password with less than 6 characters  
+2. Fill other mandatory fields with valid data  
+3. Click Register  
 
-    #### TC-FUNCINV-US1.0-06 – Validate using a registered email
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled except email
-    - **Test Steps:**
-     1. Fill the email fields with a registered email
-     2. Click on the register button
-    - **Actual Result:** ______
+**Expected Result:**
+- A validation message indicates password does not meet minimum length.  
+- Registration is blocked.  
+- No account is created.  
 
-    #### TC-FUNCINV-US1.0-07 – Validate using a wrong format email
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled except email
-    - **Test Steps:**
-     1. Fill the email fields with an email in the wrong format 
-     2. Click on the register button
-    - **Actual Result:** ______
-  
-    #### TC-FUNCINV-US1.0-07 – Validate leaving email field empty
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled except email
-    - **Test Steps:**
-     1. Leave the email field empty
-     2. Click on the register button
-    - **Actual Result:** ______
+**Actual Result:** ______  
 
-    #### TC-FUNCINV-US1.0-08 – Validate leaving the first name field empty
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled except the first name
-    - **Test Steps:**
-     1. Leave the first name field empty
-     2. Click on the register button
-    - **Actual Result:** ______
+---
 
-    #### TC-FUNCINV-US1.0-09 – Validate leaving the last name field empty
-    - **Priority:** Medium
-    - **Preconditions:** User on the register page & All mandatory fields are filled except the last name
-    - **Test Steps:**
-     1. Leave the last name field empty
-     2. Click on the register button
-    - **Actual Result:** ______ 
-  - Edge
- - UI / Usability Test
- - Performance Test
- - Compatibility Test
- - Security
- - API
-- Then validation error messages are displayed  
-- And the account is not created
+### TC-FUNCINV-US2.0-02 – Password exceeds maximum length (65 characters)
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Enter a password longer than 64 characters  
+2. Fill other mandatory fields  
+3. Click Register  
+
+**Expected Result:**
+- A validation message indicates password exceeds maximum length.  
+- Registration is blocked.  
+- No account is created.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-FUNCINV-US2.0-03 – Submit with all fields empty
+- **Priority:** High  
+
+**Test Steps:**
+1. Leave all fields empty  
+2. Click Register  
+
+**Expected Result:**
+- Required field validation messages are displayed for all mandatory fields.  
+- The form is not submitted.  
+- No account is created.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-FUNCINV-US2.0-04 – Password and Confirm Password mismatch
+- **Priority:** High  
+
+**Test Steps:**
+1. Enter different values in Password and Confirm Password  
+2. Fill other fields correctly  
+3. Click Register  
+
+**Expected Result:**
+- A validation message indicates passwords do not match.  
+- Registration is blocked.  
+- No account is created.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-FUNCINV-US2.0-05 – No internet connection during submission
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Fill all required fields with valid data  
+2. Disable internet connection  
+3. Click Register  
+
+**Expected Result:**
+- Registration request fails.  
+- User is shown a network error message.  
+- No account is created.  
+- User remains on the Register page.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-FUNCINV-US2.0-06 – Register with already registered email
+- **Priority:** High  
+
+**Test Steps:**
+1. Enter an email that already exists in the system  
+2. Fill other mandatory fields correctly  
+3. Click Register  
+
+**Expected Result:**
+- A validation message indicates that the email already exists.  
+- Registration is blocked.  
+- No duplicate account is created.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-FUNCINV-US2.0-07 – Invalid email format
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Enter an email in incorrect format (e.g., user@@mail)  
+2. Fill other fields correctly  
+3. Click Register  
+
+**Expected Result:**
+- A validation message indicates invalid email format.  
+- Registration is blocked.  
+- No account is created.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-FUNCINV-US2.0-08 – Leave email field empty
+- **Priority:** High  
+
+**Test Steps:**
+1. Leave Email field empty  
+2. Fill other fields  
+3. Click Register  
+
+**Expected Result:**
+- "Email is required" validation message appears.  
+- Form submission is prevented.  
+- No account is created.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-FUNCINV-US2.0-09 – Leave First Name empty
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Leave First Name empty  
+2. Fill other fields  
+3. Click Register  
+
+**Expected Result:**
+- Required field validation message is displayed for First Name.  
+- Registration is blocked.  
+- No account is created.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-FUNCINV-US2.0-10 – Leave Last Name empty
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Leave Last Name empty  
+2. Fill other fields  
+3. Click Register  
+
+**Expected Result:**
+- Required field validation message is displayed for Last Name.  
+- Registration is blocked.  
+- No account is created.  
+
+**Actual Result:** ______  
+
+-----------------------------------
+
+## Edge Cases
+
+### TC-EDGE-US1.0-01 – Multiple rapid clicks on Register button
+- **Priority:** Medium  
+- **Preconditions:** All mandatory fields are filled with valid data  
+
+**Test Steps:**
+1. Rapidly click the Register button multiple times  
+
+**Expected Result:**
+- The Register button becomes disabled after the first click OR shows a loading state.  
+- Only one registration request is processed.  
+- Only one user account is created.  
+- No duplicate accounts exist in the database.  
+- The system remains stable without crashes.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-EDGE-US1.0-02 – Concurrent registration with same email
+- **Priority:** Medium  
+- **Preconditions:** Same email used on two browsers/devices  
+
+**Test Steps:**
+1. Fill registration form with identical email on two devices  
+2. Submit both forms simultaneously  
+
+**Expected Result:**
+- Only one account is successfully created.  
+- The second request fails with a proper validation message (e.g., Email already exists).  
+- No duplicate records are stored in the database.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-EDGE-US1.0-03 – Submit form after long inactivity
+- **Priority:** Low  
+- **Preconditions:** Form filled and left idle for extended period  
+
+**Test Steps:**
+1. Fill all required fields  
+2. Wait for session expiration  
+3. Click Register  
+
+**Expected Result:**
+- The system detects session expiration.  
+- A session expired message is displayed.  
+- Form submission is rejected.  
+- No account is created.  
+- User is required to refresh the page.  
+
+**Actual Result:** ______  
+
+-------------------------------
+
+## UI Tests
+
+### TC-UI-US1.0-01 – Validate page layout
+- **Priority:** High  
+
+**Test Steps:**
+1. Observe the Register page layout  
+
+**Expected Result:**
+- No overlapping elements.  
+- Text is properly aligned.  
+- Font sizes are consistent.  
+- Page is responsive on different screen sizes.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-UI-US1.0-02 – Validate Register button design
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Observe Register button  
+
+**Expected Result:**
+- Button is clearly visible.  
+- Button color contrasts with background.  
+- Button text is readable.  
+- Button has consistent styling.  
+
+**Actual Result:** ______  
+
+-----------------------------------
+
+## Usability Tests
+
+### TC-USE-US1.0-01 – Hover state validation
+- **Priority:** Low  
+
+**Test Steps:**
+1. Hover over Register button  
+
+**Expected Result:**
+- Cursor changes to pointer.  
+- Hover state is visually distinguishable.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-USE-US1.0-02 – Form clarity validation
+- **Priority:** High  
+
+**Test Steps:**
+1. Observe the form structure  
+
+**Expected Result:**
+- All mandatory fields are clearly marked (*).  
+- Labels are descriptive and visible.  
+- Error messages are clear and specific.  
+- Input order is logical.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-USE-US1.0-03 – Keyboard navigation validation
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Use Tab key to navigate fields  
+2. Use Shift + Tab to navigate backwards  
+
+**Expected Result:**
+- Focus moves sequentially between fields.  
+- Focus indicator is visible.  
+- Register button is accessible via keyboard.  
+
+**Actual Result:** ______  
+
+----------------------------------
+
+## Performance Tests
+
+### TC-PFM-US1.0-01 – Registration response time
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Fill all mandatory fields  
+2. Click Register  
+
+**Expected Result:**
+- Registration response time is less than 3 seconds under normal network conditions.  
+- No timeout or performance degradation occurs.  
+
+**Actual Result:** ______  
+
+-----------------------------------
+
+## Compatibility Tests
+
+### TC-COMP-US1.0-01 – Different devices
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Open Register page on PC, Tablet, Mobile  
+
+**Expected Result:**
+- Page functions correctly on all devices.  
+- Layout adapts properly.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-COMP-US1.0-02 – Different browsers
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Open Register page on Chrome, Edge, Firefox  
+
+**Expected Result:**
+- Page functions consistently across browsers.  
+- No UI or functional differences observed.  
+
+**Actual Result:** ______  
+
+-----------------------------------
+
+## Security Tests
+
+### TC-SEC-US1.0-01 – SQL Injection attempt
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Enter "' OR 1=1 --" in email field  
+2. Fill other required fields  
+3. Click Register  
+
+**Expected Result:**
+- Input is sanitized.  
+- No SQL error or stack trace is displayed.  
+- Registration fails if input is invalid.  
+- No database exposure occurs.  
+
+**Actual Result:** ______  
+
+-------------------------------------
+
+## API Tests
+
+### TC-API-US1.0-01 – Create account via API
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Send POST request with valid registration data  
+
+**Expected Result:**
+- Response code is 201 (Created).  
+- Response body contains created user details.  
+- User is stored in database.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-API-US1.0-02 – Delete account via API
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Send a DELETE request with a valid user ID  
+
+**Expected Result:**
+- Response code is 204 (No Content) or 200 (OK).  
+- Account is deleted successfully.  
+
+**Actual Result:** ______  
+
+---
+
+### TC-API-US1.0-03 – Get deleted account
+- **Priority:** Medium  
+
+**Test Steps:**
+1. Send a GET request using the deleted account ID  
+
+**Expected Result:**
+- Response code is 404 (Not Found).  
+- Response indicates user does not exist.  
+
+**Actual Result:** ______  
+
+
+
+
+ 
