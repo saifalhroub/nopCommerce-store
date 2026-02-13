@@ -9,7 +9,7 @@ So that I can use the store faster.
 
 ---
 
-# 2️⃣ Acceptance Criteria (BDD)
+#  Acceptance Criteria (BDD)
 
 ## AC1 – Happy Path
 Given that the user navigates to the website 
@@ -28,9 +28,12 @@ Given
 When  
 Then  
 
+# 2️ As a user,
+ I want to see a rigester option while I am on the login page,
+ So I can create an account if I do not have one.
 ---
 
-# 3️⃣ Test Cases
+#  Test Cases
 
 ---
 
@@ -56,18 +59,20 @@ Then
 
 **Steps:**
 1.  Check the Remember me checkbox
-2.  logout
-3.  Click inside the email field
-5.  Select the email suggested to you
-6.  Observe both email and password fields
-7.  Click on the login button
+2.  Click on login
+3.  logout
+4.  Observe email & password fields
+5.  Click on login
+
 
 **Expected Result:**
--  both email and password fields are auto-filled
+-  both email and password fields are placed inside their fields
 -  Login request is accepted
 -  A new session is created
 -  Session Id created and stored in the database
 -  user is redirected to the landing page
+
+
 
 
 ---
@@ -144,7 +149,7 @@ Then
 **Expected Result:**
 - The login request is rejected
 - The user remains on the login page
--  A validation error message appears notifying the user, "Wrong email format."
+- A validation error message appears notifying the user, "Wrong email format."
 ---
 
 ## Functional – Invalid Scenarios
@@ -181,19 +186,152 @@ Then
 - No session is recorded in the database
 ---
 ## Edge Cases
- many time wrong pass / spam click on login button / use space / copy paste data / login from two devices at the same time / using capital letters in email
+ 
 | TC ID | Scenario | Expected Result |
 |-------|----------|----------------|
 
+| TC-EDGE-1.0 | Multiple login failed attempts with wrong password | medium | User is on the login page |
+
+**Steps:**
+1.  Fill the email field with a valid registered email
+2.  Fill the password field with an invalid password
+3.  Click on the login button
+4.  Repeat steps 2 & 3 multiple times
+
+**Expected Result:**
+- The login request is rejected
+- User remains on the login page
+- No crashes occur on the system
+- User is asked to reset their password after too many failed attempts
 ---
 
+| TC-EDGE-1.1 | Spam clicking on the login button | medium | User is on the login page |
+
+**Steps:**
+1.  Fill in the email and password fields
+2.  Spam clicking on the login button
+
+**Expected Result:**
+- One request is accepted and recorded in the database if a valid email and password are used
+  or
+- Login requests are rejected, and the user is not allowed to log in and is asked to reset their password 
+- No crash occurs in the system
+---
+
+| TC-EDGE-1.2 | Validate using space in the email| low | User is on the login page |
+****** This Case depends on the BRD (down is assumptions)
+**Steps:**
+1.  Fill the email field with a valid registered email with a leading/ trailing space
+2.  Fill the password field with a valid password
+3.  Click on the login button
+
+**Expected Result:**
+- The system deals with the space properly by neglecting it
+- The login request is accepted
+- User is redirected to the landing page
+- Session ID is created and stored in the database
+  
+---
+
+| TC-EDGE-1.3 | Validate using space in the password | low | User is on the login page |
+****** This Case depends on the BRD (down is assumptions)
+**Steps:**
+1.  Fill the email field with a valid registered email 
+2.  Fill the password field with a valid password with a leading/ trailing space
+3.  Click on the login button
+
+**Expected Result:**
+- The login request is rejected
+- A validation error message to the password field appears
+---
+
+| TC-EDGE-1.4 | Validate copy and paste email & password | low | User is on a notes app|
+****** This Case depends on the BRD (down is assumptions)
+**Steps:**
+1.  Type the email and password
+2.  Copy the email 
+3.  Navigate to the store
+4.  Paste the email
+5.  Navigate to the notes app
+6.  Copy the password
+7.  Navigate to the store
+8.  Paste the password
+10. Click on the login button
+
+**Expected Result:**
+- The login request is accepted
+- The user is redirected to the landing page
+- A session id is created and stored in the database
+---
+
+| TC-EDGE-1.5 | Validate Race condition login attempts | low | User is on the login page on different devices |
+****** This Case depends on the BRD (down is assumptions)
+**Steps:**
+1.  Fill both email and password fields with valid data on both devices
+2.  Click on the login button at the same time on both devices
+
+**Expected Result:**
+- (I can not Judge)
+---
+
+| TC-EDGE-1.6 | Validate using capital letters in the email field | low | User is on the login page |
+****** This Case depends on the BRD (down is assumptions)
+**Steps:**
+1.  Fill the email field with a valid registered email using capital letters
+2.  Fill the password field with a valid password 
+3.  Click on the login button
+
+**Expected Result:**
+- The login request is accepted
+- User is redirected to the landing page
+- Session ID is created and stored in the database
+---
 ## Security Testing
 
 | TC ID | Attack Type | Expected Result |
 |-------|------------|----------------|
 
+| TC-SEC-1.0 | Validate using SQL injection in the password field | High | User is on the login page |
+****** This Case depends on the BRD (down is assumptions)
+**Steps:**
+1.  Fill the email field 
+2.  Fill the password field with a SQL injection (' OR 1=1 --)
+3.  Click on the login button
+
+**Expected Result:**
+- The login request is rejected
+- No sensitive and secured data is exposed
+
 ---
 
+| TC-SEC-1.1 | Validate using SQL injection in the email field | High | User is on the login page |
+****** This Case depends on the BRD (down is assumptions)
+**Steps:**
+1.  Fill the email field with a SQL injection (' OR 1=1 --)
+2.  Fill the password field 
+3.  Click on the login button
+
+**Expected Result:**
+- The login request is rejected
+- No sensitive and secured data is exposed
+
+---
+
+| TC-SEC-1.2 | Validate session expired after a period of non using time | High | User is logged in |
+****** This Case depends on the BRD (down is assumptions)
+**Steps:**
+1.  Do not use the store for a while
+2.  Use the store
+3.  Observe the store reaction
+
+**Expected Result:**
+- Session is expired
+- User is redirected to the login page
+- Email and password fields are empty if the user did not activate (Remember me option.
+- Email and password fields are filled if the user did activate (Remember me option.
+
+
+---
 ## UI Testing
 
 - Layout validation  
