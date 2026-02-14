@@ -221,6 +221,8 @@ Then a visible Register option is available
 |-------|-------|----------|
 | TC-UI-1.0 | Error message placement | Medium |
 | TC-UI-1.1 | Login button disabled state | Medium |
+| TC-UI-1.2 | Login link state while not logged in | Medium |
+
 
 ### TC-UI-1.0
 
@@ -244,6 +246,16 @@ Then a visible Register option is available
 - Button shows loading/disabled state  
 - Prevents multiple submissions  
 
+---
+
+### TC-UI-1.2
+
+**Steps:**
+1. Navigate to the Login page  
+2. Observe the Login link state 
+
+**Expected Result:**
+- Button shows a "Login" as a placeholder, not Logout  
 ---------------------------------------------------------------------------------------
 
 ## Usability Testing
