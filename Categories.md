@@ -125,35 +125,31 @@ Then the user is redirected to the product details page
 
 ---
 
+
+
 | TC ID | Title | Priority | Preconditions |
 |-------|-------|----------|---------------|
-| TC-FUNCV-Integration-04 | Validate sorting after determining the number of displayed products  | low | user is on the products page |
+| TC-FUNCV-04 | Validate the filteration using manufacturer | user is on the products page |
 
 **Steps:**
-1.  Click on the display per page drop-down list
-2.  Select the number of products to be displayed
-3.  Click on the sort by drop-down list
-4.  Select the sorting criteria
-5.  Observe the product's 
+1.  Select a manufacturer filter option
+3.  Observe the displayed products
 
 **Expected Result:**
--  The number of products displayed matches the selected (Display per page)
--  Products are rearranged according to the selected sorting option
--  No crashes occur in the system
-
+- Only products that match the manufacturer will appear
 ---
 
 | TC ID | Title | Priority | Preconditions |
 |-------|-------|----------|---------------|
-| TC-FUNCV-05 | Validate the filter functionality | medium | user is on the products page |
+| TC-FUNCV-05 | Validate the filteration using color filter for Apparel category | user is on the Apparel products page |
 
 **Steps:**
-1.  Select a filter option
-3.  Observe the product's displayed
+1.  Select a subcategory
+2.  Select the color
+3.  Observe the displayed products
 
 **Expected Result:**
--  Only matched filter products appears
-
+- Only products that match the color will appear
 ---
 
 | TC ID | Title | Priority | Preconditions |
@@ -171,22 +167,106 @@ Then the user is redirected to the product details page
 
 ---
 
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-FUNCV-07| Validate add to cart functionality | High | user is on the products page |
+
+**Steps:**
+1.  Click on add to cart button
+
+
+**Expected Result:**
+-  A confirmation message will appear telling user that: (the product has been added to your shopping cart)
+  
+---
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-FUNCV-08| Validate add to wishlist functionality | High | user is on the products page |
+
+**Steps:**
+1.  Click on add to wishlist button
+
+
+**Expected Result:**
+-  A confirmation message will appear telling user that: (the product has been added to your wishlist)
+  
+---
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-FUNCV-09| Validate add to compare list functionality | High | user is on the products page |
+
+**Steps:**
+1.  Click on add to compare list
+
+
+**Expected Result:**
+-  A confirmation message will appear telling user that: (the product has been added to your comparinglist)
+  
+---
 ## Functional – Invalid Scenarios
 
 | TC ID | Title | Priority | Preconditions |
 |-------|-------|----------|---------------|
-| TC-FUNCINV-01 | Validate selecting a category while no internet connection is established | low | User is using the store |
+| TC-FUNCINV-01 | Validate selecting a product category while no internet connection established | low | User is using the store |
 
 **Steps:**
 1.  Cut-off the internet connection
 2.  Select a category 
 
 **Expected Result:**
--  
--  
+-  User is redirected to no internet connection page
+-  The request is sent to the server 
+-  The request is accepted when the internet connection is back
 
 ---
 
+## Integration
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-INT-04 | Validate sorting after determining the number of displayed products  | low | user is on the products page |
+
+**Steps:**
+1.  Click on the display per page drop-down list
+2.  Select the number of products to be displayed
+3.  Click on the sort by drop-down list
+4.  Select the sorting criteria
+5.  Observe the product's 
+
+**Expected Result:**
+-  The number of products displayed matches the selected (Display per page)
+-  Products are rearranged according to the selected sorting option
+-  No crashes occur in the system
+
+---
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-INT-02| Validate the number of products appears on the  cart when adding a product to the cart | low | user is on the products page |
+
+**Steps:**
+1.  Click on add to cart button
+2.  Observe the number beside the cart link at the top of the page
+
+**Expected Result:**
+-  The number changes accordingly after each add to the cart process
+  
+---
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-INT-03| Validate the number of products appears on the wishlist link when adding a product to the wishlist | low | user is on the products page |
+
+**Steps:**
+1.  Click on add to wishlist button
+2.  Observe the number beside the wishlist link at the top of the page
+
+**Expected Result:**
+-  The number changes accordingly after each add to the wishlist process
+  
+---
 ## Boundary Value Testing
 
 | Field | Min | Max | Tested Value | Expected |
