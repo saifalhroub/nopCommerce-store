@@ -226,7 +226,7 @@ Then the user is redirected to the product details page
 
 | TC ID | Title | Priority | Preconditions |
 |-------|-------|----------|---------------|
-| TC-INT-04 | Validate sorting after determining the number of displayed products  | low | user is on the products page |
+| TC-INT-01 | Validate sorting after determining the number of displayed products  | low | user is on the products page |
 
 **Steps:**
 1.  Click on the display per page drop-down list
@@ -266,12 +266,6 @@ Then the user is redirected to the product details page
 **Expected Result:**
 -  The number changes accordingly after each add to the wishlist process
   
----
-## Boundary Value Testing
-
-| Field | Min | Max | Tested Value | Expected |
-|-------|-----|-----|-------------|----------|
- 
 ---
 
 ## Edge Cases
