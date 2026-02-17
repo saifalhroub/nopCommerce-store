@@ -103,6 +103,15 @@ Then
 
 ---
 
+## Compatibility Testing
+
+- Keyboard navigation  
+- Field focus behavior  
+- Error clarity  
+- Mandatory indicators  
+
+---
+
 ## API Testing (If applicable)
 
 ### Valid Request
