@@ -51,7 +51,8 @@ Then each product card contains:
 - Add to Cart button  
 - Add to Watchlist button  
 - Compare option  
-- Rating indicator  
+- Rating indicator
+- A rent option for specific products
 
 ---
 
@@ -73,7 +74,6 @@ Given the user clicks on a product image
 Then the user is redirected to the product details page  
 
 ---
-
 # 3️⃣ Test Cases
 
 ---
@@ -205,6 +205,20 @@ Then the user is redirected to the product details page
 -  A confirmation message will appear telling user that: (the product has been added to your comparinglist)
   
 ---
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-FUNCV-10 | Validate the rent button functionality | High | user is on the products page |
+
+**Steps:**
+1.  Navigate to the jewellery category
+2.  Click on the rent button for the (Elegant Gemstone Necklace) product
+
+**Expected Result:**
+-  The User is redirected to the product details page
+-  The user will be asked to provide some details to confirm the process
+  
+---
 ## Functional – Invalid Scenarios
 
 | TC ID | Title | Priority | Preconditions |
@@ -221,6 +235,7 @@ Then the user is redirected to the product details page
 -  The request is accepted when the internet connection is back
 
 ---
+
 
 ## Integration
 
@@ -273,41 +288,237 @@ Then the user is redirected to the product details page
 | TC ID | Scenario | Expected Result |
 |-------|----------|----------------|
 
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-EDGE-01| Validate spam clicking on category name | low | user is on the products page |
+
+**Steps:**
+1.  Spam click on the category name
+2.  Observe the page response
+**Expected Result:**
+-  No crashes occur in the system
+-  The spam clicked category products are the ones displayed
+-  Each time a request is sent to the server and recorded
+  
 ---
 
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-EDGE-02| Validate spam clicking on add to cart button | high | user is on the products page |
+
+**Steps:**
+1.  Spam click on the add to cart button
+2.  Observe the system response
+   
+**Expected Result:**
+-  No crashes occur in the system
+-  Each click is handled like a separate request
+-  With each click, a new item is added to the cart
+  
+--- 
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-EDGE-03| Validate spam clicking on add to wishlist button | low | user is on the products page |
+
+**Steps:**
+1.  Spam click on the add to the wishlist button
+2.  Observe the system response
+   
+**Expected Result:**
+-  No crashes occur in the system
+-  Each click is handled like a separate request
+-  With each click, a new item is added to the wishlist
+  
+--- 
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-EDGE-04| Validate spam clicking on add to comparing list button | low | user is on the products page |
+
+**Steps:**
+1.  Spam clicks on the add to Comparing List button
+2.  Observe the system response
+   
+**Expected Result:**
+-  No crashes occur in the system
+-  only one request is accepted
+-  Everyrequest is sent has the same outcome 
+  
+--- 
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-EDGE-05| Validate refreshing the page after adding products to cart/wishlist | high | user is on the products page |
+
+**Steps:**
+1.  Add product to the cart/wishlist
+2.  Refresh the page
+3.  Observe the number of products on the cart link/wishlist link
+   
+**Expected Result:**
+-  Added products to cart/wishlist remains the same after adding and before refresh
+  
+--- 
 ## Security Testing
 
 | TC ID | Attack Type | Expected Result |
 |-------|------------|----------------|
 
+-----NO NEED-----
 ---
 
 ## UI Testing
 
-- Layout validation  
-- Field alignment  
-- Button state  
-- Error message placement  
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-UI-01| Validate Product card layout | high | user is on the products page |
+
+**Steps:**
+1.  Observe the product card elements
+   
+**Expected Result:**
+-  Product card has:
+   - Image
+   - Price
+   - Add to cart button
+   - Add to compare list button
+   - Add to wishlist button
+   - Rent buttons for some products
+   - Review rating bar
+
+--- 
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-UI-02| Validate the product has the right infromations | high | user is on the products page |
+
+**Steps:**
+1.  Observe the product name & image
+   
+**Expected Result:**
+-  Product Image must match its name
 
 ---
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-UI-03| Validate the products layout and alignment | high | user is on the products page |
+
+**Steps:**
+1.  Observe the product's layout and alignment
+   
+**Expected Result:**
+-  All products have the same card size (image, Text)
+-  No overlapping between products card
+
+---
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-UI-03| Validate page layout and design | high | user is on the products page |
+
+**Steps:**
+1.  Observe the product page elements alignment
+   
+**Expected Result:**
+
 
 ## Usability Testing
 
-- Keyboard navigation  
-- Field focus behavior  
-- Error clarity  
-- Mandatory indicators  
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-USB-01| Validate Alternative text appears when hovering over page elements | high | user is on the products page |
 
+**Steps:**
+1.  Hover over product image
+2.  Observe the alternate text that will appear
+   
+**Expected Result:**
+-  Alternative text will appear describing the product image
+  
+--- 
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-USB-02| Validate page supports screen reader apps| high | User installed a screen reader appilcation |
+
+**Steps:**
+1.  Open screen reader application
+2.  Navigate to the prducts page
+   
+**Expected Result:**
+-  Screen reader should be able to read page elements
+  
+--- 
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-USB-03| Validate navigation using keyboard keys | low | user is on the products page |
+
+**Steps:**
+1.  Click on the tab button to move forward to the next element
+2.  Click on tab + shift to move backward to the previous element 
+
+   
+**Expected Result:**
+-  Focus response correctly
+   - On the next field, when clicking on the tab button
+   - on the previous field when clicking on the tab + shift button
+  
 ---
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-USB-04| Validate Texts readability | high | user is on the products page |
+
+**Steps:**
+1.  Observe :
+    - Font size is comfortable and easy to read with a size of (12px)
+    - Font color is different from the page color
+    - All texts have the same language
+
+   
+**Expected Result:**
+-  Focus response correctly
+   - On the next field, when clicking on the tab button
+   - on the previous field when clicking on the tab + shift button
+  
+---
+## Compatibility Scenarios
+
 
 ## API Testing (If applicable)
 
 ### Valid Request
-- Status Code:
-- Response Body:
-- Database Check:
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-APIV-01| Validate Adding product to cart API response (code/Time/Body) | high | user is on Postman |
+
+**Steps:**
+1.  Submit an add to cart request
+   
+**Expected Result:**
+-  Response status code is 200
+-  Response Time is < 3s
+-  Response body: (Product name, Product ID, Amount of added product, Product price)
+  
+
 
 ### Invalid Request
-- Status Code:
-- Error Message:
-- Data Integrity:
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-APIINV-01| Validate Adding product to cart API response (code/Time/Body) while offline | high | user is on Postman |
+
+**Steps:**
+1.  Cut-off Internet connection 
+2.  Submit an add to cart request
+   
+**Expected Result:**
+-  Response status code is 400
+-  Response Time is < 3s
+-  Response body: Bad request
+  
+--- 
+
