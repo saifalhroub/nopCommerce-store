@@ -486,6 +486,8 @@ Then the user is redirected to the product details page
 ---
 ## Compatibility Scenarios
 
+NO NEED Because it will consume a lot of time and effort, I will make a Global Test Suite for this Test type
+
 
 ## API Testing (If applicable)
 
