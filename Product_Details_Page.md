@@ -21,15 +21,16 @@ Given the user is using the store
 When the user is on the product details page
 Then the product details will appear:
  - Product name
+ - Product image
  - Product description
  - Product price
  - Review rating
 
 ## AC3 – 
-Given the user is on the product details page
-When the user decides to add a product to the cart
-Then the user will click on the add to cart button
-And the user will be able to determine the number of the same product to be added
+Given the user is using the store
+When the user is on the product details page
+Then the user will be able to add the product to the cart using add to cart button
+And a quantity field will be available to determine the number of copies wanted
 
 ## AC4 -
 Given the user is using the store
@@ -204,7 +205,7 @@ Then the user will be asked to select: - shoe color. - shoe size
    - Date and time of publishing 
 ---
 
-| TC-FUNCV-08 | Validate adding to the cart a shoe with its color and size  | hig | User is on the shoe details page |
+| TC-FUNCV-09 | Validate adding to the cart a shoe with its color and size  | hig | User is on the shoe details page |
 
 **Steps:**
 1. Select the shoe color
@@ -215,6 +216,22 @@ Then the user will be asked to select: - shoe color. - shoe size
 -  A confirmation message will show up
 -  The total number appear beside the add to cart link will change accordingly
 -  The product will be added to the Cart
+---
+
+| TC-FUNCV-10 | Validate product total price that depends on the quantity "Offer" | high | User is on others section inside electronics |
+
+**Steps:**
+1. Navigate to Beats Pill Wireless Speaker
+2. Add the quantity that matches the offer
+3. Click on add to cart button
+4. Navigate to the cart page
+5. Observe the price
+   
+**Expected Result:**
+-  A confirmation message will show up
+-  The total number appear beside the add to cart link will change accordingly
+-  The products will be added to the Cart
+-  The total price of the selected product matches the offer
 ---
 ## Functional – Invalid Scenarios
 
