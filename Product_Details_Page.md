@@ -83,6 +83,11 @@ Then the user will be able to see related products
 Given the user is using the store
 When the user is on the product details page 
 Then the user will be able to see others' reviews
+
+## AC13 -
+Given the user is using the store
+When the user is on the shoe detail page
+Then the user will be asked to select: - shoe color. - shoe size
 ---
 
 # 3️⃣ Test Cases
@@ -198,22 +203,134 @@ Then the user will be able to see others' reviews
    - Reviewer name
    - Date and time of publishing 
 ---
+
+| TC-FUNCV-08 | Validate adding to the cart a shoe with its color and size  | hig | User is on the shoe details page |
+
+**Steps:**
+1. Select the shoe color
+2. Select the shoe size
+3. Click on add to cart button
+   
+**Expected Result:**
+-  A confirmation message will show up
+-  The total number appear beside the add to cart link will change accordingly
+-  The product will be added to the Cart
+---
 ## Functional – Invalid Scenarios
 
 | TC ID | Title | Priority | Preconditions |
 |-------|-------|----------|---------------|
-| TC-FUNCINV-01 | | | |
+| TC-FUNCINV-01 | Validate adding to (Cart/Wishlist/Compare list) functionalities to no internet connection | High | User is on product details page |
 
 **Steps:**
-1.  
-2.  
+1. Cut off your internet connection
+2. Add a product to (Cart/Wishlist/Compare list)
 
 **Expected Result:**
--  
--  
+- No product is added to any of (Cart/Wishlist/Compare list)
+- A clear error message telling user: "Please connect to the internet"
 
 ---
 
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-FUNCINV-02 | Validate Adding a negative number for the product quantity | High | User is on product details page |
+
+**Steps:**
+1. Fill the quantity field with a negative number
+2. Click on the add to the cart button
+   
+**Expected Result:**
+- No product is added to the Cart
+- A clear error message telling the user: "Quantity should be positive."
+
+---
+
+| TC-FUNCINV-03 | Validate leaving rent fields empty | High | User is on product details page |
+
+**Steps:**
+1. Leave the start and end date empty
+2. Click on the Rent button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Enter rental start date."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-04 | Validate leaving start renting date empty | High | User is on product details page |
+
+**Steps:**
+1. Leave the start date empty
+2. Click on the Rent button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Enter rental start date."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-05 | Validate leaving end renting date empty | High | User is on product details page |
+
+**Steps:**
+1. Leave the end date empty
+2. Click on the Rent button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Enter rental end date."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-06 | Validate leaving all mandatory pc components fields empty while building your own pc | High | User is on product details page |
+
+**Steps:**
+1. Leave all mandatory fields empty
+2. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Please select (......)."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-07 | Validate leaving all mandatory shoes fields empty | High | User is on product details page |
+
+**Steps:**
+1. Leave all mandatory fields empty
+2. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Please select (......)."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-08 | Validate leaving shoes color field empty | High | User is on product details page |
+
+**Steps:**
+1. Select shoes color
+2. Leave shoes size empty
+3. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Please select the shoe size."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-09 | Validate leaving shoes size field empty | High | User is on product details page |
+
+**Steps:**
+1. Select shoes size
+2. Leave shoes color empty
+3. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Please select the shoe color."
+- No product is added to the cart
+
+---
 ## Boundary Value Testing
 
 | TC-BVA-01 | Validate adding the maximum allowed number of the same product | High | User is on product details page |
@@ -271,6 +388,33 @@ Then the user will be able to see others' reviews
 | TC ID | Scenario | Expected Result |
 |-------|----------|----------------|
 
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-EDGE-01 | Validate write the number in letters | low | User is on product details page |
+
+**Steps:**
+1. Fill the quantity field with a number in letters
+2. Click on the add to the cart button
+   
+**Expected Result:**
+- No product is added to the Cart
+- A clear error message telling the user: "Quantity should be positive"
+
+---
+
+| TC ID | Title | Priority | Preconditions |
+|-------|-------|----------|---------------|
+| TC-EDGE-02 | Validate writting a special character in the quantity field | low | User is on product details page |
+
+**Steps:**
+1. Fill the quantity field with a number in letters
+2. Click on the add to the cart button
+   
+**Expected Result:**
+- No product is added to the Cart
+- A clear error message telling the user: "Quantity should be positive"
+
+---
 ---
 
 ## Security Testing
