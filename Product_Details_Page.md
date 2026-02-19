@@ -4,17 +4,23 @@
 
 # 1️⃣ User Story
 As a user,  
-I want to view the product details page,  
-So that I can get more information about the product.
+I want a product details page,  
+So I can get a deeper understanding of the product.
+
+As a user,
+I want a category's products page,
+So I can see the available products
+
+ 
 
 ---
 
 # 2️⃣ Acceptance Criteria (BDD)
 
 ## AC1 – 
-Given the user is on product page
-When the user clicks on product image
-Then the user will be redirected to product details page
+Given the user is on the product page
+When the user clicks on the product image
+Then the user will be redirected to the product details page
 
 ## AC2 – 
 Given the user is using the store
@@ -161,7 +167,7 @@ Then the user will be asked to select: - shoe color. - shoe size
    
 
 **Expected Result:**
--  A confirmation message will show up
+-  A confirmation message will show upص
 -  The product will be added to the Compare list  
 ---
 
@@ -189,11 +195,12 @@ Then the user will be asked to select: - shoe color. - shoe size
 -  A shipping destination and price will show up 
 ---
 
-| TC-FUNCV-08 | Validate leaving a review while logged in | low | User is on product details page |
+| TC-FUNCV-08 | Validate leaving a review for a product while logged in | low | User is on product details page |
 
 **Steps:**
-1. Fill all mandatory fields with valid data
-2. Click on the Submit Review button
+1. Navigate to any product details page
+2. Fill all mandatory fields with valid data
+3. Click on the Submit Review button
    
 **Expected Result:**
 -  A confirmation message will show up: "Product review is successfully added."
@@ -233,6 +240,35 @@ Then the user will be asked to select: - shoe color. - shoe size
 -  The products will be added to the Cart
 -  The total price of the selected product matches the offer
 ---
+
+| TC-FUNCV-11 | Validate selecting size for cloths | high | User is on the clothes |
+
+**Steps:**
+1. Select a subcategory
+2. Select item
+3. Select size
+4. Repeat the steps for all items
+   
+**Expected Result:**
+-  The user can select the available sizes
+  
+---
+
+| TC-FUNCV-12 | Validate using valid data to send card gift | high | User is on the gift card |
+
+**Steps:**
+1. Fill in all fields with valid data
+2. detern=mine the quantity
+3. Click on the Add to Cart button
+   
+**Expected Result:**
+-  A confirmation message will show up
+-  The total number that appears beside the add to cart link will change accordingly
+-  The products will be added to the Cart
+-   
+
+---
+
 ## Functional – Invalid Scenarios
 
 | TC ID | Title | Priority | Preconditions |
@@ -301,6 +337,53 @@ Then the user will be asked to select: - shoe color. - shoe size
 
 | TC-FUNCINV-06 | Validate leaving all mandatory pc components fields empty while building your own pc | High | User is on product details page |
 
+و**Steps:**
+1. Leave all mandatory fields empty
+2. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Please select (......)."
+- No product is added to the cart
+
+---
+| TC-FUNCINV-07 | Validate leaving processor field empty while building your own pc | High | User is on build your own pc details page |
+
+**Steps:**
+1. Leave the processor field empty
+2. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Please select Processor."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-08 | Validate leaving Ram field empty while building your own pc | High | User is on build your own pc details page |
+
+**Steps:**
+1. Leave the Ram field empty
+2. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Please select RAM."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-09 | Validate leaving HDD field empty while building your own pc | High | User is on build your own pc details page |
+
+**Steps:**
+1. Leave the HDD field empty
+2. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Please select HDD."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-10 | Validate leaving all mandatory shoes fields empty | High | User is on product details page |
+
 **Steps:**
 1. Leave all mandatory fields empty
 2. Click on the add to cart button
@@ -311,19 +394,7 @@ Then the user will be asked to select: - shoe color. - shoe size
 
 ---
 
-| TC-FUNCINV-07 | Validate leaving all mandatory shoes fields empty | High | User is on product details page |
-
-**Steps:**
-1. Leave all mandatory fields empty
-2. Click on the add to cart button
-   
-**Expected Result:**
-- An error message will appear telling the user: "Please select (......)."
-- No product is added to the cart
-
----
-
-| TC-FUNCINV-08 | Validate leaving shoes color field empty | High | User is on product details page |
+| TC-FUNCINV-11 | Validate leaving shoes color field empty | High | User is on product details page |
 
 **Steps:**
 1. Select shoes color
@@ -336,7 +407,7 @@ Then the user will be asked to select: - shoe color. - shoe size
 
 ---
 
-| TC-FUNCINV-09 | Validate leaving shoes size field empty | High | User is on product details page |
+| TC-FUNCINV-12 | Validate leaving shoes size field empty | High | User is on product details page |
 
 **Steps:**
 1. Select shoes size
@@ -348,6 +419,84 @@ Then the user will be asked to select: - shoe color. - shoe size
 - No product is added to the cart
 
 ---
+
+| TC-FUNCINV-13 | Validate leaving text field empty on the Customed T-shirt page | High | User is on Custom T-shirt page |
+
+**Steps:**
+1. Select the shoe size
+2. Leave the shoe color empty
+3. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Please select the shoe color."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-14 | Validate leaving Gift Card mandatory fields empty | High | User is on Gift Card page |
+
+**Steps:**
+1. Leave all mandatory fields empty
+3. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Enter a valid value for the mandatory fields."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-15 | Validate leaving Gift Card Recipient's Name field empty | High | User is on the Recipient's Name page |
+
+**Steps:**
+1. Leave the Recipient's Name field empty
+2. Fill all other mandatory fields with valid data
+3. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Enter a valid Recipient's Name."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-17 | Validate leaving Gift Card Recipient's Email field empty | High | User is on the Recipient's Email page |
+
+**Steps:**
+1. Leave the Recipient's Email field empty
+2. Fill all other mandatory fields with valid data
+3. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Enter a valid Recipient's Email."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-18 | Validate leaving Gift Card Your Name field empty | High | User is on the Your Name page |
+
+**Steps:**
+1. Leave the Your Name field empty
+2. Fill all other mandatory fields with valid data
+3. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Enter a valid Your Name."
+- No product is added to the cart
+
+---
+
+| TC-FUNCINV-19 | Validate leaving Gift Card Your Email field empty | High | User is on the Your Email page |
+
+**Steps:**
+1. Leave the Your Email field empty
+2. Fill all other mandatory fields with valid data
+3. Click on the add to cart button
+   
+**Expected Result:**
+- An error message will appear telling the user: "Enter a valid Your Email field."
+- No product is added to the cart
+
+---
+
 ## Boundary Value Testing
 
 | TC-BVA-01 | Validate adding the maximum allowed number of the same product | High | User is on product details page |
@@ -374,7 +523,7 @@ Then the user will be asked to select: - shoe color. - shoe size
 -  All of the product copies will be added to the Cart
 ---
 
-| TC-BVA-03 | Validate adding a zero copies of a product les than the min allowed 1| High | User is on product details page |
+| TC-BVA-03 | Validate adding a zero copies of a product less than the min allowed 1| High | User is on product details page |
 
 **Steps:**
 1. Fill in the number of copies that you want (0)
@@ -402,11 +551,7 @@ Then the user will be asked to select: - shoe color. - shoe size
 ---
 ## Edge Cases
 
-| TC ID | Scenario | Expected Result |
-|-------|----------|----------------|
 
-| TC ID | Title | Priority | Preconditions |
-|-------|-------|----------|---------------|
 | TC-EDGE-01 | Validate write the number in letters | low | User is on product details page |
 
 **Steps:**
@@ -419,8 +564,7 @@ Then the user will be asked to select: - shoe color. - shoe size
 
 ---
 
-| TC ID | Title | Priority | Preconditions |
-|-------|-------|----------|---------------|
+
 | TC-EDGE-02 | Validate writting a special character in the quantity field | low | User is on product details page |
 
 **Steps:**
@@ -429,7 +573,7 @@ Then the user will be asked to select: - shoe color. - shoe size
    
 **Expected Result:**
 - No product is added to the Cart
-- A clear error message telling the user: "Quantity should be positive"
+- A clear error message telling the user: "Quantity should be positive."
 
 ---
 ---
