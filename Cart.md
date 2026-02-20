@@ -17,8 +17,28 @@ So that I can check my cart and edit it.
  Then all the products added should appear
 
 ## AC (Quantity)
- Given the user wants to change the quantity
- Then he can 
+ Given that the user changed the quantity
+ Then the total price changes accordingly
+
+## AC (Remove)
+ Given that the user is on the shopping cart page
+ When the user clicks on the X icon under the name of the removed
+ Then all of the product copies will be removed
+
+As a User,
+I want a continue shopping button,
+So I can go back to the products page
+
+## AC (Continue Shopping)
+Given that the user clicked on the continue shopping button
+Then the user will be redirected to the products page
+
+As a user,
+I want an estimate shipping button
+So I can know the estimated shipping price to my region
+## AC (Estimate Shipping)
+Given that the user clicked on the continue shopping button
+Then the user will be redirected to products page
 ---
 
 # 2️⃣ Acceptance Criteria (BDD)
