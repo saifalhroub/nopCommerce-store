@@ -1,4 +1,4 @@
-# Feature: <Cart Page>
+# Feature: <shopping Cart Page>
 
 ---
 
@@ -7,6 +7,14 @@ As a user,
 I want to have a cart page,  
 So that I can check my cart and edit it.
 
+## AC (Navigation):
+ Given the user is using the store
+ When the user clicks on the add to cart link
+ Then the user will be redirected tothe shopping cart 
+
+## AC (Shopping cart design)
+ Given the user is on the shopping cart page
+ Then the user
 ---
 
 # 2️⃣ Acceptance Criteria (BDD)
