@@ -12,9 +12,13 @@ So that I can check my cart and edit it.
  When the user clicks on the add to cart link
  Then the user will be redirected tothe shopping cart 
 
-## AC (Shopping cart design)
+## AC (Products selected)
  Given the user is on the shopping cart page
- Then the user
+ Then all the products added should appear
+
+## AC (Quantity)
+ Given the user wants to change the quantity
+ Then he can 
 ---
 
 # 2️⃣ Acceptance Criteria (BDD)
