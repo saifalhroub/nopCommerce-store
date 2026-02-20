@@ -36,31 +36,19 @@ Then the user will be redirected to the products page
 As a user,
 I want an estimate shipping button
 So I can know the estimated shipping price to my region
-## AC (Estimate Shipping)
-Given that the user clicked on the continue shopping button
-Then the user will be redirected to products page
----
 
-# 2️⃣ Acceptance Criteria (BDD)
-
-## AC1 – Happy Path
-Given  
-When  
-Then  
-
-## AC2 – Validation
-Given  
-When  
-Then  
-
-## AC3 – System Behavior
-Given  
-When  
-Then  
+## AC (Estimate shipping)
+Given the user is on the shipping cart page
+When the user click on the Estimate Shipping button
+Then the user will be asked to provide:
+ - Region (Country)
+ - Zip/Postal code
+And the estimated shipping price will show up
 
 ---
 
-# 3️⃣ Test Cases
+
+#  Test Cases
 
 ---
 
