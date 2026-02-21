@@ -26,8 +26,8 @@ So that I can check my cart and edit it.
  Then all of the product copies will be removed
 
 As a User,
-I want a continue shopping button,
-So I can go back to the products page
+I want to be able to reach the products page,
+So I can go add more products
 
 ## AC (Continue Shopping)
 Given that the user clicked on the continue shopping button
@@ -39,7 +39,7 @@ So I can know the estimated shipping price to my region
 
 ## AC (Estimate shipping)
 Given the user is on the shipping cart page
-When the user click on the Estimate Shipping button
+When the user clicks on the Estimate Shipping button
 Then the user will be asked to provide:
  - Region (Country)
  - Zip/Postal code
