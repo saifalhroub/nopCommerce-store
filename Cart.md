@@ -5,7 +5,7 @@
 # 1️⃣ User Story
 As a user,  
 I want to have a cart page,  
-So that I can check my cart and edit it.
+So that I can check/finalize/edit the cart
 
 ## AC (Navigation):
  Given the user is using the store
@@ -25,17 +25,9 @@ So that I can check my cart and edit it.
  When the user clicks on the X icon under the name of the removed
  Then all of the product copies will be removed
 
-As a User,
-I want to be able to reach the products page,
-So I can go add more products
-
 ## AC (Continue Shopping)
 Given that the user clicked on the continue shopping button
 Then the user will be redirected to the products page
-
-As a user,
-I want an estimate shipping button
-So I can know the estimated shipping price to my region
 
 ## AC (Estimate shipping)
 Given the user is on the shipping cart page
@@ -44,6 +36,38 @@ Then the user will be asked to provide:
  - Region (Country)
  - Zip/Postal code
 And the estimated shipping price will show up
+
+## AC (Gift Rapping)
+Given the useris on the shopping cart
+When the user decides to gift the products
+Then the user can order the product to be gift-wrapped
+And +10$ will be added to the total price
+
+As a user,
+I want a bill to see the total price and apply promo codes,
+so I can have a discount and see the total price
+
+## AC (price details)
+Given the user is using the store
+When the user is on the shopping cart page
+Then he will see the total price that includes:
+ - Sub-Total
+ - Shipping price
+ - Tax price
+ - Total price
+
+## AC (Discount Code)
+Given the user is using the store 
+When the user fills in the discount code field with a valid code
+Then the discount will be applied to the bill
+And the total price will change accordingly
+
+## AC (Checkout)
+Given the user is on the shopping cart
+When the user is finished finalizing his order 
+Then the user has to accept the terms of services
+And then the user can use the checkout to proceed
+
 
 ---
 
