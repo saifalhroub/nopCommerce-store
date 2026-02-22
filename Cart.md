@@ -1,11 +1,220 @@
-# Feature: <shopping Cart Page>
+# 🚀 Feature: Shopping Cart Page
 
 ---
 
 # 1️⃣ User Story
+
 As a user,  
-I want to have a cart page,  
-So that I can check/finalize/edit the cart
+I want to view and manage the items in my cart,  
+So that I can review, edit, and finalize my purchase.
+
+---
+
+## Acceptance Criteria
+
+### AC (Navigation)
+Given the user is browsing the store  
+When the user clicks on the cart link  
+Then the user is redirected to the Shopping Cart page  
+
+---
+
+### AC (Products Display)
+Given the user has added products to the cart  
+When the user navigates to the Shopping Cart page  
+Then all added products should be displayed correctly  
+
+---
+
+### AC (Quantity Update)
+Given the user changes the product quantity  
+When the quantity is updated  
+Then the subtotal and total prices should update dynamically and accurately  
+
+---
+
+### AC (Remove Product)
+Given the user is on the Shopping Cart page  
+When the user clicks on the remove (X) icon  
+Then all quantities of that product are removed from the cart  
+And the subtotal and total are updated accordingly  
+
+---
+
+### AC (Continue Shopping)
+Given the user is on the Shopping Cart page  
+When the user clicks the "Continue Shopping" button  
+Then the user is redirected to the products page  
+
+---
+
+### AC (Estimate Shipping)
+Given the user is on the Shopping Cart page  
+When the user clicks on "Estimate Shipping"  
+Then the user is asked to provide:
+- Country / Region  
+- Zip / Postal Code  
+And the estimated shipping methods and prices are displayed  
+
+---
+
+### AC (Gift Wrapping)
+Given the user is on the Shopping Cart page  
+When the user selects the gift wrapping option  
+Then an additional $10 is added to the total price  
+And the total price updates accordingly  
+
+---
+
+### AC (Price Details)
+Given the user is on the Shopping Cart page  
+Then the user should see a detailed price breakdown including:
+- Subtotal  
+- Shipping  
+- Tax  
+- Total  
+
+---
+
+### AC (Discount Code)
+Given the user enters a valid discount code  
+When the code is applied  
+Then the discount is reflected in the total price  
+And the total price updates accordingly  
+
+---
+
+### AC (Checkout)
+Given the user has finalized the order  
+When the user accepts the Terms of Service  
+And clicks the "Checkout" button  
+Then the user is redirected to the Checkout page  
+
+---
+
+# 2️⃣ Functional Test Cases (Happy Path)
+
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| TC-FUNC-01 | Validate cart link navigation | High | Store loaded | Click cart link | User is redirected to Shopping Cart page |
+| TC-FUNC-02 | Validate removing a product | High | Cart page loaded | Click remove (X) icon | Product is removed; subtotal & total updated |
+| TC-FUNC-03 | Validate quantity update using arrows | High | Cart page loaded | Click increment/decrement arrows | Quantity updates by 1 per click; totals recalculate |
+| TC-FUNC-04 | Validate quantity update by typing | High | Cart page loaded | Enter valid number in quantity field | Quantity updates; totals recalculate |
+| TC-FUNC-05 | Validate quantity update using keyboard arrows | Medium | Cart page loaded | Use keyboard up/down keys | Quantity updates correctly; totals recalculate |
+| TC-FUNC-06 | Validate editing gift card details | High | Cart page loaded | Edit gift card → Update | Changes saved; no duplicate item created |
+| TC-FUNC-07 | Validate estimating shipping | High | Cart page loaded | Estimate shipping with valid data | Shipping methods displayed; total updates when selected |
+| TC-FUNC-08 | Validate Continue Shopping button | High | Cart page loaded | Click Continue Shopping | User redirected to products page |
+| TC-FUNC-09 | Validate Checkout navigation | High | Cart page loaded | Accept Terms → Click Checkout | Redirected to Checkout page |
+| TC-FUNC-10 | Verify subtotal updates dynamically | High | Cart page loaded | Change quantity | Subtotal updates instantly without page reload |
+| TC-FUNC-11 | Verify total recalculation accuracy | High | Cart page loaded | Change quantity | Total = Subtotal + Tax + Shipping (correct formula) |
+| TC-FUNC-12 | Validate cart persistence after refresh | Medium | Cart contains products | Refresh page | Products remain; totals unchanged |
+| TC-FUNC-13 | Validate cart persistence after logout/login | Medium | Cart contains products | Logout → Login → Open cart | Products persist correctly |
+| TC-FUNC-14 | Validate cart persistence after closing browser | Medium | Cart contains products | Close browser → Reopen → Open cart | Products persist correctly |
+| TC-FUNC-15 | Verify quantity increments one by one | High | Cart page loaded | Click increment multiple times | Quantity increases by exactly 1 per click |
+
+---
+
+# Functional – Invalid Scenarios
+
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| TC-FUNCINV-01 | Checkout without accepting Terms | High | Cart page loaded | Do not accept Terms → Click Checkout | Checkout blocked; clear validation message displayed |
+| TC-FUNCINV-02 | Checkout with no internet | Medium | Cart page loaded | Disable internet → Click Checkout | Request fails gracefully; user sees network error message |
+| TC-FUNCINV-03 | Invalid discount code | High | Cart page loaded | Enter invalid code → Apply | Code rejected; clear error message; total unchanged |
+| TC-FUNCINV-04 | Invalid gift card code | High | Cart page loaded | Enter invalid code → Apply | Code rejected; clear error message; total unchanged |
+
+---
+
+# Edge & Security Testing
+
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| TC-EDGE-01 | Quantity = 0 | Medium | Cart contains products | Enter 0 | Product removed OR validation shown (based on requirements); totals update |
+| TC-EDGE-02 | Leading/trailing spaces | Low | Cart contains products | Enter " 5 " | Spaces trimmed; value processed correctly |
+| TC-EDGE-03 | Extremely large quantity | High | Cart contains products | Enter large number (e.g., 9999999) | Request rejected; validation message shown |
+| TC-EDGE-04 | Decimal quantity | High | Cart contains products | Enter 2.5 | Validation error; quantity remains unchanged |
+| TC-EDGE-05 | Special characters | Medium | Cart contains products | Enter !@#$% | Validation error; no crash |
+| TC-EDGE-06 | Copy & Paste quantity | Low | Cart contains products | Paste valid number | Value accepted; no crash |
+| TC-EDGE-07 | Long string in discount field | Medium | Cart contains products | Enter 1000+ characters | Input rejected; no performance degradation |
+
+| TC-SEC-01 | Negative quantity | High | Cart contains products | Enter -115 | Validation error; old quantity restored |
+| TC-SEC-02 | XSS in discount field | High | Cart contains products | Enter `<script>alert('test')</script>` | Script not executed; input sanitized |
+| TC-SEC-03 | XSS in gift card field | High | Cart contains products | Enter `<script>alert('test')</script>` | Script not executed; input sanitized |
+| TC-SEC-04 | SQL Injection attempt | High | Cart contains products | Enter `' OR '1'='1` | Injection blocked; input sanitized |
+
+---
+
+# UI Validation
+
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| TC-UI-01 | Mandatory fields marked clearly | High | Cart page loaded | Observe fields | Required fields marked with * and proper styling |
+| TC-UI-02 | Proper error message display | High | Cart page loaded | Trigger validation error | Error displayed near field; readable; styled consistently |
+| TC-UI-03 | Layout alignment | High | Cart page loaded | Inspect layout | No overlapping; proper spacing; responsive alignment |
+| TC-UI-04 | Consistent font styles | Medium | Cart page loaded | Inspect typography | Headers & text follow consistent design system |
+
+---
+
+# Usability Testing
+
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| TC-USB-01 | Keyboard navigation | Medium | Cart page loaded | Use Tab / Shift+Tab | Focus moves logically; no focus trap |
+| TC-USB-02 | Screen reader compatibility | High | Screen reader active | Navigate through cart | All elements announced correctly; buttons labeled; images have alt text; totals announced properly |
+
+---
+
+# Compatibility Testing
+
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| TC-COM-01 | Responsive design | High | Desktop/Tablet/Mobile | Resize viewport | No horizontal scroll; layout adapts correctly |
+| TC-COM-02 | OS compatibility | High | Windows / Linux | Test functionality | No layout issues; no console errors |
+| TC-COM-03 | Browser compatibility | High | Chrome / Edge | Test full flow | No functional or UI differences |
+| TC-COM-04 | Slow network (3G) | High | Throttled network | Test interactions | No crashes; graceful loading indicators |
+
+---
+
+# API Testing
+
+| TC ID | Title | Priority | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- |
+| TC-API-01 | Invalid quantity | High | Send quantity = -1 | HTTP 400; validation error |
+| TC-API-02 | Checkout without terms | High | POST checkout with termsAccepted=false | HTTP 422; validation error |
+| TC-API-03 | Backend validation bypass | Medium | Send invalid payload via Postman | Request rejected |
+| TC-API-04 | Correct payload structure | Medium | Send valid request | HTTP 200/201; correct response body |
+
+---
+
+# Performance Testing
+
+| TC ID | Title | Priority | Expected Threshold |
+| :--- | :--- | :--- | :--- |
+| TC-PFM-01 | Continue Shopping response time | High | ≤ 3 seconds |
+| TC-PFM-02 | Checkout response time | High | ≤ 3 seconds |
+| TC-PFM-03 | Apply discount response time | High | ≤ 3 seconds |
+| TC-PFM-04 | Apply gift card response time | High | ≤ 3 seconds |
+| TC-PFM-05 | Estimate shipping response time | High | ≤ 3 seconds |
+| TC-PFM-06 | Subtotal & total recalculation | High | ≤ 500 ms |
+
+---
+
+Performance thresholds are based on industry standards:
+
+- Page load / critical transactions: ≤ 3 seconds  
+- Backend/API calls: ≤ 500 ms  
+
+
+
+
+-------------------------------------------------------------------------------------------------------------
+# Shopping Cart 
+---
+
+# 1️⃣ User Story
+ِAs a user,
+I want to view and manage the items in my cart,
+So that I can review and finalize my purchase
 
 ## AC (Navigation):
  Given the user is using the store
@@ -13,8 +222,9 @@ So that I can check/finalize/edit the cart
  Then the user will be redirected tothe shopping cart 
 
 ## AC (Products selected)
- Given the user is on the shopping cart page
- Then all the products added should appear
+Given the user has added products to the cart
+When the user navigates to the cart page
+Then all selected products should be displayed
 
 ## AC (Quantity)
  Given that the user changed the quantity
