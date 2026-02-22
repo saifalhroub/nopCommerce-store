@@ -76,7 +76,7 @@ And then the user can use the checkout to proceed
 
 ---
 
-## 2️⃣ Functional Test Cases (Happy Path)
+## 2️⃣Functional Test Cases (Happy Path)
 
 | TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -100,74 +100,89 @@ And then the user can use the checkout to proceed
 
 | TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **TC-FUNCINV-01** | | | |
-
-**Steps:**
-1.  
-2.  
-
-**Expected Result:**
--  
--  
+| **TC-FUNCINV-01** | Validate checkout without accepting Terms of Service. | High | Cart page loaded | 1. Do not accept Terms of Service <br> 2. Observe the system response. | 1. The user will be prohibited from proceeding to the checkout page <br> 2. An error message will appear notifying the user that he has to accept the terms of service |
+| **TC-FUNCINV-02** | Validate checkout with no internet connection. | low | Cart page loaded | 1. Cut-off the internet connection <br> 2. Click on the Checkout button. | 1. The user will be prohibited from proceeding to the checkout page <br> 2. The user will be redirected to a no internet connection page |
+| **TC-FUNCINV-03** | Validate applying an invalid discount code. | High | Cart page loaded | 1. Fill the discount field with an invalid code <br> 2. Click on the Apply button | 1. The code will be rejected <br> 2. An error message will appear saying: "The code is invalid". |
+| **TC-FUNCINV-04** | Validate applying an invalid gift card code. | High | Cart page loaded | 1. Fill the gift card field with an invalid code <br> 2. Click on the Apply button | 1. The code will be rejected <br> 2. An error message will appear saying: "The code is invalid". |
 
 ---
 
-## Boundary Value Testing
 
-| Field | Min | Max | Tested Value | Expected |
-|-------|-----|-----|-------------|----------|
+
+## Edge & Security
+
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **TC-Edge-01** | Validate entering zero in the quantity field. | low | Cart page loaded. User has products in the cart | 1. Fill the quantity field with zero <br> 2. Observe the system response | 1. The product will be removed from the cart <br> 2. The subtotal and total will change accordingly |
+| **TC-Edge-02** | Validate leading/trailing spaces in the quantity field. | low | Cart page loaded. User has products in the cart |  1. Fill the quantity field with a leading/trailing space <br> 2. Click outside the quantity field | 1. The system will remove the space and neglect it |
+| **TC-Edge-03** | Validate entering an extremely large number in quantity. | High | Cart page loaded. User has products in the cart | 1. Fill the quantity field with an extremely large number <br> 2. Click outside the quantity field | Request denied, the quantity number placed inside the quantity field is the old one |
+| **TC-Edge-04** | Validate decimal numbers in the quantity field. | High | Cart page loaded. User has products in the cart | 1. Fill the quantity field with a decimal number <br> 2. Click outside the quantity field | Request denied, the quantity number placed inside the quantity field is the old one |
+| **TC-Edge-05** | Speacial characteres inside the quantity field | low | Cart page loaded. User has products in the cart | 1. Fill the quantity field with a decimal number <br> 2. Click outside the quantity field | Request denied, the quantity number placed inside the quantity field is the old one |
+| **TC-Edge-06** | Copy & Paste into the quantity field | low | Cart page loaded. User has products in the cart. Note app to write and copy the number from | 1. Navigate to the note app <br> 2. Write the number <br> 3. Select and copy the number <br> 4. Navigate to the shopping cart <br> 5. Paste the number inside the quantity field. | System accepts the pasted number. No crash |
+| **TC-Edge-07** | Validate extremely long string in discount field (1000+ characters). | low | Cart page loaded. User has products in the cart | 1. Enter a (+1000 character) inside the discount field | 1. Code is rejected <br> 2. No change to the total price |
+| **TC-SEC-01** | Validate entering a negative number (e.g., -115). | High | Cart page loaded. User has products in the cart | 1. Enter -115 in the quantity field <br> 2. Click outside the quantity field | 1. The number is rejected <br> 2. The old number is the one still processed <br> 3. Proper validation message appears |
+| **TC-SEC-02** | Validate entering JavaScript code in the discount field. | high | Cart page loaded. User has products in the cart | 1. Enter <script>alert('test')</script> in discount field <br> 2. Click Apply | 1. Script is not executed <br> 2. Input is sanitized <br> 3. Proper validation message appears |
+| **TC-SEC-03** | Validate entering JavaScript code in the gift card code field. | high | Cart page loaded. User has products in the cart |  1. Enter <script>alert('test')</script> in gift card field <br> 2. Click Apply | 1. Script is not executed <br> 2. Input is sanitized |
+| **TC-SEC-04** | Validate SQL injection attempt in quantity field (e.g., ' OR '1'='1) | High | Cart page loaded. User has products in the cart | 1. Enter (' OR '1'='1) in the quantity field <br> 2. Click outside the quantity field | 1. The injection is not executed <br> 2. The system restores the old number |
 
 ---
 
-## Edge Cases
+## UI Validation
 
-| TC ID | Scenario | Expected Result |
-|-------|----------|----------------|
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **TC-UI-01** | Validate mandatory fields are clearly marked | High | Cart page loaded | Observe the page mandatory fields | All mandatory fields have a star sign beside them | 
+| **TC-UI-02** | Validate correct rror messages appear | High | Cart page loaded | 1. Do not accept the terms of service <br> 2. Click on the Checkout button | 1. System rejects the order <br> 2. "You have to accept the terms of service" error message appears | 
+| **TC-UI-03** | Validate cart elements alignment. | High | Cart page loaded | Observe the page elements alignment | 1. No overlapping between page's elements | 
+| **TC-UI-04** | Validate consistent font styles. | Medium | Cart page loaded | Observe the font style across the page | All headers have the same style, all paragraphs have the same style | 
 
----
-
-## Security Testing
-
-| TC ID | Attack Type | Expected Result |
-|-------|------------|----------------|
-
----
-
-## UI Testing
-
-- Layout validation  
-- Field alignment  
-- Button state  
-- Error message placement  
 
 ---
 
 ## Usability Testing
 
-- Keyboard navigation  
-- Field focus behavior  
-- Error clarity  
-- Mandatory indicators  
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **TC-USB-01** | Validate keyboard navigation (Tab, Shift+Tab). | low | Cart page loaded | 1.  Click on the tab button to move to the next element <br> 2. Click on the "tab+shift" buttons to move to the previous element | 1. Focus will move to the next element each time the user presses "tab" button <br> 2. Focus will move to the previous element each time the user presses the "tab+shift" buttonس |
+| **TC-USB-02** | Validate page compatibility with screen readers. | High | Cart page loaded, Screen reader is active |  |  |
 
 ---
 
 ## Compatibility Testing
 
-- Keyboard navigation  
-- Field focus behavior  
-- Error clarity  
-- Mandatory indicators  
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **TC-COM-01** | Validate responsiveness across devices (Desktop / Tablet / Mobile). | High | User is using the store via (Desktop/Tablet/Mobile) | Observe the page responsivity for all devices | The store is responsive to all of the devices | 
+| **TC-COM-02** | Validate functionality across different operating systems for PC | High | User has access to the store via Windows & linux | Test the store functionality with the two operating systems | The store works correctly without any errors | 
+| **TC-COM-03** | Validate compatibility across major browsers for PC | High | User is using the store via Chrome & Edge | Make sure the store is compatible for both browsers | The store works correctly without any errors | 
+| **TC-COM-04** | Validate behavior under slow network conditions (e.g., 3G throttling). | High | User is using the app wit 3G internet | Observe the page behavior | No crash, the store works normally |  
 
 ---
 
 ## API Testing (If applicable)
 
-### Valid Request
-- Status Code:
-- Response Body:
-- Database Check:
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **TC-API-01** | Validate error response when invalid quantity is sent. | High | User logged in, item in cart. | Send PATCH `/cart` with quantity = -1. | HTTP 400 with error message: "Quantity must be positive". |
+| **TC-API-02** | Validate checkout API fails if Terms are not accepted. | High | User logged in, cart has items. | Send POST `/checkout` with `termsAccepted = false`. | HTTP 422 with error: "You must accept the terms". |
+| **TC-API-03** | Validate backend validation even if frontend validation is bypassed. | Medium | Valid session, product in cart. | Using Postman, send request with quantity = 0 or missing fields. | Backend returns 400/422 and rejects request. |
+| **TC-API-04** | Validate correct request payload structure. | Medium | API documentation available. | Send full valid payload to create a resource. | HTTP 201 with correct response body. |
 
-### Invalid Request
-- Status Code:
-- Error Message:
-- Data Integrity:
+---
+
+## Performance Testing
+
+| TC ID | Title | Priority | Pre-conditions | Steps | Expected Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **TC-PFM-01** | Validate response time for Continue Shopping button | High | Cart page loaded | 1. Click on the Continue shopping button <br> 2. Observe the redirection response time | response time is ≤ 3 seconds  |  
+| **TC-PFM-02** | Validate response time for Checkout button | High | Cart page loaded | 1. Accept terms of service <br> 2. Click on checkout <br> 3. Observe the redirection response time | response time is ≤ 3 seconds |  
+| **TC-PFM-03** | Validate response time for Applying discount code | High | Cart page loaded | 1. Enter the discount code <br> 2. Click on apply <br> 3. Observe the code application process response time | response time is ≤ 3 seconds |  
+| **TC-PFM-04** | Validate response time for Applying gift card code | High | Cart page loaded | 1. Enter the gift card code <br> 2. Click on apply <br> 3. Observe the code application process response time | response time is ≤ 3 seconds |  
+| **TC-PFM-05** | Validate response time for Estimating shipping | High | Cart page loaded | 1. Click on the estimate shipping button <br> 2. Fill all mandatory fields <br> 3. Click on the apply button <br> 4. Observe the estimation response time | response time is ≤ 3 seconds |  
+| **TC-PFM-06** | Validate response time for Subtotal & total recalculation | High | Cart page loaded | 1. Change the product quantity <br> 2. Observe the subtotal & total recalculation response time | response time is ≤ 3 seconds |
+
+- Based on industry-standard performance benchmarks (Google/Amazon studies) and the nature of the application, the expected response time thresholds are set as follows:
+
+  - Page load / critical transactions: ≤ 3 seconds (the threshold beyond which 40% of users abandon the site).
+
+  - API/backend calls: ≤ 500 ms (to ensure a smooth user experience).
