@@ -1,16 +1,17 @@
 # Checkout
 
-## 1- As a user, 
-I want a checkout page,
-So I can use my personal information to confirm my purchase
+## 1-
+> As a user, 
+> I want a checkout page,
+> So I can use my personal information to confirm my purchase
 
 ---
 
 ### AC (Billing Address)
 
-Given that the user wants to confirm identity
-When the user is on the checkout page
-Then he has to provide his billing address informationsto confirm identity
+ Given that the user wants to confirm identity
+ When the user is on the checkout page
+ Then he has to provide his billing address informationsto confirm identity
 
 ---
 
@@ -116,13 +117,10 @@ Given the user is on any of these checkout page steps
 When the user clicks on the Continue button  
 Then the system should proceed to the next checkout step
 
----
 
-## As a user,
-I want a thank-you page,
-So I can make sure I submitted my order successfully
-
----
+> As a user,
+> I want an order confirmation screen
+> So I know the order has been accepted
 
 ### AC - Confirmation message
 Given the user finished the checkout process
@@ -148,6 +146,6 @@ Then the user will be redirected to the landing page
 
 ---
 
-## As a user,
-I want an order information page
-So I can check my order details or cancel my order
+
+
+
