@@ -13,6 +13,18 @@
  When the user is on the checkout page
  Then he has to provide his billing address informationsto confirm identity
 
+
+## AC (Billing Address - Save info)
+Given the user is on the billing address form
+When the user clicks onsave
+Then the user will be saved in the database
+And the user can use it for other orders
+
+## AC (Billing Address - shipping to the same address0
+Given the user selected ship to the same address
+When the user clicks on the continue button
+Then the shipping address section will be skipped
+And the shipping address will be the same as of the billing address
 ---
 
 ### AC - (Shipping Address)
@@ -27,7 +39,11 @@ Then he will be asked to provide a shipping destination
 
 Given the user is on the checkout page
 When the user completed the shipping address step
-Then he will be asked to select a shipping method
+Then the user will be redirected to shipping method page
+And three shipping methods will be available:
+  - Land Transport
+  - Air Shipping one day
+  - Air Shipping two days
 
 ---
 
@@ -145,7 +161,9 @@ When the user clicks on the continue button
 Then the user will be redirected to the landing page
 
 ---
+# Functional Positive “Billing & Shipping Addresses”
 
-
-
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-FUNV-01** | Validate Using valid bill informations
 
