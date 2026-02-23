@@ -161,9 +161,13 @@ When the user clicks on the continue button
 Then the user will be redirected to the landing page
 
 ---
-# Functional Positive “Billing & Shipping Addresses”
+# Functional Positive “Billing Address”
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results |
 | --- | --- | --- | --- | --- | --- |
-| **TC-FUNV-01** | Validate Using valid bill informations
-
+| **TC-FUNV-01** | Using valid bill information without checking the ship to the same address radio box | High | Checkout page loaded | 1. Fill all mandatory fields <br> 2. Click on continue | 1. No validation error <br> 2. user is redirected to the Shipping Address section |
+| **TC-FUNV-02** | Validate leaving optional fields empty | low | Checkout page loaded | 1. Fill all mandatory fields <br> 2. Leave all unmarked/optional fields empty <br> 3. Click on continue | 1. No validation error <br> 2. user is redirected to the Shipping Address section |
+| **TC-FUNV-03** | Validate checking the ship to the same address radio box | high | Checkout page loaded | 1. Fill all mandatory fields <br> 2. Check the "ship to the same address" radio box  <br> 3. Click on continue | 1. No validation error <br> 2. user is redirected to the Shipping method section |
+| **TC-FUNV-04** | Validate Selecting a saved address | High | 1. User set up his address on my account  | 1. Navigate to the checkout page <br> 2. Observe the bill address  available address | User can select the address he saved from my account page | 
+| **TC-FUNV-05** | Validate First name, last name & email autofilled | low | Bill Address fields loaded | 1. Observe the First name, last name & email fields | 1. All fields are autofilled <br> 2. User can modify them |
+| **TC-FUNV-06** | Validate the state/province change based on the selected country  | high | Bill Address fields loaded | 1. Select a country <br> 2. Navigate to the state/province drop-down list <br> 3. Observe the options <br> 4. Repeat the procedure for more countries | 1. State/province changes each time the user changes the selected country |
