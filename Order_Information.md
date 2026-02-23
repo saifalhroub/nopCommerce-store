@@ -53,3 +53,15 @@ Then the order information will be downloaded as PDF
 Given the user wants to reorder the same order
 When the user is on the order information page
 Then the user can use the reorder button 
+
+---
+
+# Functional Positive
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-FUNV-01** | Validate redirecting to order information page | High | User checked out successfully, user is on the thank-you page | 1. Click on the order details link | User is redirected to the order information page |
+| **TC-FUNV-02** | Validate Printing order informations | low | Order details page loaded | 1. Click on the print button | user is redirected to print settings tab |
+| **TC-FUNV-03** | Validate Downloading order informations as PDF | low | Order details page loaded | 1. Click on the PDF Invoice button | A download will start |
+| **TC-FUNV-04** | Validate Cancelling the order | High | Order details page loaded | 1. Click on the Cancel order button | 1. A confirmation message will appear confirming the deletion <br> 2. The cancel order button will disappear <br> 3. The order status will change to cancelled|
+| **TC-FUNV-05** | Validate Reorder the same order | High | Order details page loaded | 1. Click on the Reorder button | 1. The user will be redirected to the checkout page <br> 2. The user is allowed to change the quantity |
