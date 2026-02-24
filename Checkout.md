@@ -370,4 +370,12 @@ Functional Negative (Payment Method)
 | **TC-UI-05** | Validate buttons state when hovering on them | low | Checkout page loaded | 1. Hover over any button <br> 2. Observe the button state | Button color changes |
 | **TC-UI-06** | Validate consistent font styles | High | Checkout page loaded | 1. Observe font style across the page | All texts have the same color and size, and type|
 
+---
 
+# Usability Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-USB-01** | Validate using the keyboard navigation keys to move forward and backward | low | Checkout page loaded | 1. Click on the tab button <br> 2. Observe the focus <br> 3. Click on the tab + shift buttons <br> 4. Observe the focus | 1. Focus moves to the next field when clicking on the tab button <br> 2. Focus moving to the previous field when clicking on tab + shift |
+| **TC-USB-02** | Validate the page can be read via the screen reading apps | High | Checkout page loaded | 1. Open the screen reader <br> 2. Scroll through the page | 1. The app should read every text on the page <br> 2. The app can read images' alt text |
+| **TC-USB-03** | Field’s suggestion input | low | Checkout page loaded | 1. Click inside any field  | 1. Suggestion input will appear from previous usage <br> 2. User can select the suggestion |
