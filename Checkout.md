@@ -340,3 +340,34 @@ Functional Negative (Payment Method)
 | **TC-SEC-01** | Validate using SQL injection ( OR ‘1’=’1’) inside the cardholder name field | high | 1. Payment information fields loaded | 1. Fill the cardholder name field with -> OR '1'='1' <br> 2. Fill all mandatory fields <br> 3. Click on the continue button | 1. no crash <br> 2. System won't execute the code <br> 3. A validation error message appears in the cardholder name field <br> 4. No other user's account information is leaked. |
 | **TC-SEC-02** | Validate using JavaScript code inside card number field | high | 1. Payment information fields loaded | 1. Fill the card number field with -> <script>alert"(hack)"<script> <br> 2. Fill all mandatory fields <br> 3. Click on the continue button | 1. no crash <br> 2. System won't execute the code <br> 3. A validation error message appears in the card number field <br> 4. No Pop-ups appear |
 
+---
+
+# Performance Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-PFM-01** | Validate all sections continue button response time | High | Checkout page laoded | 1. Click on the continue button for every section <br> 2. Observe the response time | 1. User has to be redirected to the next section within < 3s |
+| **TC-PFM-02** | Validate error message notification time | Medium | Checkout page laoded | 1. Navigate to any section <br> 2. Leave a mandatory field empty <br> 3. Click on the continue button <br> 4. Observe the error message time show up | 1. The message has to be loaded immediately after the page is loaded |
+
+---
+
+# Edge Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-Edge-01** | Validate page functionality when user is using the store with 3G throttling connection | High | 1. User is having #G throttling connection <br> 2. Checkout page loaded | 1. Navigate to the Billing Address section <br> 2. Complete the form <br> 3. Click on the continue button | 1. Page works correctly <br> 2. No crash <br> 3. page design and layout is consistent |
+
+---
+
+# UI Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-UI-01** | Validate error message in the right place | High | Checkout page loaded | 1. Leave a mandatory field empty <br> 2. Click on the continue button <br> 3. Observe the error message place | Error message shall appear near the field with invalid data |
+| **TC-UI-02** | Validate error message text style | High | Checkout page loaded | 1. Leave a mandatory field empty <br> 2. Click on the continue button <br> 3. Observe the error message style | Error message color is red |
+| **TC-UI-03** | Validate fields state when it is active | low | Checkout page loaded | 1. Navigate to any field in any section <br> 3. Observe the field state | 1. Writing cursor is placed inside the field <br> 2. Field outline highlight color changes |
+| **TC-UI-04** | Validate alignment of all sections elements | High | Checkout page loaded | 1. Observe the sections' fields alignment | All fields are aligned correctly without any overlap |
+| **TC-UI-05** | Validate buttons state when hovering on them | low | Checkout page loaded | 1. Hover over any button <br> 2. Observe the button state | Button color changes |
+| **TC-UI-06** | Validate consistent font styles | High | Checkout page loaded | 1. Observe font style across the page | All texts have the same color and size, and type|
+
+
