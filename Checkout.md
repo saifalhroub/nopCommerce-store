@@ -174,6 +174,32 @@ Then the user will be redirected to the landing page
 
 ---
 
+# Functional Negative “Billing Address”
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-FUNINV-01** | Leaving all mandatory fields empty | High | Billing fields loaded | 1. Leave all mandatory fields empty <br> 2. Click on continue | 1. Request denied <br> 2. User remains int billing address section <br> 3. Validation error message for all mandatory fields | 
+| **TC-FUNINV-02** | Selecting state/province without selecting the country | low | Billing fields loaded | 1. Do not select the country <br> 2. select the state/province | User not allowed to select the state unless he selects the country |
+| **TC-FUNINV-03** | Using wrong fromat email | high | Billing fields loaded | 1. make a mistake on the email format <br> 2. fill mandatory fields <br> 3. Click on the continue button | 1. Request is denied <br> 2. User won't be redirected to the shipping address section <br> 3. validation error message indicating the usage of invalid email |
+| **TC-FUNINV-04** | Using only spaces in the mandatory fields | medium | Billing fields loaded | 1. Fill all mandatory fields with only spaces <br> 2. Click on the continue button | 1. Request is denied <br> 2. Validation error message indicating the mandatory field have invalid data |
+| **TC-FUNINV-05** | Leave first name empty | high | Billing fields loaded | 1. Leave the first name field empty <br> 2. Fill all mandatory fields<br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping address section <br> 3. validation error message indicating the first name field is required |
+| **TC-FUNINV-06** | Leave last name empty | hgh | Billing fields loaded | 1. Leave the last name field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping address section <br> 3. validation error message indicating the last name field is required |
+| **TC-FUNINV-07** | Leave email empty  | high | Billing fields loaded | 1. Leave the email field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping address section <br> 3. validation error message indicating the email field is required |
+| **TC-FUNINV-08** | Leave address 1 empty | High | Billing fields loaded | 1. Leave the address 1 field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue |  1. Request is denied <br> 2. User won't be redirected to the shipping address section <br> 3. validation error message indicating the address 1 field is required |
+| **TC-FUNINV-09** | Leave city empty | High | Billing fields loaded | 1. Leave the city field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping address section <br> 3. validation error message indicating the city field is required |
+| **TC-FUNINV-10** | Leave postal code / Zip empty | High | Billing fields loaded | 1. Leave the postal code/zip field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping address section <br> 3. validation error message indicating the postal code / Zip field is required |
+| **TC-FUNINV-11** | Leave phone number empty | High | Billing fields loaded | 1. Leave the phone number field empty <br> 2. Fill all mandatory fields<br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping address section <br> 3. validation error message indicating the phone number field is required |
+
+
+
+
+
+
+
+
+
+
+
+
 # Functional Positive “Shipping Address”
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results |
@@ -182,4 +208,19 @@ Then the user will be redirected to the landing page
 | **TC-FUNV-02** | Validate leaving optional fields empty | low | Shipping Address fields loaded | 1. Fill all mandatory fields <br> 2. Leave all unmarked/optional fields empty <br> 3. Click on continue | 1. No validation error <br> 2. user is redirected to the Shipping method section |
 | **TC-FUNV-03** | Validate the state/province change based on the selected country  | high | Shipping Address field loaded | 1. Select a country <br> 2. Navigate to the state/province drop-down list <br> 3. Observe the options <br> 4. Repeat the procedure for more countries | 1. State/province changes each time the user changes the selected country |
 
+
+# Functional Negative “Shipping Address”
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-FUNINV-01** | Leaving all mandatory fields empty | High | Shipping address fields loaded | 1. Leave all mandatory fields empty <br> 2. Click on continue | 1. Request denied <br> 2. User remains in the Shipping Address section <br> 3. Validation error message for all mandatory fields | 
+| **TC-FUNINV-02** | Selecting state/province without selecting the country | low | Shipping address fields loaded | 1. Do not select the country <br> 2. select the state/province | User not allowed to select the state unless he selects the country |
+| **TC-FUNINV-03** | Using wrong fromat email | high | Shipping address fields loaded | 1. make a mistake on the email format <br> 2. fill mandatory fields <br> 3. Click on the continue button | 1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. validation error message indicating the usage of invalid email |
+| **TC-FUNINV-04** | Using only spaces in the mandatory fields | medium | Shipping address fields loaded | 1. Fill all mandatory fields with only spaces <br> 2. Click on the continue button | 1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. Validation error message indicating the mandatory field have invalid data |
+| **TC-FUNINV-05** | Leave first name empty | high | Shipping address fields loaded | 1. Leave the first name field empty <br> 2. Fill all mandatory fields<br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. validation error message indicating the first name field is required |
+| **TC-FUNINV-06** | Leave last name empty | hgh | Shipping address fields loaded | 1. Leave the last name field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. validation error message indicating the last name field is required |
+| **TC-FUNINV-07** | Leave email empty  | high | Shipping address fields loaded | 1. Leave the email field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. validation error message indicating the email field is required |
+| **TC-FUNINV-08** | Leave address 1 empty | High | Shipping address fields loaded | 1. Leave the address 1 field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue |  1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. validation error message indicating the address 1 field is required |
+| **TC-FUNINV-09** | Leave city empty | High | Shipping address fields loaded | 1. Leave the city field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. validation error message indicating the city field is required |
+| **TC-FUNINV-10** | Leave postal code / Zip empty | High | Shipping address fields loaded | 1. Leave the postal code/zip field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. validation error message indicating the postal code / Zip field is required |
+| **TC-FUNINV-11** | Leave phone number empty | High | Shipping address fields loaded | 1. Leave the phone number field empty <br> 2. Fill all mandatory fields<br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. validation error message indicating the phone number field is required |
 ---
