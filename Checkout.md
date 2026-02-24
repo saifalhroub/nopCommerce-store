@@ -244,6 +244,7 @@ Then the user will be redirected to the landing page
 ---
 
 # Functional Positive (Shipping Method)
+
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results |
 | --- | --- | --- | --- | --- | --- |
 | **TC-FUNV-01** | Validate selecting land transport as a shipping method | High | 1. Shipping methods loaded | 1. Select Ground/land transport <br> 2. Click on the continue button | 1. User is redirected to the payment method section |
@@ -253,6 +254,89 @@ Then the user will be redirected to the landing page
 ---
 
  # Functional Negative (Shipping Method)
+ 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results |
 | --- | --- | --- | --- | --- | --- |
 | **TC-FUNINV-01** | Validate un-check shipping method | High | 1. Shipping methods loaded | 1. Un-check the shipping method | 1. The radio box can't be unchecked |
+
+---
+
+# UI (Shipping Method)
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-UI-01** | Validate all shipping methods have a radio box | High | 1. Shipping methods loaded | 1. Observe the method's design and layout | 1. All Methods have a radio box |
+| **TC-UI-02** | Validate the method selected radio button is checked | High | 1. Shipping methods loaded | 1. Select a method <br> 2. Observe the selected method's radio box state | 1. The selected method's radio box is checked |
+| **TC-UI-03** | Validate the shipping method elements alignment | High | 1. Shipping methods loaded | 1. Observe the alignment of the shipping methods | 1. No overlapping between the methods |
+
+---
+
+# Functional Positive (Payment Method)
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-FUNV-01** | Validate choosing pay by cheque or money order | High | 1. The user completed the shipping method section <br> 2. Payment methods loaded | 1. Select pay by cheque or money order <br> 2. Click on the continue button | 1. The user is redirected to the payment information page <br> 2. User won't be asked to enter their credit card information |
+| **TC-FUNV-02** | Validate choosing pay with credit card | High | 1. The user completed the shipping method section <br> 2. Payment methods loaded | 1. Select pay by credit card <br> 2. Click on the continue button | 1. The user is redirected to the payment information page <br> 2. User will be asked to enter their credit card information |
+
+---
+
+Functional Negative (Payment Method)
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-FUNV-01** | Validate unselect payment method empty | High | 1. The user completed the shipping method section <br> 2. Payment methods loaded | 1. Unselect payment method | User is obligated to choose a method |
+
+---
+
+# UI (Payment Method)
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-UI-01** | Validate all payment methods have a radio box | High | 1. Payment methods loaded | 1. Observe the method's design and layout | 1. All Methods have a radio box |
+| **TC-UI-02** | Validate the method selected radio button is checked | High | 1. Payment methods loaded | 1. Select a method <br> 2. Observe the selected method's radio box state | 1. The selected method's radio box is checked |
+| **TC-UI-03** | Validate the payment method elements alignment | High | 1. Payment methods loaded | 1. Observe the alignment of the payment methods | 1. No overlapping between the methods |
+
+---
+
+# Functional positive (payment information-Credit card)
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-FUNV-01** | Validate using visa for credit card information | High | 1. User chose a credit card as a payment method <br> 2. Payment information fields loaded | 1. Select Visa card type <br> 2. Fill all fields <br> 3. Click on the continue button | 1. User is redirected to confirm order section <br> 2. Data saved in the database |
+| **TC-FUNV-02** | Validate using Master card | High | 1. User chose a credit card as a payment method <br> 2. Payment information fields loaded | 1. Select Master card type <br> 2. Fill all fields <br> 3. Click on the continue button | 1. User is redirected to confirm order section <br> 2. Data saved in the database |
+| **TC-FUNV-03** | Validate using Discover | High | 1. User chose a credit card as a payment method <br> 2. Payment information fields loaded | 1. Select Discover type <br> 2. Fill all fields <br> 3. Click on the continue button | 1. User is redirected to confirm order section <br> 2. Data saved in the database |
+| **TC-FUNV-04** | Validate using Amex | High | 1. User chose a credit card as a payment method <br> 2. Payment information fields loaded | 1. Select Amex type <br> 2. Fill all fields <br> 3. Click on the continue button | 1. User is redirected to confirm order section <br> 2. Data saved in the database |
+
+---
+
+# Functional Negative (payment information-Credit card)
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-FUNINV-01** | Validate leaving all fields empty | High | 1. User chose a credit card as a payment method <br> 2. Payment information fields loaded | 1. Leave all fields empty <br> 2. Click on the continue button | 1. Validation error message indicating fields required |
+| **TC-FUNINV-02** | Validate selecting wrong credit card type | High | 1. User chose a credit card as a payment method <br> 2. Payment information fields loaded | 1.Select a card type that is not attached to the given data <br> 2. Click on the continue button | 1. Validation error message indicating invaild data |
+| **TC-FUNINV-03** | Validate leaving cardholder name empty | High | 1. User chose a credit card as a payment method <br> 2. Payment information fields loaded | 1. Leave Cardholder name field empty <br> 2. Click on the continue button | 1. Validation error message indicating cardholder name is required <br> 2. User is not redirected to the confirm section |
+| **TC-FUNINV-04** | Validate leaving card number field empty | High | 1. User chose a credit card as a payment method <br> 2. Payment information fields loaded | 1. Leave card number field empty <br> 2. Click on the continue button | 1. Validation error message indicating card number is required <br> 2. User is not redirected to the confirm section |
+| **TC-FUNINV-05** | Validate leaving the card code empty | High | 1. User chose a credit card as a payment method <br> 2. Payment information fields loaded | 1. Leave card code field empty <br> 2. Click on the continue button | 1. Validation error message indicating card code is required <br> 2. User is not redirected to the confirm section |
+| **TC-FUNINV-06** | Validate selecting expired date  | High | 1. User chose a credit card as a payment method <br> 2. Payment information fields loaded | 1. Select an expired date <br> 2. Click on the continue button | 1. Validation error message indicating that the card is expired <br> 2. User is not redirected to the confirm section |
+---
+
+# UI (payment information-Credit card)
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-UI-01** | Verify Credit Card section is displayed when user selects Credit Card | High | 1. Payment information fields loaded | 1. Select "Credit Card" payment method <br> 2. Click on the continue button | 1. Select credit card dropdown displayed <br> 2. Cardholder name field displayed <br> 3. Card number field displayed <br> 4. Expiration date dropdowns displayed <br> 5. Card code field displayed <br> 6. Cheque instructions text NOT displayed |
+| **TC-UI-02** | Verify the Cheque section is displayed when the user selects Pay by Cheque | High | 1. Payment information fields loaded | 1. Select "Pay by Cheque" <br> 2. Click on the continue button | 1. Company name and address displayed <br> 2. Instruction text displayed <br> 3. Credit card fields NOT displayed |
+| **TC-UI-03** | Verify switching between payment methods updates UI dynamically | High | 1. Payment information fields loaded | 1. Select Credit Card <br> 2. Switch to Cheque <br> 3. Switch back to Credit Card | 1. UI updates correctly each time <br> 2. correctly No overlapping sections <br> 3. No broken layout <br> 4. No console errors |
+
+---
+
+# Edge & Security (payment information-Credit card)
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-Edge-01** | Validate Enter a too long card holder name  | low | 1. Payment information fields loaded | 1. Fill the cardholder name field with a too-long name <br> 2. Fill all required fields <br> 3. click on the continue button |  |
+| **TC-Edge-02** | Validate using spaces in the card information fields | low | 1. Payment information fields loaded | 1. Fill fields with spaces <br> 2. click on continue | 1. no crash <br> 2. the system should deal properly with the spaces by deleting them/system will prevent the user from continuing |
+| **TC-SEC-01** | Validate using SQL injection ( OR ‘1’=’1’) inside the cardholder name field | high | 1. Payment information fields loaded | 1. Fill the cardholder name field with -> OR '1'='1' <br> 2. Fill all mandatory fields <br> 3. Click on the continue button | 1. no crash <br> 2. System won't execute the code <br> 3. A validation error message appears in the cardholder name field <br> 4. No other user's account information is leaked. |
+| **TC-SEC-02** | Validate using JavaScript code inside card number field | high | 1. Payment information fields loaded | 1. Fill the card number field with -> <script>alert"(hack)"<script> <br> 2. Fill all mandatory fields <br> 3. Click on the continue button | 1. no crash <br> 2. System won't execute the code <br> 3. A validation error message appears in the card number field <br> 4. No Pop-ups appear |
+
