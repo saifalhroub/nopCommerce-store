@@ -240,3 +240,19 @@ Then the user will be redirected to the landing page
 | **TC-Edge-03** | Validate using trailing or  leading spaces | low | 1. Shipping Address fields loaded | 1. Enter data in each field with a trailing/leading space <br> 2. Observe the field's validation error message <br> 3. Click on the continue button | 1. no crash <br> 2. A correct error message appears in the restricted fields / System will deal with the space properly and ignore the space |
 | **TC-SEC-01** | Validate using SQL injection ( OR ‘1’=’1’) inside the email field | high | 1. Shipping Address fields loaded | 1. Fill the email field with -> OR '1'='1' <br> 2. Fill all mandatory fields <br> 3. Click on the continue button | 1. no crash <br> 2. System won't execute the code <br> 3. A validation error message appears in the email field <br> 4. No other user's account information is leaked. |
 | **TC-SEC-02** | Validate using JavaScript code inside first/last name fields | high | 1. Shipping Address fields loaded | 1. Fill the first/last name field with -> <script>alert"(hack)"<script> <br> 2. Fill all mandatory fields <br> 3. Click on the continue button | 1. no crash <br> 2. System won't execute the code <br> 3. A validation error message appears in the email field <br> 4. No Pop-ups appear|
+
+---
+
+# Functional Positive (Shipping Method)
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-FUNV-01** | Validate selecting land transport as a shipping method | High | 1. Shipping methods loaded | 1. Select Ground/land transport <br> 2. Click on the continue button | 1. User is redirected to the payment method section |
+| **TC-FUNV-02** | Validate Selecting Air shipping “one-day” | High | 1. Shipping methods loaded | 1. Select Next day air shipping method <br> 2. Click on the continue button | 1. User is redirected to the payment method section |
+| **TC-FUNV-03** | Validate Selecting Air shipping “two-day” | High | 1. Shipping methods loaded | 1. Select 2nd day air shipping method <br> 2. Click on the continue button | 1. User is redirected to the payment method section |
+
+---
+
+ # Functional Negative (Shipping Method)
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-FUNINV-01** | Validate un-check shipping method | High | 1. Shipping methods loaded | 1. Un-check the shipping method | 1. The radio box can't be unchecked |
