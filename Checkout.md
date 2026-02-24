@@ -189,15 +189,19 @@ Then the user will be redirected to the landing page
 | **TC-FUNINV-10** | Leave postal code / Zip empty | High | Billing fields loaded | 1. Leave the postal code/zip field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping address section <br> 3. validation error message indicating the postal code / Zip field is required |
 | **TC-FUNINV-11** | Leave phone number empty | High | Billing fields loaded | 1. Leave the phone number field empty <br> 2. Fill all mandatory fields<br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping address section <br> 3. validation error message indicating the phone number field is required |
 
+---
 
+# Edge & SEC “Billing Addresses”
 
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-Edge-01** | Validate spam clicking on continue button | medium | 1. Billing Address fields loaded | 1. Fill all required fields <br> 2. Spam click on the continue button | 1. no crash <br> 2. Every click won't make any effect <br> 3. User is redirected to the shipping address |
+| **TC-Edge-02** | Validate copy and paste data | low | 1. Billing Address fields loaded | 1. Navigate to the note app <br> 2. Copy data <br> 3. Navigate to the store checkout page <br> 4. Paste each field with its data | 1. no crash <br> 2. the data is placed and appears inside the fields without problems |
+| **TC-Edge-03** | Validate using trailing or  leading spaces | low | 1. Billing Address fields loaded | 1. Enter data in each field with a trailing/leading space <br> 2. Observe the field's validation error message <br> 3. Click on the continue button | 1. no crash <br> 2. A correct error message appears in the restricted fields / System will deal with the space properly and ignore the space |
+| **TC-SEC-01** | Validate using SQL injection ( OR ‘1’=’1’) inside the email field | high | 1. Billing address fields loaded | 1. Fill the email field with -> OR '1'='1' <br> 2. Fill all mandatory fields <br> 3. Click on the continue button | 1. no crash <br> 2. System won't execute the code <br> 3. A validation error message appears in the email field <br> 4. No other user's account information is leaked. |
+| **TC-SEC-02** | Validate using JavaScript code inside first/last name fields | high | 1. Billing address fields loaded | 1. Fill the first/last name field with -> <script>alert"(hack)"<script> <br> 2. Fill all mandatory fields <br> 3. Click on the continue button | 1. no crash <br> 2. System won't execute the code <br> 3. A validation error message appears in the email field <br> 4. No Pop-ups appear|
 
-
-
-
-
-
-
+---
 
 
 # Functional Positive “Shipping Address”
@@ -208,6 +212,7 @@ Then the user will be redirected to the landing page
 | **TC-FUNV-02** | Validate leaving optional fields empty | low | Shipping Address fields loaded | 1. Fill all mandatory fields <br> 2. Leave all unmarked/optional fields empty <br> 3. Click on continue | 1. No validation error <br> 2. user is redirected to the Shipping method section |
 | **TC-FUNV-03** | Validate the state/province change based on the selected country  | high | Shipping Address field loaded | 1. Select a country <br> 2. Navigate to the state/province drop-down list <br> 3. Observe the options <br> 4. Repeat the procedure for more countries | 1. State/province changes each time the user changes the selected country |
 
+---
 
 # Functional Negative “Shipping Address”
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results |
@@ -223,4 +228,15 @@ Then the user will be redirected to the landing page
 | **TC-FUNINV-09** | Leave city empty | High | Shipping address fields loaded | 1. Leave the city field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. validation error message indicating the city field is required |
 | **TC-FUNINV-10** | Leave postal code / Zip empty | High | Shipping address fields loaded | 1. Leave the postal code/zip field empty <br> 2. Fill all mandatory fields <br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. validation error message indicating the postal code / Zip field is required |
 | **TC-FUNINV-11** | Leave phone number empty | High | Shipping address fields loaded | 1. Leave the phone number field empty <br> 2. Fill all mandatory fields<br> 3. Click on continue | 1. Request is denied <br> 2. User won't be redirected to the shipping method section <br> 3. validation error message indicating the phone number field is required |
+
 ---
+
+# Edge & SEC “Shipping Addresses”
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-Edge-01** | Validate spam clicking on continue button | medium | 1. Shipping Address fields loaded | 1. Fill all required fields <br> 2. Spam click on the continue button | 1. no crash <br> 2. Every click won't make any effect <br> 3. User is redirected to the shipping method section |
+| **TC-Edge-02** | Validate copy and paste data | low | 1. Shipping Address fields loaded | 1. Navigate to the note app <br> 2. Copy data <br> 3. Navigate to the store checkout page <br> 4. Paste each field with its data | 1. no crash <br> 2. the data is placed and appears inside the fields without problems |
+| **TC-Edge-03** | Validate using trailing or  leading spaces | low | 1. Shipping Address fields loaded | 1. Enter data in each field with a trailing/leading space <br> 2. Observe the field's validation error message <br> 3. Click on the continue button | 1. no crash <br> 2. A correct error message appears in the restricted fields / System will deal with the space properly and ignore the space |
+| **TC-SEC-01** | Validate using SQL injection ( OR ‘1’=’1’) inside the email field | high | 1. Shipping Address fields loaded | 1. Fill the email field with -> OR '1'='1' <br> 2. Fill all mandatory fields <br> 3. Click on the continue button | 1. no crash <br> 2. System won't execute the code <br> 3. A validation error message appears in the email field <br> 4. No other user's account information is leaked. |
+| **TC-SEC-02** | Validate using JavaScript code inside first/last name fields | high | 1. Shipping Address fields loaded | 1. Fill the first/last name field with -> <script>alert"(hack)"<script> <br> 2. Fill all mandatory fields <br> 3. Click on the continue button | 1. no crash <br> 2. System won't execute the code <br> 3. A validation error message appears in the email field <br> 4. No Pop-ups appear|
