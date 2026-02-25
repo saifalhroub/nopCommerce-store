@@ -355,7 +355,7 @@ Functional Negative (Payment Method)
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results |
 | --- | --- | --- | --- | --- | --- |
-| **TC-Edge-01** | Validate page functionality when user is using the store with 3G throttling connection | High | 1. User is having #G throttling connection <br> 2. Checkout page loaded | 1. Navigate to the Billing Address section <br> 2. Complete the form <br> 3. Click on the continue button | 1. Page works correctly <br> 2. No crash <br> 3. page design and layout is consistent |
+
 
 ---
 
@@ -379,3 +379,19 @@ Functional Negative (Payment Method)
 | **TC-USB-01** | Validate using the keyboard navigation keys to move forward and backward | low | Checkout page loaded | 1. Click on the tab button <br> 2. Observe the focus <br> 3. Click on the tab + shift buttons <br> 4. Observe the focus | 1. Focus moves to the next field when clicking on the tab button <br> 2. Focus moving to the previous field when clicking on tab + shift |
 | **TC-USB-02** | Validate the page can be read via the screen reading apps | High | Checkout page loaded | 1. Open the screen reader <br> 2. Scroll through the page | 1. The app should read every text on the page <br> 2. The app can read images' alt text |
 | **TC-USB-03** | Field’s suggestion input | low | Checkout page loaded | 1. Click inside any field  | 1. Suggestion input will appear from previous usage <br> 2. User can select the suggestion |
+
+---
+
+# Compatibility Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **TC-COMP-01** | Validate behavior on slow network 3G throttling  | High | 1. User is having #G throttling connection <br> 2. Checkout page loaded | 1. Navigate to the Billing Address section <br> 2. Complete the form <br> 3. Click on the continue button | 1. Page works correctly <br> 2. No crash <br> 3. page design and layout are consistent |
+| **TC-COMP-02** | Validate the page is responsive to different devices (PC/Mobile/Tablet) | High | User has access to the checkout page with the 3 devices | Observe the page design and layout with each device | The page adapts and works normally with each device (All fields work normally & Page elements size change in corresponding) |
+| **TC-COMP-03** | Validate functionality across different operating systems (Windows/Linux/iOS/APK) | High | User has access to the checkout page with all mentioned operating systems | Observe the page functionality | The page works normally on each device (links are clickable & Button works normally & user is allowed to type in the inputs inside the fields) |
+| **TC-COMP-04** | Validate compatibility across major browsers (Chrome/Edge/Firefox)| High | User has access to the checkout page with all mentioned browsers | Observe the page functionality | The page works normally on each browser (links are clickable & Button works normally & user is allowed to type in the inputs inside the fields) |
+---
+
+# API
+# Accessibility Global
+
