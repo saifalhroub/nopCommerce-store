@@ -432,8 +432,6 @@ PaymentInformation --> PaymentInformation : Validation error
 
 ConfirmOrder --> OrderProcessing : Confirm clicked
 ConfirmOrder --> PaymentInformation : Back
-ConfirmOrder --> ShippingMethod : Back
-ConfirmOrder --> BillingAddress : Back
 
 OrderProcessing --> ThankYou : Success
 OrderProcessing --> ConfirmOrder : Failure / network issue
