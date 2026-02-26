@@ -418,10 +418,10 @@ CheckoutLoaded --> BillingAddress
 BillingAddress --> ShippingMethod : Same address checked + Continue
 BillingAddress --> ShippingAddress : Same address NOT checked + Continue
 BillingAddress --> BillingAddress : Validation error
-ShippingAddress --> BillingAddess : Back
 
 ShippingAddress --> ShippingMethod : Valid + Continue
 ShippingAddress --> ShippingAddress : Validation error
+Back --> BillingAddress : return
 
 ShippingMethod --> PaymentMethod : Method selected + Continue
 ShippingMethod --> ShippingMethod : No method selected
