@@ -424,7 +424,6 @@ ShippingAddress --> ShippingAddress : Validation error
 ShippingAddress --> BillingAddress : Back
 
 ShippingMethod --> PaymentMethod : Method selected + Continue
-ShippingMethod --> ShippingMethod : No method selected
 ShippingMethod --> ShippingAddress : Back
 
 PaymentMethod --> PaymentInformation : Continue
