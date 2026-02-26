@@ -84,11 +84,17 @@ And the total price updates accordingly
 
 ---
 
-### AC (Checkout)
-Given the user has finalized the order  
-When the user accepts the Terms of Service  
-And clicks the "Checkout" button  
+### AC (Checkout-Registered)
+Given that the user is on the cart page as a registered customer
+When the user is making a valid checkout
 Then the user is redirected to the Checkout page  
+
+---
+
+## AC (Checkout-Guest)
+Given that the user is on the cart page as a guest 
+When the user is making a valid checkout
+Then the user is redirected to the register/login page
 
 ---
 
@@ -122,6 +128,7 @@ Then the user is redirected to the Checkout page
 | TC-FUNCINV-02 | Checkout with no internet | Medium | Cart page loaded | Disable internet → Click Checkout | Request fails gracefully; user sees network error message |
 | TC-FUNCINV-03 | Invalid discount code | High | Cart page loaded | Enter invalid code → Apply | Code rejected; clear error message; total unchanged |
 | TC-FUNCINV-04 | Invalid gift card code | High | Cart page loaded | Enter invalid code → Apply | Code rejected; clear error message; total unchanged |
+| TC-FUNCINV-05 | Checkout as a guest | High | Cart page loaded | Accept Terms → Click Checkout | User is redirected to the register/login page |
 
 ---
 
