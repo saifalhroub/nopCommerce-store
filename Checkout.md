@@ -737,14 +737,6 @@ And shipping address is empty
 
 ---
 
-# Global Behaviour
-
-| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
-|---|---|---|---|---|---|
-| TC-GLOB-01 | Step transition time | Medium | Checkout active | Move between steps | Transition occurs < 3s |
-| TC-GLOB-02 | Error visibility | Medium | Any step | Trigger validation | Error appears near field |
-
----
 
 # UI Global
 
