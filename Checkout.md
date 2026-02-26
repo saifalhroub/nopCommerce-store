@@ -395,3 +395,393 @@ Functional Negative (Payment Method)
 # API
 # Accessibility Global
 
+----------------------------------------------------------------------------------------------------------------
+
+# Checkout
+
+## 1-
+> As a user,  
+> I want a checkout page,  
+> So I can use my personal information to confirm my purchase  
+
+---
+
+## Checkout Flow Diagram
+
+```mermaid
+stateDiagram-v2
+
+[*] --> CheckoutLoaded
+
+CheckoutLoaded --> BillingAddress
+
+BillingAddress --> ShippingMethod : Same address checked + Continue
+BillingAddress --> ShippingAddress : Same address NOT checked + Continue
+BillingAddress --> BillingAddress : Validation error
+
+ShippingAddress --> ShippingMethod : Valid + Continue
+ShippingAddress --> ShippingAddress : Validation error
+
+ShippingMethod --> PaymentMethod : Method selected + Continue
+ShippingMethod --> ShippingMethod : No method selected
+
+PaymentMethod --> PaymentInformation : Continue
+
+PaymentInformation --> ConfirmOrder : Valid data
+PaymentInformation --> PaymentInformation : Validation error
+
+ConfirmOrder --> OrderProcessing : Confirm clicked
+ConfirmOrder --> PaymentInformation : Back
+ConfirmOrder --> ShippingMethod : Back
+ConfirmOrder --> BillingAddress : Back
+
+OrderProcessing --> ThankYou : Success
+OrderProcessing --> ConfirmOrder : Failure / network issue
+
+ThankYou --> [*]
+```
+
+---
+
+### AC (Billing Address)
+
+Given the user is on the checkout page  
+When the user wants to proceed with the purchase  
+Then the user must provide billing address information to continue  
+
+---
+
+## AC (Billing Address - Save info)
+
+Given the user is on the billing address form  
+When the user clicks on save  
+Then the address is stored in the database  
+And the user can reuse it in future orders  
+
+---
+
+## AC (Billing Address - Ship to same address)
+
+Given the user selected **Ship to the same address**  
+When the user clicks Continue  
+Then the shipping address step is skipped  
+And the shipping address is copied from billing  
+And the user is redirected to the Shipping Method step  
+
+---
+
+## AC (Billing Address → Shipping Address)
+
+Given the user completed the billing step  
+And the user did NOT select ship to the same address  
+When the user clicks Continue  
+Then the user is redirected to the Shipping Address step  
+
+---
+
+### AC (Shipping Address)
+
+Given the user is on the Shipping Address step  
+When the user provides valid shipping data  
+Then the user can proceed to Shipping Method  
+
+---
+
+### AC (Shipping Method)
+
+Given the user is on Shipping Method step  
+When the user selects a shipping method  
+Then the user can proceed to Payment Method  
+
+Available methods:
+  - Land Transport  
+  - Air Shipping one day  
+  - Air Shipping two days  
+
+---
+
+### AC (Payment Method)
+
+Given the user is on Payment Method step  
+When the user selects a payment method  
+Then the user can proceed to Payment Information  
+
+Available methods:
+ - Check / Money Order  
+ - Credit Card  
+
+---
+
+### AC (Payment Information)
+
+#### Check / Money Order
+
+Given the user selects Check / Money Order  
+When the user proceeds to Payment Information  
+Then the system displays:
+  - Company name  
+  - Mailing address  
+  - Instructions  
+  - Delay notice  
+  - No input fields required  
+
+And the user can continue without entering payment data  
+
+---
+
+#### Credit Card
+
+Given the user selects Credit Card  
+When the user proceeds to Payment Information  
+Then the user must provide:
+  - Card type  
+  - Cardholder name  
+  - Card number  
+  - Expiration date  
+  - Card code  
+
+---
+
+### AC (Confirm Order)
+
+Given the user completed Payment Information  
+When the user reaches Confirm Order  
+Then the system displays:
+  - Billing Address  
+  - Shipping Address  
+  - Shipping Method  
+  - Payment Method  
+  - Order summary  
+  - Subtotal, shipping, tax, total  
+  - Back button  
+  - Confirm button  
+
+---
+
+### AC (Confirm Button)
+
+Given the user is on Confirm Order  
+When the user clicks Confirm  
+Then the order is placed  
+And the user is redirected to the Thank You page  
+
+---
+
+### AC (Navigation - Back Button)
+
+Given the user is on any checkout step  
+When the user clicks Back  
+Then the system returns to the previous step  
+And previously entered data remains saved  
+
+---
+
+### AC (Continue Button)
+
+Given the user is on any checkout step  
+When the user clicks Continue  
+Then the system validates the data  
+And proceeds to the next step only if valid  
+
+---
+
+### AC (Order Confirmation Screen)
+
+> As a user,  
+> I want an order confirmation screen  
+> So I know the order has been accepted  
+
+---
+
+### AC (Confirmation Message)
+
+Given the user completed checkout  
+Then the Thank You page shows:
+  - Thank you message  
+  - Confirmation text  
+  - Order number  
+
+---
+
+### AC (Order Details)
+
+Given the user is on Thank You page  
+When the user clicks Order Details  
+Then the user is redirected to Order Information page  
+
+---
+
+### AC (Continue Shopping)
+
+Given the user is on Thank You page  
+When the user clicks Continue  
+Then the user returns to the home page  
+
+---
+
+# Critical Flow Edge Cases
+
+### AC (Session Timeout)
+
+Given the user is inactive during checkout  
+When the session expires  
+Then the user is redirected to cart/login  
+And the cart contents remain saved  
+
+---
+
+### AC (Browser Refresh)
+
+Given the user refreshes during checkout  
+Then the system restores the last completed step  
+And previously entered data remains  
+
+---
+
+### AC (Network Failure During Payment)
+
+Given the user confirms payment  
+When network failure occurs  
+Then the system prevents duplicate orders  
+And informs the user about payment status  
+
+---
+
+### AC (Unchecking Ship to Same Address)
+
+Given the user checked ship to same address  
+When the user unchecks it before continuing  
+Then the shipping form appears  
+And shipping address is empty  
+
+---
+
+# Notes
+
+- ACs are Acceptance Criteria, not User Stories  
+- Your User Story is the sentence starting with *As a user…*  
+- ACs describe system behavior, not user intention
+
+---
+
+# Checkout Test Suite (Refined)
+
+---
+
+# Billing Address — Core Functional
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-BILL-01 | Submit valid billing with different shipping | High | Checkout loaded | Fill required fields → uncheck same address → Continue | User moves to Shipping Address step |
+| TC-BILL-02 | Submit valid billing with same shipping | High | Checkout loaded | Fill required fields → check same address → Continue | Shipping step skipped → Shipping Method shown |
+| TC-BILL-03 | Use saved address | High | User has saved address | Select saved address → Continue | Address applied and user proceeds correctly |
+| TC-BILL-04 | Country change updates region list | Medium | Billing form visible | Change country repeatedly | State/province options update correctly |
+
+---
+
+# Billing Address — Validation Logic
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-BILL-VAL-01 | Submit empty form | High | Billing loaded | Click Continue | Validation shown for all required fields |
+| TC-BILL-VAL-02 | Invalid email format | High | Billing loaded | Enter wrong email → Continue | Email validation error shown |
+| TC-BILL-VAL-03 | Spaces-only input | Medium | Billing loaded | Enter spaces in required fields | Field rejected and error displayed |
+| TC-BILL-VAL-04 | Missing mandatory field | High | Billing loaded | Leave one required field empty | Form blocked and specific error shown |
+
+---
+
+# Billing Address — Robustness & Security
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-BILL-ROB-01 | Rapid continue clicks | Medium | Billing valid | Spam Continue | No duplicate submissions, no crash |
+| TC-BILL-SEC-01 | SQL injection input | High | Billing loaded | Insert SQL payload in field | Input rejected, no execution |
+| TC-BILL-SEC-02 | Script injection input | High | Billing loaded | Insert JS payload | Escaped or blocked safely |
+
+---
+
+# Shipping Address — Core Behaviour
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-SHIP-01 | Submit valid shipping | High | Shipping loaded | Fill required fields → Continue | Moves to Shipping Method |
+| TC-SHIP-02 | Validation prevents incomplete submission | High | Shipping loaded | Leave required fields empty | Errors shown, step not advanced |
+
+---
+
+# Shipping Method
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-SM-01 | Select any shipping option | High | Shipping methods visible | Choose method → Continue | Payment Method displayed |
+| TC-SM-02 | Continue without selection | High | Shipping methods visible | Click Continue | User blocked with message |
+
+---
+
+# Payment Method
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-PM-01 | Choose cheque | High | Payment step visible | Select cheque → Continue | Payment instructions shown |
+| TC-PM-02 | Choose credit card | High | Payment step visible | Select card → Continue | Card fields displayed |
+
+---
+
+# Credit Card Validation
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-CC-01 | Valid credit card flow | High | Card form visible | Enter valid data → Continue | Confirm Order step shown |
+| TC-CC-02 | Expired card | High | Card form visible | Enter expired date | Validation error shown |
+| TC-CC-03 | Invalid card number | High | Card form visible | Enter wrong number | Validation error shown |
+
+---
+
+# Global Behaviour
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-GLOB-01 | Step transition time | Medium | Checkout active | Move between steps | Transition occurs < 3s |
+| TC-GLOB-02 | Error visibility | Medium | Any step | Trigger validation | Error appears near field |
+
+---
+
+# UI Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-UI-01 | Error message placement | High | Any form step | Trigger validation | Error shown next to field |
+| TC-UI-02 | Required field indicator visible | Medium | Form visible | Observe required fields | Asterisk or indicator displayed |
+| TC-UI-03 | Button visual state | Low | Page loaded | Hover and click buttons | Hover/active states visible |
+| TC-UI-04 | Layout stability | High | Checkout loaded | Resize window | No overlapping or broken layout |
+
+---
+
+# Usability Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-USB-01 | Checkout progress clarity | Medium | Checkout open | Observe step indicator | User understands current step |
+| TC-USB-02 | Error messages clarity | High | Trigger validation | Read error text | Message explains problem clearly |
+| TC-USB-03 | Autofocus on first invalid field | Medium | Submit invalid form | Observe cursor position | Cursor moves to first invalid input |
+
+---
+
+# Performance Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-PERF-01 | Step transition speed | High | Checkout active | Move between steps | Loads within acceptable time (<3s typical) |
+| TC-PERF-02 | Validation response speed | Medium | Trigger error | Observe delay | Error shown instantly |
+| TC-PERF-03 | Multiple users checkout | High | Load test environment | Simulate concurrent users | No crash, acceptable response time |
+
+---
+
+# Compatibility Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+|---|---|---|---|---|---|
+| TC-COMP-01 | Browser compatibility | High | Supported browsers | Run checkout in each browser | Same behavior everywhere |
+| TC-COMP-02 | Mobile responsiveness | High | Mobile device | Perform checkout flow | Layout adapts correctly |
+| TC-COMP-03 | Different screen resolutions | Medium | Desktop | Change screen size | No layout issues |
+
