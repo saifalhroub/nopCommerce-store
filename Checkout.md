@@ -425,11 +425,14 @@ ShippingAddress --> BillingAddress : Back
 
 ShippingMethod --> PaymentMethod : Method selected + Continue
 ShippingMethod --> ShippingMethod : No method selected
+ShippingMethod --> ShippingAddress : Back
 
 PaymentMethod --> PaymentInformation : Continue
+PaymentMethod --> ShippingMethod : Back
 
 PaymentInformation --> ConfirmOrder : Valid data
 PaymentInformation --> PaymentInformation : Validation error
+PaymentInformation --> PaymentMethod : Back
 
 ConfirmOrder --> OrderProcessing : Confirm clicked
 ConfirmOrder --> PaymentInformation : Back
