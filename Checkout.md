@@ -421,7 +421,7 @@ BillingAddress --> BillingAddress : Validation error
 
 ShippingAddress --> ShippingMethod : Valid + Continue
 ShippingAddress --> ShippingAddress : Validation error
-Back --> BillingAddress : return
+ShippingAddress --> Back --> BillingAddress : return
 
 ShippingMethod --> PaymentMethod : Method selected + Continue
 ShippingMethod --> ShippingMethod : No method selected
