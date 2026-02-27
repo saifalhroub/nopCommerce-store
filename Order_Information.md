@@ -80,5 +80,44 @@ And the same products that have been in the order will appear
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results |
 | --- | --- | --- | --- | --- | --- |
 | **EDGE-internet-01** | Validate the page response to no internet connection | Medium | Order information page loaded | 1. Turn off th wifi <br> 2. Send request a request for any functionality | 1. The system will redirect the user to no internet connection page <br> 2. The request will be processed after user connects the device to the internet |
-| **ROBU-cancel-02** | Validate spame clicking on the cancel button | Medium | Order information page loaded | 1. Click for a consecutive times on the cancel button | 1. The page is disabled <br> 2. A confirm canceling message appears <br> 3. The system prevent the user from interacting with the page | 
-| **ROBU-Print&PDF-03** | Validate spame clicking on the print button | Medium | Order information page loaded | 1. Click for a consecutive times on the print button | 1. The system responds to the first click only <br> 2. The user is redirected to only one new tab for print request <br> 3. Only one download will start for PDF Invoice  | 
+| **EDGE-refresh-02** | Validate refreshing the page after cancelling order | Medium | Order information page loaded | 1. Cancel order <br> 2. Refresh the page | 1. The order state remains cancelled <br> 2. No new order placed |
+| **EDGE-refresh-03** | Validate using the page with 3G throttling | High | Order information page loaded| 1. use the page and make orders | 1. The system responds correctly <br> 2. No crash |
+| **ROBU-cancel-04** | Validate spame clicking on the cancel button | Medium | Order information page loaded | 1. Click for a consecutive times on the cancel button | 1. The page is disabled <br> 2. A confirm canceling message appears <br> 3. The system prevent the user from interacting with the page | 
+| **ROBU-Print&PDF-05** | Validate spame clicking on the print button | Medium | Order information page loaded | 1. Click for a consecutive times on the print button | 1. The system responds to the first click only <br> 2. The user is redirected to only one new tab for print request <br> 3. Only one download will start for PDF Invoice  | 
+
+---
+
+# UI - Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **UI-layout-01** | Verify page elements consistency & alignment | High | Order information page loaded | Observe the page layout | 1. All elements are consistent with (size, shape) <br> 2. Page elements will aligned no overlapping is noticed |
+
+---
+
+# Compatibility - Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **COMP-Browsers-01** | Validate page functionality with major browsers | High | User has access to different browsers | 1. Navigate to the page with each browser <br> 2. Use the page | 1. System respond correctly to different browsers |
+| **COMP-Devices-02** | Validate page responsivness with different devices | High | User has access to different diveces | 1. Navigate to the page with each device | 1. Page adapts to every decvice screen dimensions correctly <br> 2. No overlapping between page elements <br> 3. No crash |
+| **COMP-OS-03** | Validate page functionality with operating systems | High | User has access to different OS | 1. Navigate to the page with each OS <br> 2. Use the page | 1. System respond correctly to different OS |
+
+---
+
+# Performence - Global
+
+> The response time is according to amazon recommended response time
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **PFM-buttons-01** | Validate page's button response time | High | Order information page loaded | 1. Make an action with each burron <br> 2. observe the system response time | 1. Response tiime is </equal 3 seconds |
+| **PFM-internet-02** | Validate page response time to different internet connections | Medium | User has access to different internet connections | 1. Navigate to the order information page with each connection <br> 2. Make action | 1. Response tiime is </equal 3 seconds for all connections |    
+---
+
+# Usability - Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| --- | --- | --- | --- | --- | --- |
+| **USB-keyboard-01** | Validate navigation using keyboard keys | low | Oredr information page loaded | 1. Click on the tab button to move forward to the next button <br> 2. Click on the tab + shit buttons to move backward to the previous button |
+| **USB-Cursor-02** | Verify cursor state change when hovering over different elements | low | Order information page loaded | 1. Hover over any button | 1. Cursor will change from arrow to pointer when hover over button/link <br> 2. Cursor will change from arrow to text cursor when hovering over headings/paragraphs <br> 3. Cursor will change from arrow to not-allowed cursor when dragging button element | 
