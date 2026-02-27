@@ -95,7 +95,7 @@ Then the user is redirected to the Checkout page
 Given that the user is on the cart page as a guest 
 When the user is making a valid checkout
 Then the user is redirected to the register/login page
-
+And the user can select (Checkout as a guest) 
 ---
 
 # 2️⃣ Functional Test Cases (Happy Path)
@@ -117,6 +117,7 @@ Then the user is redirected to the register/login page
 | TC-FUNC-13 | Validate cart persistence after logout/login | Medium | Cart contains products | Logout → Login → Open cart | Products persist correctly |
 | TC-FUNC-14 | Validate cart persistence after closing browser | Medium | Cart contains products | Close browser → Reopen → Open cart | Products persist correctly |
 | TC-FUNC-15 | Verify quantity increments one by one | High | Cart page loaded | Click increment multiple times | Quantity increases by exactly 1 per click |
+| TC-FUN-16 | Checkout as a guest | High | Cart page loaded | Accept Terms → Click Checkout | 1. User is redirected to the register/login page <br> 2. User can select checkout as a guest |
 
 ---
 
@@ -128,7 +129,7 @@ Then the user is redirected to the register/login page
 | TC-FUNCINV-02 | Checkout with no internet | Medium | Cart page loaded | Disable internet → Click Checkout | Request fails gracefully; user sees network error message |
 | TC-FUNCINV-03 | Invalid discount code | High | Cart page loaded | Enter invalid code → Apply | Code rejected; clear error message; total unchanged |
 | TC-FUNCINV-04 | Invalid gift card code | High | Cart page loaded | Enter invalid code → Apply | Code rejected; clear error message; total unchanged |
-| TC-FUNCINV-05 | Checkout as a guest | High | Cart page loaded | Accept Terms → Click Checkout | User is redirected to the register/login page |
+
 
 ---
 
