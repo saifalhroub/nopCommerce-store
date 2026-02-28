@@ -35,6 +35,12 @@ And no session/token is created
 Given the user is on the Login page  
 Then a visible Register option is available  
 
+## AC5 - Login to session timeout account
+Given that the user login session timed out
+When the user logs in to the same account
+Then the system accepts the request
+And the user is redirected to the landing page
+
 ---------------------------------------------------------------------------------------
 
 # 3️⃣ Test Cases
