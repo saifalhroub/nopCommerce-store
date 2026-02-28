@@ -308,6 +308,21 @@ Then:
 
 ---
 
+# Customer Info - Core functional
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **CustomerInfo-Fun-01** | Validate updating any field in the customer info's | High | Customer info fields loaded | 1. Edit the data of the required field <br> 2. Click on the save button | 1. Data is updated successfully <br> 2. Success change info message: (The customer info has been updated successfully.) <br> 3. The system placed the new data inside the fields <br> user is allowed to  log in using the new data |
+
+--- 
+
+# Customer Info - Validation
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **CustomerInfo-Val-01** | Validate leaving a required field empty | Medium | Customer info fields loaded | 1. Erase any required field data <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears near the empty required field | 
+| **CustomerInfo-Val-02** | Validate using a wrong format new email | High | Customer info fields loaded | 1. Fill the email field with a wrong format email (saas@asas) <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears indicating that (Wrong Email) is used | 
+
 # Testing Scope Note
 
 - Testing performed on live training environment.
