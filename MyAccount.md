@@ -191,8 +191,79 @@ Then no orders appear
 
 Given the user has a recurring payment 
 When the user is on the My account page
-Then the user can see all of his recurring payments
+Then the user can see all of their recurring payments
 
 ---
 
-# AC -
+# AC - Back in stock subscriptions
+
+Given the user is on my account page
+When the user clicks on the Back in stock subscriptions
+Then the system will preview the subscriptions the user made  
+
+---
+
+# AC - Reward points
+
+Given the user is on the reward points section
+When the user made purchases more than 10$ 
+Then the system will sum up all points 
+And the user will be able to see the total points
+
+**Business logic**:
+  - every 10$ = 1 reawrd point
+  - if the user bought a product with a price of 139$, then he will get 13 reward points
+
+---
+
+# AC - Downloadable products
+
+Given the user is on My account page
+When the user clicks on the Downloadable products link
+Then all products appear
+And a download link will appear for the downloadable products
+
+---
+
+# AC - Change Password structure
+
+Given the user clicks on the change password link 
+When the page loads
+Then the user will see:
+  - Old Password
+  - Forgot Password
+  - New Password
+  - Confirm Password
+  - Change password button
+
+# Business roles:
+  - All fields are marked as required
+  - If the user forgot his password, then the system will allow him to reset his password via email
+
+---
+
+# AC - Change Password Core functionality
+
+Given the user is on the change password page
+When the user change his password
+Then:
+   - A confirmation message will appear
+   - The user can use the new password to log in
+
+---
+
+# AC - Change password (New pass = Old Pass)
+Given that the user uses the same old password in the new password field
+When the user clicks on the " Change Password " button
+Then:
+  - A Validation error message indicating that the new password should not match the old password
+  - And the focus should be on the new password field
+
+---
+
+# AC - Change password Validation
+
+Given that the user left a field empty
+When the user clicks on the " Change Password " button
+Then A validation error message indicating that ( ____ filed is required)
+
