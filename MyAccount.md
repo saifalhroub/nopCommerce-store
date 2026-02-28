@@ -312,16 +312,35 @@ Then:
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **CustomerInfo-Fun-01** | Validate updating any field in the customer info's | High | Customer info fields loaded | 1. Edit the data of the required field <br> 2. Click on the save button | 1. Data is updated successfully <br> 2. Success change info message: (The customer info has been updated successfully.) <br> 3. The system placed the new data inside the fields <br> user is allowed to  log in using the new data |
-
+| **Fun-01** | Validate updating any field in the customer info's | High | Customer info fields loaded | 1. Edit the data of the required field <br> 2. Click on the save button | 1. Data is updated successfully <br> 2. Success change info message: (The customer info has been updated successfully.) <br> 3. The system placed the new data inside the fields <br> user is allowed to  log in using the new data |
+| **Fun-02** | Validate no cange made o customer info | low | Customer info fields loaded | 1. Keep the same old data without modifications <br> 2. Click on the save button | 1. Data is updated successfully <br> 2. Success change info message: (The customer info has been updated successfully.) |
 --- 
 
 # Customer Info - Validation
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **CustomerInfo-Val-01** | Validate leaving a required field empty | Medium | Customer info fields loaded | 1. Erase any required field data <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears near the empty required field | 
-| **CustomerInfo-Val-02** | Validate using a wrong format new email | High | Customer info fields loaded | 1. Fill the email field with a wrong format email (saas@asas) <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears indicating that (Wrong Email) is used | 
+| **Val-01** | Validate leaving a required field empty | Medium | Customer info fields loaded | 1. Erase any required field data <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears near the empty required field | 
+| **Val-02** | Validate using a wrong format email | High | Customer info fields loaded | 1. Fill the email field with a wrong format email (saas@asas) <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears indicating that (Wrong Email) is used | 
+---
+
+# Customer Info - Edge
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **Edge-01** | Validate spam click on the save button | Low | User is on the customer info page | Click for a multiple times on the save button | 1. Each click is handled separately <br> 2. Success save message for each click <br> 3. No Crash |
+| **Edge-02** | Validate refresh the page after saving | Low | Customer saved the new modifications | 1. Refresh the page <br> 2. Observe all the field's content | 1. The fields show the latest updated data |
+
+---
+
+# Customer Info - Security
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+
+| **Sec-01** | Validate and replace the old email with the already registered email | High | Customer info fields loaded | 1. Replace the old email with another registered email <br> 2. Click on the save button | 1. Validation error message indicating: (This email is linked to another account.) | 
+| **Sec-02** | Validate using SQL code inside the email field | High | Customer info fields loaded | 1. Enter inside the email field --> OR '1'='1' <br> 2. Click on the save | 1. Wrong email validation message <br> 2. The system does not execute the code <br> 3. No sensitive data is shown |
+| **Sec-03** | Validate using a script inside the name fields | High | Customer info fields loaded | 1. Fill the first name field with JavaScript code <br> 2. Click on the Save button | 1. The code is not executed <br> 2. No crash <br> 3. No unusual activity (popups......)
 
 # Testing Scope Note
 
