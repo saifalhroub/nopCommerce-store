@@ -329,8 +329,9 @@ Then:
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **Val-01** | Validate leaving a required field empty | Medium | Customer info fields loaded | 1. Erase any required field data <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears near the empty required field | 
-| **Val-02** | Validate using a wrong format email | High | Customer info fields loaded | 1. Fill the email field with a wrong format email (saas@asas) <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears indicating that (Wrong Email) is used | 
+| **CuInfo-Val-01** | Validate leaving a mandatory field empty | Medium | Customer info fields loaded | 1. Erase any mandatory field data <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears near the empty required field | 
+| **CuInfo-Val-02** | Validate using a wrong format email | High | Customer info fields loaded | 1. Fill the email field with a wrong format email (saas@asas) <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears indicating that (Wrong Email) is used | 
+| **CuInfo-Val-03** | Validate leaving a required field empty | High | Customer info fields loaded | 1. Leave only one mandatory field empty <br> 2. Fill the rest mandatory fields with valid data <br> 3. Click on the " Save " button <br> 4. Repeat these steps for every field | 1. Request is rejected <br> 2. A validation error message appears near the empty mandatory| field
 ---
 
 # Customer Info - Edge
@@ -418,7 +419,7 @@ Then:
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
 | **ORDERS-ED-01** | Validate using the browser back button to reset filter | Low | User is on the " Orders " screen & has checked-out orders | 1. Select a date filter <br> 2. Click on the " Browsers Back Button." | The system returns the user to the state before the selected filter | 
-
+| **ORDERS-ED-02** | Validate the system shows the cancelled orders | low | User canceled an order | 1. Navigate to the " My account page " <br> 2. Click on the " Orders " from the side list <br> 3. Look for the canceled order | 1. The user sees the order <br> 2. Order status is canceled |
 ---
 
 # Orders - UI
@@ -429,11 +430,11 @@ Then:
 
 ---
 
-# Recurring payments - Core functionality 
+# Recurring payments - Integration
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **RECPAY-FUN-01** | Validate the system shows any recurring payments | My acco
+| **RECPAY-INT-01** | Validate the system shows any recurring payments | Medium | User has a recurring payment | 1. Navigate to my account page <br> 2. Select recurring payments | System will show all recurring payments the user has | 
 
 # My Account page - Usability Global
 
