@@ -337,11 +337,27 @@ Then:
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-
 | **Sec-01** | Validate and replace the old email with the already registered email | High | Customer info fields loaded | 1. Replace the old email with another registered email <br> 2. Click on the save button | 1. Validation error message indicating: (This email is linked to another account.) | 
 | **Sec-02** | Validate using SQL code inside the email field | High | Customer info fields loaded | 1. Enter inside the email field --> OR '1'='1' <br> 2. Click on the save | 1. Wrong email validation message <br> 2. The system does not execute the code <br> 3. No sensitive data is shown |
 | **Sec-03** | Validate using a script inside the name fields | High | Customer info fields loaded | 1. Fill the first name field with JavaScript code <br> 2. Click on the Save button | 1. The code is not executed <br> 2. No crash <br> 3. No unusual activity (popups......)
 
+---
+
+# Address - Core Functional 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **ADDRESS-FUN-01** | Validate adding a new address | High | My account page loaded | 1. Click on the Address | 1. Click on the " Add New " button <br> 2. Fill all of the mandatory fields <br> 3. Click on the " Save " button | 1. Success operation message <br> 2. The system will preview the address information <br> 3. The system allows the user to manage the added address (Edit/Delete) | 
+| **ADDRESS-FUN-02** | Validate Editing an Address | High | user has a saved Address | 1. Click on the Edit button <br> 2. Edit any field <br> 3. Click on the " Save " button | 1.  1. Success operation message <br> 2. The system shows the new updated data | 
+
+--- 
+
+# Address - Validation 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **ADDRESS-VAL-01** | Validate Adding/Editing Address and leaving required fields empty | High | Address fields loaded | 1. Leave all the required fields empty <br> 2. Click on the " Save " button | 1. Validation error message indicating " ____ field is required | for each missing required field | 
+| **ADDRESS-VAL-02** | Validate 
 # Testing Scope Note
 
 - Testing performed on live training environment.
