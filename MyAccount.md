@@ -357,7 +357,31 @@ Then:
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
 | **ADDRESS-VAL-01** | Validate Adding/Editing Address and leaving required fields empty | High | Address fields loaded | 1. Leave all the required fields empty <br> 2. Click on the " Save " button | 1. Validation error message indicating " ____ field is required | for each missing required field | 
-| **ADDRESS-VAL-02** | Validate 
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results |
+| **ADDRESS-VAL-02** | Validate Invalid email format | High | Address fields loaded | Enter wrong email → save | Email validation error shown |
+| **ADDRESS-VAL-03** | Validate Spaces-only input | Medium | Address fields loaded | Enter spaces in required fields | Field rejected and error displayed |
+| **ADDRESS-VAL-04** | Validate Missing mandatory field | High | Address fields loaded | Leave one required field empty | Form blocked and specific error shown |
+
+---
+
+# Address - Edge 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **ADDRESS-ED-01** | Validate adding mulltiple Addresses | Low | User is on the Address screen | 1. Click on the Add New button <br> 2. Fill all mandatory fields <br> 3. Click on the save button <br> 4. Repeat the previous steps for many times | 1. The system saves each address separately <br> 2. The new address won't replace the old address |
+| **ADDRESS-ED-02** | Validate repeated clicking clicking of the " Save " button| Low | Address fields loaded | 1. Fill all mandatory fields with valid data <br> 2. Click the "Save " button repeatedly within a short time | 1. System saves and previews one address | 
+| **ADDRESS-ED-03** | Verify refreshing the page after adding/editing an address | Medium | New/Edited address is saved | 1. Refresh the page | 1. The Added Address still exists and shows the right data <br> 2. The Edited Address shows the latest edited version | 
+| **ADDRESS-ED-04** | Validate using space between email characters | Medium | Address fields loaded | 1. Fill the email field with leading/trailing space <br> 2. Fill all mandatory fields <br> 3. Click on the " Save " button | System handles correctly with the space |
+
+---
+
+Address - Integration
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **ADDRESS-ED-01** | Validate saved address available to the user to select when checking out | Medium | User is on the checkout page | 1. Observe the available addresses for the billing & shipping addresses | All addresses are available for the user to select from
+
+
 # Testing Scope Note
 
 - Testing performed on live training environment.
