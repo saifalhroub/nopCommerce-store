@@ -214,6 +214,15 @@ Cancelled orders:
 
 ---
 
+# AC - Orders Details
+
+Given the user has a checked-out order 
+When the user click on the order details 
+Then the user will be redirected to the order details page
+And the user will be able to monitor and control his orders
+
+---
+
 # AC - Reward Points
 
 Given the user navigates to Reward Points  
@@ -372,14 +381,68 @@ Then:
 | **ADDRESS-ED-02** | Validate repeated clicking clicking of the " Save " button| Low | Address fields loaded | 1. Fill all mandatory fields with valid data <br> 2. Click the "Save " button repeatedly within a short time | 1. System saves and previews one address | 
 | **ADDRESS-ED-03** | Verify refreshing the page after adding/editing an address | Medium | New/Edited address is saved | 1. Refresh the page | 1. The Added Address still exists and shows the right data <br> 2. The Edited Address shows the latest edited version | 
 | **ADDRESS-ED-04** | Validate using space between email characters | Medium | Address fields loaded | 1. Fill the email field with leading/trailing space <br> 2. Fill all mandatory fields <br> 3. Click on the " Save " button | System handles correctly with the space |
+| **ADDRESS-ED-05** | Validate copy and paste data to the address fields | Low | User has access to external note app, Address fields loaded | 1. Open the note app <br> 2. Type the data <br> 3. Copy the data <br> 4. Navigate to the Address page <br> 5. Paste the data | System accepts the inputs |
 
 ---
 
-Address - Integration
+# Address - Integration
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **ADDRESS-ED-01** | Validate saved address available to the user to select when checking out | Medium | User is on the checkout page | 1. Observe the available addresses for the billing & shipping addresses | All addresses are available for the user to select from
+| **ADDRESS-ED-01** | Validate saved address available to the user to select when checking out | Medium | User is on the checkout page | 1. Observe the available addresses for the billing & shipping addresses | The system shows all addresses, and the user is allowed to select one of them | 
+
+
+---
+
+# Address - Security 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **ADDRESS-SEC-01** | Validate using SQL code inside the address fields | High | Address fields loaded | 1. Enter a SQL code <br> 2. Click on the " Save " button | 1. System will not execute the code <br> 2. No sensitive data displayed <br> 3. No Crash |
+| **ADDRESS-SEC-02** | Validate using JavaScript code inside the address fields | High | Address fields loaded | 1. Enter a SQL code <br> 2. Click on the " Save " button | 1. System will not execute the code <br> 2. No sensitive data displayed <br> 3. No Crash |
+
+---
+
+# Orders - Core functional
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **ORDERS-FUN-01** | Validate that all checked-out orders appear | High | User completed two orders | 1. Navigate to my account page <br> 2. Selet " Order " from the side list | All checked-out orders appear | 
+| **ORDERS-FUN-02** | Validate navigating to the order details page | High | User is on the " Orders " screen | Clicks on the Details link for any order & has checked-out rders | System redirects the user to the order details page | 
+| **ORDERS-FUN-03** | Validate Order date filter functionality | Medium | User is on the " Orders " screen & has checked-out orders | 1. Click on the filter drop-down menu list <br> 2. Select the desired period | System previews only the orders matching the selected period of time | 
+
+---
+
+# Orders - EDGE
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **ORDERS-ED-01** | Validate using the browser back button to reset filter | Low | User is on the " Orders " screen & has checked-out orders | 1. Select a date filter <br> 2. Click on the " Browsers Back Button." | The system returns the user to the state before the selected filter | 
+
+---
+
+# Orders - UI
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **ORDERS-UI-01** | Verify orders data is not mixed or overlapping in UI | Medium | User has checked-out orders & Orders screen loaded | Check each order data | System shows the orders separately with their correct data without overlapping |
+
+---
+
+# Recurring payments - Core functionality 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **RECPAY-FUN-01** | Validate the system shows any recurring payments | My acco
+
+# My Account page - Usability Global
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **Navigation-USAB-01** | Validate navigation via keybaord | Low | My Account page loaded | 1. Navigate to (Customer Info/Address/Change password) <br> 2. Click on the " Shift + Tab " buttons | 1. Focus moves to the next field when clicking on the " Tab " button <br> 2. Focus moves to the previous field when clicking on the " Shift + Tab " button  |
+| **Cursor-USAB-02** | Validate cursor state change when hovering on different elements | Low | My account page loaded | Hover over different elements on the page | Curesor state changes depending on the (Element type & Action type) | 
+
+---
 
 
 # Testing Scope Note
