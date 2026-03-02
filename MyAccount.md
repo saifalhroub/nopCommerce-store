@@ -512,8 +512,25 @@ Then:
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **
+| **MandatoryFields-UI-01** | Validate all mandatory fields are marked | High | User is on Customer Info/Address/Password | Observe the mandatory fields design | The system shows a mark beside every mandatory field |
+| **Align-UI-02** | Validate All elements aligned and no overlapping | High | My account page loaded | 1. Navigate to each section in the page | No overlap between page elements | 
+| **Error-UI-03** | Validate error message content and place | Medium | My account page loaded | 1. Navigate to any section that requires input <br> 2. Leave a mandatory field empty <br> 3. Observe the error message | Error message appears near the empty mandatory field & the error message contains the right error information | 
 
+---
+
+# My Account page - Compatibility
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **Browsers-Comp-01** | Validate page responsiveness with different browsers |
+| **Devices-Comp-02** | Validate page functionality across different devices | 
+
+---
+
+# My Account page - Performance
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- | 
+| **
 # Testing Scope Note
 
 - Testing performed on live training environment.
