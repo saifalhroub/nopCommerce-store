@@ -422,8 +422,9 @@ Then:
 | **ADDRESS-API-01** | Validate adding address status code | Medium | User is on Postman | Create a post request | Status code equals (200) | 
 | **ADDRESS-API-02** | Validate changing Address status code | Medium | User is on Postman | Create a put request | Status code equals (200) |
 | **ADDRESS-API-03** | Validate changing Address response time | Medium | User is on Postman | Create a put request | Response time must not exceed 300ms | 
-| **ADDRESS-API-04** | Validate Adding Address response time | Medium | User is on Postman | Create a put request | Response time must not exceed 300ms | 
-| **ADDRESS-API-05** | Validate the status code for with a mistake in the address field | Medium | User is on Postman | Create a put request | Status code equals (400) Bad request | 
+| **ADDRESS-API-04** | Validate Adding Address response time | Medium | User is on Postman | Create a post request | Response time must not exceed 300ms | 
+| **ADDRESS-API-05** | Validate the status code for with a mistake in the address field | Medium | User is on Postman | Create a request | Status code equals (400) Bad request | 
+
 > Response time based on best practices and UX performance standards
 
 
@@ -522,6 +523,18 @@ Then:
 
 ---
 
+# Change Password - API 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **PASS-API-01** | Validate changing password status code | Medium | User is on Postman | Create a put request | Status code equals (200) |
+| **PASS-API-02** | Validate changing password response time | Medium | User is on Postman | Create a put request | Response time must not exceed 300ms | 
+| **PASS-API-03** | Validate the status code for a mistake in the address field | Medium | User is on Postman | Create a request | Status code equals (400) Bad request | 
+
+> Response time based on best practices and UX performance standards
+
+---
+
 # My Account page - Usability Global
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
@@ -538,6 +551,7 @@ Then:
 | **MandatoryFields-UI-01** | Validate all mandatory fields are marked | High | User is on Customer Info/Address/Password | Observe the mandatory fields design | The system shows a mark beside every mandatory field |
 | **Align-UI-02** | Validate All elements aligned and no overlapping | High | My account page loaded | 1. Navigate to each section in the page | No overlap between page elements | 
 | **Error-UI-03** | Validate error message content and place | Medium | My account page loaded | 1. Navigate to any section that requires input <br> 2. Leave a mandatory field empty <br> 3. Observe the error message | Error message appears near the empty mandatory field & the error message contains the right error information | 
+| **Focus-UI-04** | Validate the selected section font style | My account page loaded | 1. Click on any section | The selected section text color changed |  
 
 ---
 
@@ -545,8 +559,8 @@ Then:
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **Browsers-Comp-01** | Validate page responsiveness with different browsers |
-| **Devices-Comp-02** | Validate page functionality across different devices | 
+| **Screen-Comp-01** | Validate page responsiveness with different screens | High | My account page loaded | 1. Navigate to the Developer's Tools <br> 2. Change the screen dimensions | 1. System displays the page correctly <br> 2. No overlapping <br> 3. Elements size changes accordingly <br> 4. Page's elements are placed in the right order |
+| **Devices-Comp-02** | Validate page functionality across different devices | High | User has a different devices, & My account page loaded | 1. Make actions on the page | Page works in the same way throughout all devices |
 
 ---
 
@@ -554,10 +568,10 @@ Then:
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- | 
-| **PFM-01** | Validate sections' screen loading time | 
-| **PFM-02** | Validate the page response with a 3G throttling internet | 
-| **PFM-03** | Validate page's sections buttons response time | 
-| **PFM-04** | Validate page response time with different internet connections | 
+| **PFM-01** | Validate My account sections' screen loading time | High | My Account page Loaded | 1. Navigate to any section <br> 2. Observe fields loading time | Loading time must not exceed 3s |
+| **PFM-02** | Validate the page response with a 3G throttling internet | High | User has a 3G internet connection | 1. Navigate to My account page <br> 2. Observe the page's performance | Page operates correctly and response time < 3s |
+| **PFM-03** | Validate page's sections buttons response time | Medium | My Account page Loaded | 1. Navigate to any section <br> 2. Fill the section's fields <br> 3. Click on the existing button | Loading time must not exceed 3s |
+| **PFM-04** | Validate page response time with different internet connections | Medium | User has access to different internet connections & My account page loaded | 1. Navigate to any section <br> 2. Observe fields loading time | Loading time must not exceed 3s, and the page works correctly |
 
 ---
 
