@@ -329,17 +329,17 @@ Then:
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **CuInfo-Val-01** | Validate leaving a mandatory field empty | Medium | Customer info fields loaded | 1. Erase any mandatory field data <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears near the empty required field | 
-| **CuInfo-Val-02** | Validate using a wrong format email | High | Customer info fields loaded | 1. Fill the email field with a wrong format email (saas@asas) <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears indicating that (Wrong Email) is used | 
-| **CuInfo-Val-03** | Validate leaving a required field empty | High | Customer info fields loaded | 1. Leave only one mandatory field empty <br> 2. Fill the rest mandatory fields with valid data <br> 3. Click on the " Save " button <br> 4. Repeat these steps for every field | 1. Request is rejected <br> 2. A validation error message appears near the empty mandatory| field
+| **CUSINFO--Val-01** | Validate leaving a mandatory field empty | Medium | Customer info fields loaded | 1. Erase any mandatory field data <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears near the empty required field | 
+| **CUSINFO--Val-02** | Validate using a wrong format email | High | Customer info fields loaded | 1. Fill the email field with a wrong format email (saas@asas) <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears indicating that (Wrong Email) is used | 
+| **CUSINFO--Val-03** | Validate leaving a required field empty | High | Customer info fields loaded | 1. Leave only one mandatory field empty <br> 2. Fill the rest mandatory fields with valid data <br> 3. Click on the " Save " button <br> 4. Repeat these steps for every field | 1. Request is rejected <br> 2. A validation error message appears near the empty mandatory| field
 ---
 
 # Customer Info - Edge
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **Edge-01** | Validate spam click on the save button | Low | User is on the customer info page | Click for a multiple times on the save button | 1. Each click is handled separately <br> 2. Success save message for each click <br> 3. No Crash |
-| **Edge-02** | Validate refresh the page after saving | Low | Customer saved the new modifications | 1. Refresh the page <br> 2. Observe all the field's content | 1. The fields show the latest updated data |
+| **CUSINFO-Edge-01** | Validate spam click on the save button | Low | User is on the customer info page | Click for a multiple times on the save button | 1. Each click is handled separately <br> 2. Success save message for each click <br> 3. No Crash |
+| **CUSINFO-Edge-02** | Validate refresh the page after saving | Low | Customer saved the new modifications | 1. Refresh the page <br> 2. Observe all the field's content | 1. The fields show the latest updated data |
 
 ---
 
@@ -347,9 +347,20 @@ Then:
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **Sec-01** | Validate and replace the old email with the already registered email | High | Customer info fields loaded | 1. Replace the old email with another registered email <br> 2. Click on the save button | 1. Validation error message indicating: (This email is linked to another account.) | 
-| **Sec-02** | Validate using SQL code inside the email field | High | Customer info fields loaded | 1. Enter inside the email field --> OR '1'='1' <br> 2. Click on the save | 1. Wrong email validation message <br> 2. The system does not execute the code <br> 3. No sensitive data is shown |
-| **Sec-03** | Validate using a script inside the name fields | High | Customer info fields loaded | 1. Fill the first name field with JavaScript code <br> 2. Click on the Save button | 1. The code is not executed <br> 2. No crash <br> 3. No unusual activity (popups......)
+| **CUSINFO-Sec-01** | Validate and replace the old email with the already registered email | High | Customer info fields loaded | 1. Replace the old email with another registered email <br> 2. Click on the save button | 1. Validation error message indicating: (This email is linked to another account.) | 
+| **CUSINFO-Sec-02** | Validate using SQL code inside the email field | High | Customer info fields loaded | 1. Enter inside the email field --> OR '1'='1' <br> 2. Click on the save | 1. Wrong email validation message <br> 2. The system does not execute the code <br> 3. No sensitive data is shown |
+| **CUSINFO-Sec-03** | Validate using a script inside the name fields | High | Customer info fields loaded | 1. Fill the first name field with JavaScript code <br> 2. Click on the Save button | 1. The code is not executed <br> 2. No crash <br> 3. No unusual activity (popups......)
+
+---
+
+# Customer Info - API 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **CUSINFO-API-01** | Validate changing customer info status code | Medium | User is on Postman | Create a put request | Response code equals (200) |
+| **CUSINFO-API-02** | Validate changing customer info response time | Medium | User is on Postman | Create a put request | Response time must not exceed 300ms | 
+
+> Response time based on best practices and UX performance standards
 
 ---
 
@@ -403,6 +414,18 @@ Then:
 | **ADDRESS-SEC-02** | Validate using JavaScript code inside the address fields | High | Address fields loaded | 1. Enter a SQL code <br> 2. Click on the " Save " button | 1. System will not execute the code <br> 2. No sensitive data displayed <br> 3. No Crash |
 
 ---
+
+# Adress - API 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **ADDRESS-API-01** | Validate adding address status code | Medium | User is on Postman | Create a post request | Status code equals (200) | 
+| **ADDRESS-API-02** | Validate changing Address status code | Medium | User is on Postman | Create a put request | Status code equals (200) |
+| **ADDRESS-API-03** | Validate changing Address response time | Medium | User is on Postman | Create a put request | Response time must not exceed 300ms | 
+| **ADDRESS-API-04** | Validate Adding Address response time | Medium | User is on Postman | Create a put request | Response time must not exceed 300ms | 
+| **ADDRESS-API-05** | Validate the status code for with a mistake in the address field | Medium | User is on Postman | Create a put request | Status code equals (400) Bad request | 
+> Response time based on best practices and UX performance standards
+
 
 # Orders - Core functional
 
@@ -528,9 +551,16 @@ Then:
 ---
 
 # My Account page - Performance
+
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- | 
-| **
+| **PFM-01** | Validate sections' screen loading time | 
+| **PFM-02** | Validate the page response with a 3G throttling internet | 
+| **PFM-03** | Validate page's sections buttons response time | 
+| **PFM-04** | Validate page response time with different internet connections | 
+
+---
+
 # Testing Scope Note
 
 - Testing performed on live training environment.
