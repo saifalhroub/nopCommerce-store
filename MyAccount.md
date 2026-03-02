@@ -430,11 +430,74 @@ Then:
 
 ---
 
-# Recurring payments - Integration
+# Recurring payments - Core Functional
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **RECPAY-INT-01** | Validate the system shows any recurring payments | Medium | User has a recurring payment | 1. Navigate to my account page <br> 2. Select recurring payments | System will show all recurring payments the user has | 
+| **RECPAY-FUN-01** | Validate the system shows the recurring payments | Medium | User has a recurring payment | 1. Navigate to my account page <br> 2. Select recurring payments | System will show all recurring payments the user has | 
+
+---
+
+# Back in stock subscriptions - Core Functional
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- | 
+| **BKNSTK-FUN-01** | Validate all Back in stock products subscription appear | low | User subscribed to a back in stock reminder for a product | 1. Navigate to my account page <br> 2. Select Back in stock subscriptions | System will show all Back in stock subscriptions the user has | 
+
+---
+
+# Rewards points - Core functional 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- | 
+| **REWARDSPT-Fun-01** | Validate the system shows the user's rewards points | Low | User completed order with price not less than 10$ | 1. Navigate to the my account page <br> 2. Click on the rewards points | The system shows the correct total rewards points | 
+
+---
+
+# Rewards points - Security
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- | 
+| **REWARDSPT-SEC-01** | Validate the rewards points when canceling an order | High | User Canceled order | 1. Navigate to the my account page <br> 2. Clickon the Rewards points from the side list | System handles the cancellation correctly |
+
+---
+
+ **Password constraints:**
+   - At least six characters
+     
+# Change Password - Core Functional
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- | 
+| **PASS-Fun-01** | Validate changing the password | High | Change password screen loaded | 1. Fill the old password field <br> 2. Enter a Valid password inside the new password field <br> 3. Fill the confirm password field with the same new password <br> 4. Click on the " Change Password " button | System confirms and accepts operation |
+| **PASS-Fun-02**| Validate the user resets his password if he forgets his old password | High |  Change password screen loaded | 1. Click on the forgot password <br> 2. Fill the email field | The system will send a reset password email, and the user will be able to reset his password | 
+
+---
+
+# Change Password - Validation
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- | 
+| **PASS-Val-01** | Validate leaving all fields empty | High | Change password screen loaded | 1. Leave all fields empty <br> 2. Click on the " Change Password " button. | 1. The system rejects the request <br> 2. Validation error message near all mandatory fields |
+| **PASS-Val-02** | Validate leaving the old password field empty | Low | Change password screen loaded | 1. Leave the " Old password " field empty <br> 2. Fill in the new password and the confirmation password with the same valid password. <br> 3. Click on the " Change password " field | System rejects the request, and a Validation error message appears near the old password field | 
+| **PASS-Val-03** | Validate leaving the new password field empty | Medium | Change password screen loaded | 1. Enter the old password <br> 2. Leave the New password field empty <br> 3. Fill the confirm password field with a valid password <br> 3. Click on the " Change password " field | System rejects the request, and a Validation error message appears near the new password field |
+| **PASS-Val-04** | Validate leaving the confirm password field empty | Medium | Change password screen loaded | 1. Enter the old password <br> 2. Fill the New password field with a valid password. <br> 3. Leave the confirm password field empty <br> 3. Click on the " Change password " field | System rejects the request, and a Validation error message appears near the confirm password field |
+| **PASS-Val-05** | Validate a mistake in the old password | Medium | Change password screen loaded | 1. Enter the old password with a mistake <br> 2. Fill in the new password and the confirmation password with the same valid password <br> 3. Click on the " Change password " field | System rejects the request, and a Validation error message appears near the old password field | 
+| **PASS-VAl-06** | Validate the new and the confirm passwords mismatch | High | Change password screen loaded | 1. Enter the old password <br> 2. Fill in the new password with a valid password <br> 3. Fill the confirm password field with a different password <br> 4. Click on the " Change password " field | System rejects the request, and a Validation error message appears near the confirm password field |
+| **PASS-VAl-07**| Validate the new and the confirm passwords match the old password | lw | Change password screen loaded | 1. Fill all fields with the same old password <br> 2. Click on the " Change password " field | System rejects the request, and a Validation error message appears indicating the new password matches the old password |
+
+---
+
+# Change Password - Security
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- | 
+| **PASS-Sec-01** | Valdiate using JavaScript inside the password fields | High | Change password fields loaded | 1. Enter a script inside any password field <br> 2. Click on the " Change password " button. | System won't execute the script, no sensitive data appears | 
+| **PASS-Sec-02** | Validate the old password field is empty | High | Change password fields loaded | Observe the old password field content | System asks the user to fill the field & no data is appears |
+| **PASS-Sec-03** | Validate the password is encrypted | High | Change password fields loaded | Observe the passwords | System shows the passwords encrypted | 
+
+
+---
 
 # My Account page - Usability Global
 
@@ -445,6 +508,11 @@ Then:
 
 ---
 
+# My Account page - UI 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
+| --- | --- | --- | --- | --- | --- |
+| **
 
 # Testing Scope Note
 
