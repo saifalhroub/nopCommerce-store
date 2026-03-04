@@ -2,44 +2,45 @@
 
 ---
 
-- Application Name: **noPcommerce**
-
-- TC-ID: 
-
-- Defect Type:
-
-- Priority:
-
-- Severity:
-
-- Reporter: **Saifullah Abdullah Mohammad Alhroub**
----
-
-### Defect Description:
+Defect ID:  
+Application Name: nopCommerce  
+Module:  
+TC-ID:  
+Defect Type:  
+Severity:  
+Priority:  
+Status: Open  
+Reporter: Saifullah Abdullah Mohammad Alhroub  
+Reported Date:  
 
 ---
 
-### Steps to Reproduce:
-  - 
+## Defect Summary:
 
 ---
 
-### Expected Results:
-  - 
+## Description:
 
 ---
 
-### Actual Results:
-  - 
+## Steps to Reproduce:
+1.
+2.
+3.
 
 ---
 
-### Environment:
-
-| Hardware | software | Browser | Internet connection |
-| --- | --- | --- | --- | 
-| Laptop HP - core i7 | Windows 10 | Chrome | Wifi 2.4G |
+## Expected Result:
 
 ---
 
+## Actual Result:
 
+---
+
+## Environment:
+- OS:
+- Browser:
+- Device:
+- Environment URL:
+- Build Version (if available):
