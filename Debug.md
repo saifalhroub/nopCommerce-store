@@ -15,26 +15,26 @@
 - Reporter: **Saifullah Abdullah Mohammad Alhroub**
 ---
 
-## Defect Description:
+### Defect Description:
 
 ---
 
-## Steps to Reproduce:
+### Steps to Reproduce:
   - 
 
 ---
 
-## Expected Results:
+### Expected Results:
   - 
 
 ---
 
-## Actual Results:
+### Actual Results:
   - 
 
 ---
 
-## Environment:
+### Environment:
 
 | Hardware | software | Browser | Internet connection |
 | --- | --- | --- | --- | 
