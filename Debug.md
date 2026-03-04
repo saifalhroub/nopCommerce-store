@@ -2,7 +2,7 @@
 
 ---
 
-- Application Name: *noPcommerce*
+- Application Name: **noPcommerce**
 
 - TC-ID: 
 
@@ -12,7 +12,7 @@
 
 - Severity:
 
- Reporter: Saifullah Abdullah Mohammad Alhroub
+- Reporter: **Saifullah Abdullah Mohammad Alhroub**
 ---
 
 # Defect Description:
