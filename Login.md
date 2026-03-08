@@ -31,265 +31,136 @@ Then the login request is rejected
 And a proper validation message appears  
 And no session/token is created  
 
-## AC4 – Register Visibility
-Given the user is on the Login page  
-Then a visible Register option is available  
+## AC4 – Remember Me
 
-## AC5 - Login to session timeout account
-Given that the user login session timed out
-When the user logs in to the same account
-Then the system accepts the request
-And the user is redirected to the landing page
+Given the user is on the Login page  
+When the user enters valid credentials  
+And selects the "Remember Me" option  
+And logs in successfully  
+Then the system remembers the user session according to the defined persistence rules  
+And the user remains authenticated or their email is retained on the next visit (based on business rules)
+
+## AC5 – Register
+Given the user is not logged in  
+When the user is on the login page  
+Then the user can register with a new account  
+
+## AC6 – Login to session timeout account
+Given that the user login session timed out  
+When the user logs in again  
+Then the system accepts the request  
+And the user is redirected to the landing page  
 
 ---------------------------------------------------------------------------------------
 
 # 3️⃣ Test Cases
 
-## Functional – Valid
+---------------------------------------------------------------------------------------
 
-| TC ID | Title | Priority | Preconditions |
-|-------|-------|----------|---------------|
-| TC-FUNCV-1.0 | Login with valid credentials | High | User has registered account |
+# Feature: Login - Navigation
 
-**Steps:**
-1. Enter valid email  
-2. Enter correct password  
-3. Click Login  
+## Functional – Valid Scenarios
 
-**Expected Result:**
-- Authentication succeeds  
-- Session/token is created  
-- User redirected to landing page  
-
----
-
-| TC-FUNCV-1.1 | Remember Me functionality | High | Registered account exists |
-
-**Steps:**
-1. Enter valid credentials  
-2. Enable "Remember Me"  
-3. Click Login  
-4. Logout  
-5. Return to Login page  
-
-**Expected Result:**
-- Email field retained (as per business rules)  
-- User can log in successfully again  
+| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
+|------|------|------|------|------|------|
+| **LoginNav-FUNCV-01** | Validate navigation to login page | High | User is on website homepage | 1. Click Login button | User is redirected to login page |
 
 ---------------------------------------------------------------------------------------
 
-## Functional – Invalid
+# Feature: Login - Successful Login
 
-| TC ID | Title | Priority | Preconditions |
-|-------|-------|----------|---------------|
-| TC-FUNCINV-1.0 | Empty fields | Medium | On Login page |
+## Functional – Valid Scenarios
 
-**Steps:**
-1. Leave fields empty  
-2. Click Login  
-
-**Expected Result:**
-- Validation messages appear  
-- Login rejected  
-- No session created  
-
----
-
-| TC-FUNCINV-1.1 | Wrong password | High | Registered email exists |
-
-**Steps:**
-1. Enter valid email  
-2. Enter incorrect password  
-3. Click Login  
-
-**Expected Result:**
-- Login rejected  
-- Generic error message displayed ("Invalid credentials")  
-- No sensitive info exposed  
-
----
-
-| TC-FUNCINV-1.2 | Invalid email format | High | On Login page |
-
-**Steps:**
-1. Enter invalid email format  
-2. Enter password  
-3. Click Login  
-
-**Expected Result:**
-- Email format validation appears  
-- Login rejected  
+| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
+|------|------|------|------|------|------|
+| **Login-FUNCV-01** | Login with valid credentials | High | Registered account exists | 1. Enter valid email <br> 2. Enter correct password <br> 3. Click Login | Authentication succeeds <br> Session created <br> User redirected to landing page |
+| **RememberMe-FUNCV-02** | Validate Remember Me functionality | Medium | Registered account exists | 1. Enter credentials <br> 2. Enable Remember Me <br> 3. Login <br> 4. Logout <br> 5. Return to login page | Email remains stored according to business rules |
 
 ---------------------------------------------------------------------------------------
 
-## Edge Cases
+# Feature: Login - Validation
 
-| TC ID | Title | Priority |
-|-------|-------|----------|
-| TC-EDGE-1.0 | Multiple failed login attempts | High |
-| TC-EDGE-1.1 | Concurrent login from different devices | Medium |
-| TC-EDGE-1.2 | Direct access to protected URL without login | High |
+## Functional – Invalid Scenarios
 
-**Expected Behavior:**
-- System handles repeated attempts safely  
-- No crash or data corruption  
-- Behavior follows defined business rules  
+| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
+|------|------|------|------|------|------|
+| **LoginValidation-FUNCINV-01** | Validate empty fields | Medium | User on login page | 1. Leave fields empty <br> 2. Click Login | Validation messages appear |
+| **LoginValidation-FUNCINV-02** | Validate wrong password | High | Registered email exists | 1. Enter valid email <br> 2. Enter wrong password <br> 3. Click Login | Login rejected and generic error displayed |
+| **LoginValidation-FUNCINV-03** | Validate invalid email format | High | User on login page | 1. Enter invalid email <br> 2. Enter password <br> 3. Click Login | Email validation message appears |
 
 ---------------------------------------------------------------------------------------
 
-## Security Testing
+# Feature: Login - Session Handling
 
-| TC ID | Title | Priority |
-|-------|-------|----------|
-| TC-SEC-1.0 | SQL Injection in password field | High |
-| TC-SEC-1.1 | SQL Injection in email field | High |
-| TC-SEC-1.2 | Brute force attempt | High |
+## Functional – Valid Scenarios
 
-### Example – SQL Injection TC
-
-**Steps:**
-1. Enter valid email  
-2. Enter `' OR 1=1 --` in password  
-3. Click Login  
-
-**Expected Result:**
-- Login rejected  
-- No SQL error displayed  
-- No sensitive data exposed  
+| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
+|------|------|------|------|------|------|
+| **Session-FUNCV-01** | Login after session timeout | Medium | Previous session expired | 1. Login again | New session created and user redirected |
 
 ---------------------------------------------------------------------------------------
 
-## Performance Testing
+# Feature: Login - Edge Cases
 
-| TC ID | Title | Priority |
-|-------|-------|----------|
-| TC-PERF-1.0 | Login response time under normal load | Medium |
-
-**Preconditions:**
-- System running under normal operating conditions  
-
-**Steps:**
-1. Send login request with valid credentials  
-
-**Expected Result:**
-- Response time ≤ defined SLA (e.g., 3 seconds)  
-- No noticeable delay in redirection  
-
----
-
-| TC-PERF-1.1 | Login under concurrent users | Medium |
-
-**Preconditions:**
-- Multiple users attempting login simultaneously  
-
-**Steps:**
-1. Send multiple login requests concurrently  
-
-**Expected Result:**
-- System handles requests without crashing  
-- No abnormal delay or failure  
+| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
+|------|------|------|------|------|------|
+| **Login-EDGE-01** | Multiple failed login attempts | High | User on login page | 1. Enter wrong password repeatedly | System handles attempts safely |
+| **Login-EDGE-02** | Concurrent login from different devices | Medium | Same account used | 1. Login from two devices | System handles sessions according to rules |
+| **Login-EDGE-03** | Direct access to protected URL | High | User not logged in | 1. Open protected URL | User redirected to login page |
 
 ---------------------------------------------------------------------------------------
 
-## API Testing
+# Feature: Login - Security
 
-| TC ID | Title | Priority |
-|-------|-------|----------|
-| TC-API-1.0 | Valid login API request | High |
-| TC-API-1.1 | Invalid login API request | High |
-
-### TC-API-1.0
-
-**Steps:**
-1. Send POST request to /login endpoint  
-2. Provide valid email & password  
-
-**Expected Result:**
-- Status Code: 200 OK  
-- Response contains authentication token/session data  
-- No sensitive internal data exposed  
-
-### TC-API-1.1
-
-**Steps:**
-1. Send POST request with invalid credentials  
-
-**Expected Result:**
-- Status Code: 401 Unauthorized  
-- Generic error message returned  
-- No token generated  
+| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
+|------|------|------|------|------|------|
+| **Login-SEC-01** | SQL Injection in password field | High | User on login page | 1. Enter valid email <br> 2. Enter `' OR 1=1 --` <br> 3. Click Login | Login rejected and no SQL error shown |
+| **Login-SEC-02** | SQL Injection in email field | High | User on login page | 1. Enter SQL payload in email <br> 2. Enter password <br> 3. Click Login | Login rejected |
+| **Login-SEC-03** | Brute force login attempt | High | User on login page | 1. Send repeated login attempts | System limits attempts |
 
 ---------------------------------------------------------------------------------------
 
-## UI Testing
+# Feature: Login - Performance
 
-| TC ID | Title | Priority |
-|-------|-------|----------|
-| TC-UI-1.0 | Error message placement | Medium |
-| TC-UI-1.1 | Login button disabled state | Medium |
-| TC-UI-1.2 | Login link state while not logged in | Medium |
+| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
+|------|------|------|------|------|------|
+| **Login-PERF-01** | Login response time under normal load | Medium | System running normally | 1. Send login request | Response ≤ 3 seconds |
+| **Login-PERF-02** | Login under concurrent users | Medium | Multiple users login simultaneously | 1. Send concurrent requests | System handles load without crash |
 
-
-### TC-UI-1.0
-
-**Steps:**
-1. Trigger validation error  
-2. Observe message location  
-
-**Expected Result:**
-- Error displayed under relevant field  
-- No layout breaking occurs  
-
----
-
-### TC-UI-1.1
-
-**Steps:**
-1. Click Login button  
-2. Observe button behavior  
-
-**Expected Result:**
-- Button shows loading/disabled state  
-- Prevents multiple submissions  
-
----
-
-### TC-UI-1.2
-
-**Steps:**
-1. Navigate to the Login page  
-2. Observe the Login link state 
-
-**Expected Result:**
-- Button shows a "Login" as a placeholder, not Logout  
 ---------------------------------------------------------------------------------------
 
-## Usability Testing
+# Feature: Login - API
 
-| TC ID | Title | Priority |
-|-------|-------|----------|
-| TC-USAB-1.0 | Keyboard navigation | Medium |
-| TC-USAB-1.1 | Error message clarity | Medium |
+## Valid Request
 
-### TC-USAB-1.0
+| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
+|------|------|------|------|------|------|
+| **Login-APIV-01** | Valid login API request | High | Using Postman | 1. POST /login with valid credentials | Status 200 and token returned |
 
-**Steps:**
-1. Use Tab to navigate fields  
+## Invalid Request
 
-**Expected Result:**
-- Logical field navigation order  
-- Focus visible on active field  
+| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
+|------|------|------|------|------|------|
+| **Login-APIINV-01** | Invalid login API request | High | Using Postman | 1. Send invalid credentials | Status 401 |
 
----
+---------------------------------------------------------------------------------------
 
-### TC-USAB-1.1
+# Feature: Login - UI
 
-**Steps:**
-1. Trigger invalid login  
+| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
+|------|------|------|------|------|------|
+| **Login-UI-01** | Error message placement | Medium | User on login page | 1. Trigger validation error | Error appears under field |
+| **Login-UI-02** | Login button disabled state | Medium | User on login page | 1. Click Login | Button shows loading state |
+| **Login-UI-03** | Login link state | Medium | User not logged in | 1. Observe header | Login link visible |
 
-**Expected Result:**
-- Error message is clear and understandable  
-- User knows how to fix the issue  
+---------------------------------------------------------------------------------------
+
+# Feature: Login - Usability
+
+| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
+|------|------|------|------|------|------|
+| **Login-USB-01** | Keyboard navigation | Medium | User on login page | 1. Navigate with Tab | Focus moves correctly |
+| **Login-USB-02** | Error message clarity | Medium | User on login page | 1. Trigger invalid login | Message understandable |
 
 ---------------------------------------------------------------------------------------
 
@@ -298,4 +169,4 @@ And the user is redirected to the landing page
 - All error messages must be generic  
 - No stack traces exposed  
 - Authentication must follow defined business rules  
-- System must comply with security best practices  
+- System must follow security best practices
