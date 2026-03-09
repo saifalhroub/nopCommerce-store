@@ -2,6 +2,62 @@
 
 ---
 
+## User Story
+
+> As a visitor
+> I want to create an account
+> So that I can access personalized features and complete purchases faster.
+
+---
+## Validation Rules
+
+- Email must follow a valid email format (e.g., ___@___.____ )
+- Password must contain at least 6 characters
+- First Name is required
+- Last Name is required
+- Email is required
+- Password & Confirm Password are required
+- Company Details are optional
+- Subscribing to the newsletter is optional
+- Gender is optional
+  
+## Acceptance Criteria
+
+### AC - Redirection 
+  Given the user is using the store as a guest
+  When the user clicks on the register button
+  Then the user will be redirected to the registration page
+
+---
+
+### AC - Structure
+
+  Given the user is an new user
+  When the user navigates to the register page
+  And the register page fields loaded
+  Then the registration form shows:
+    - Your personal details:
+      - First Name
+      - Last name
+      - Email
+      - Password
+      - Confirm Password
+    - Company details
+      - Company name
+    - Subscribe to the newsletter:
+      - Register Button
+
+---
+
+### AC - Validation
+
+Given that the user provides invalid input/ leave a mandatory field empty
+When the user proceeds with the registration process
+Then the system rejects the registration request
+And the system shows a correct validation error message
+
+---
+
 ## Functional – Valid Scenarios
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results |
