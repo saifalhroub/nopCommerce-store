@@ -20,15 +20,20 @@ is accessible, responsive, performant, secure, and ready for production release.
 - Integration with other pages
 - Performance, Security, SEO (technical)
 
-### Out of Scope
-- Login / Register validation logic
-- Cart / Wishlist backend logic
-- Checkout & payment flow
-- Order placement
 
+### Out of Scope
+
+The following items are not included in this test plan:
+
+- Detailed API testing
+- Database validation and backend data integrity checks
+- Email notifications (order confirmation, registration emails)
+- Deep SEO analysis beyond basic technical checks
+  
 ---
 
 ## 3. Test Types
+
 - Functional Testing
 - Integration Testing
 - Usability Testing
@@ -37,26 +42,28 @@ is accessible, responsive, performant, secure, and ready for production release.
 - Performance Testing
 - Security Testing
 - API Testing
-- SEO Testing (Technical)
 
 ---
 
 ## 4. Test Environment
-- Browsers: Chrome, Firefox, Safari
-- Devices: Desktop, Tablet, Mobile
-- OS: Windows, macOS, Android, iOS
-- Network: WiFi, Mobile Data, Offline mode
+
+- Browsers: Chrome, Firefox, Edge
+- Devices: Desktop
+- Network: WiFi / Stable internet connection
 
 ---
 
 ## 5. Entry Criteria
-- Landing Page deployed
-- UI design approved
-- APIs available and stable
+
+- nopCommerce website is accessible via browser
+- Test environment (browser, internet connection) is ready
+- Core pages load successfully (Home, Register, Login, Products)
+- Required test data prepared (email accounts, sample inputs)
 
 ---
 
 ## 6. Exit Criteria
+
 - All critical and high-priority test cases passed
 - No blocker or critical defects open
 - Performance and accessibility requirements met
@@ -64,6 +71,7 @@ is accessible, responsive, performant, secure, and ready for production release.
 ---
 
 ## 7. Risks
+
 - API instability affecting landing page elements
 - Performance degradation on mobile devices
 - Accessibility gaps impacting usability
@@ -71,6 +79,7 @@ is accessible, responsive, performant, secure, and ready for production release.
 ---
 
 ## 8. Deliverables
+
 - Test Cases document
 - Bug reports
 - Test summary report
