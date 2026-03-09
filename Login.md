@@ -1,6 +1,6 @@
 # Feature: Login
 
----------------------------------------------------------------------------------------
+---
 
 # 1️⃣ User Story
 
@@ -8,7 +8,7 @@ As a customer,
 I want to log in to my account,  
 So that I can use the store faster.
 
----------------------------------------------------------------------------------------
+---
 
 # 2️⃣ Acceptance Criteria (BDD)
 
@@ -40,47 +40,43 @@ And logs in successfully
 Then the system remembers the user session according to the defined persistence rules  
 And the user remains authenticated or their email is retained on the next visit (based on business rules)
 
-## AC5 – Register
-Given the user is not logged in  
-When the user is on the login page  
-Then the user can register with a new account  
 
-## AC6 – Login to session timeout account
+
+## AC5 – Login to session timeout account
 Given that the user login session timed out  
 When the user logs in again  
 Then the system accepts the request  
 And the user is redirected to the landing page  
 
----------------------------------------------------------------------------------------
+---
 
 # 3️⃣ Test Cases
 
----------------------------------------------------------------------------------------
+---
 
-# Feature: Login - Navigation
+# Login - Navigation
 
-## Functional – Valid Scenarios
 
 | TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
 |------|------|------|------|------|------|
 | **LoginNav-FUNCV-01** | Validate navigation to login page | High | User is on website homepage | 1. Click Login button | User is redirected to login page |
 
----------------------------------------------------------------------------------------
+---
 
-# Feature: Login - Successful Login
+# Login - Successful Login
 
-## Functional – Valid Scenarios
+
 
 | TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
 |------|------|------|------|------|------|
 | **Login-FUNCV-01** | Login with valid credentials | High | Registered account exists | 1. Enter valid email <br> 2. Enter correct password <br> 3. Click Login | Authentication succeeds <br> Session created <br> User redirected to landing page |
 | **RememberMe-FUNCV-02** | Validate Remember Me functionality | Medium | Registered account exists | 1. Enter credentials <br> 2. Enable Remember Me <br> 3. Login <br> 4. Logout <br> 5. Return to login page | Email remains stored according to business rules |
+| **Session-FUNCV-03** | Login after session timeout | Medium | Previous session expired | 1. Login again | New session created and user redirected |
 
----------------------------------------------------------------------------------------
+---
 
-# Feature: Login - Validation
+# Login - Validation
 
-## Functional – Invalid Scenarios
 
 | TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
 |------|------|------|------|------|------|
@@ -88,19 +84,9 @@ And the user is redirected to the landing page
 | **LoginValidation-FUNCINV-02** | Validate wrong password | High | Registered email exists | 1. Enter valid email <br> 2. Enter wrong password <br> 3. Click Login | Login rejected and generic error displayed |
 | **LoginValidation-FUNCINV-03** | Validate invalid email format | High | User on login page | 1. Enter invalid email <br> 2. Enter password <br> 3. Click Login | Email validation message appears |
 
----------------------------------------------------------------------------------------
+---
 
-# Feature: Login - Session Handling
-
-## Functional – Valid Scenarios
-
-| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
-|------|------|------|------|------|------|
-| **Session-FUNCV-01** | Login after session timeout | Medium | Previous session expired | 1. Login again | New session created and user redirected |
-
----------------------------------------------------------------------------------------
-
-# Feature: Login - Edge Cases
+# Login - Edge Cases
 
 | TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
 |------|------|------|------|------|------|
@@ -108,9 +94,9 @@ And the user is redirected to the landing page
 | **Login-EDGE-02** | Concurrent login from different devices | Medium | Same account used | 1. Login from two devices | System handles sessions according to rules |
 | **Login-EDGE-03** | Direct access to protected URL | High | User not logged in | 1. Open protected URL | User redirected to login page |
 
----------------------------------------------------------------------------------------
+---
 
-# Feature: Login - Security
+# Login - Security
 
 | TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
 |------|------|------|------|------|------|
@@ -118,34 +104,18 @@ And the user is redirected to the landing page
 | **Login-SEC-02** | SQL Injection in email field | High | User on login page | 1. Enter SQL payload in email <br> 2. Enter password <br> 3. Click Login | Login rejected |
 | **Login-SEC-03** | Brute force login attempt | High | User on login page | 1. Send repeated login attempts | System limits attempts |
 
----------------------------------------------------------------------------------------
+---
 
-# Feature: Login - Performance
+# Login - Performance
 
 | TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
 |------|------|------|------|------|------|
 | **Login-PERF-01** | Login response time under normal load | Medium | System running normally | 1. Send login request | Response ≤ 3 seconds |
 | **Login-PERF-02** | Login under concurrent users | Medium | Multiple users login simultaneously | 1. Send concurrent requests | System handles load without crash |
 
----------------------------------------------------------------------------------------
+---
 
-# Feature: Login - API
-
-## Valid Request
-
-| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
-|------|------|------|------|------|------|
-| **Login-APIV-01** | Valid login API request | High | Using Postman | 1. POST /login with valid credentials | Status 200 and token returned |
-
-## Invalid Request
-
-| TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
-|------|------|------|------|------|------|
-| **Login-APIINV-01** | Invalid login API request | High | Using Postman | 1. Send invalid credentials | Status 401 |
-
----------------------------------------------------------------------------------------
-
-# Feature: Login - UI
+# Login - UI
 
 | TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
 |------|------|------|------|------|------|
@@ -153,16 +123,16 @@ And the user is redirected to the landing page
 | **Login-UI-02** | Login button disabled state | Medium | User on login page | 1. Click Login | Button shows loading state |
 | **Login-UI-03** | Login link state | Medium | User not logged in | 1. Observe header | Login link visible |
 
----------------------------------------------------------------------------------------
+---
 
-# Feature: Login - Usability
+# Login - Usability
 
 | TC ID | Title | Priority | Pre-Conditions | Steps | Expected Results |
 |------|------|------|------|------|------|
 | **Login-USB-01** | Keyboard navigation | Medium | User on login page | 1. Navigate with Tab | Focus moves correctly |
 | **Login-USB-02** | Error message clarity | Medium | User on login page | 1. Trigger invalid login | Message understandable |
 
----------------------------------------------------------------------------------------
+---
 
 # 4️⃣ Notes
 
