@@ -29,7 +29,12 @@ The following items are not included in this test plan:
 - Database validation and backend data integrity checks
 - Email notifications (order confirmation, registration emails)
 - Deep SEO analysis beyond basic technical checks
-  
+- Stress Testing
+- Load Testing with high concurrent users
+- Security penetration testing
+- Any performance tests that may negatively impact system stability or server resources
+
+ٍSome of these tests are excluded because the application is hosted in a shared environment and the tester does not have permission to perform heavy or intrusive tests that may affect system availability.
 ---
 
 ## 3. Test Types
