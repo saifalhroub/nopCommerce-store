@@ -368,9 +368,9 @@ Then:
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **ADDRESS-FUN-01** | Validate adding a new address | High | My account page loaded | 1. Click on the Address | 1. Click on the " Add New " button <br> 2. Fill all of the mandatory fields <br> 3. Click on the " Save " button | 1. Success operation message <br> 2. The system will preview the address information <br> 3. The system allows the user to manage the added address (Edit/Delete) | 
-| **ADDRESS-FUN-02** | Validate Editing an Address | High | user has a saved Address | 1. Click on the Edit button <br> 2. Edit any field <br> 3. Click on the " Save " button | 1.  1. Success operation message <br> 2. The system shows the new updated data | 
-
+| **ADDRESS-FUNCV-01** | Validate adding a new address | High | My account page loaded | 1. Click on the Address <br> 2. Click on the " Add New " button <br> 3. Use valid credentials <br> 4. Click on the " Save " button | 1. Success operation message <br> 2. The system will preview the address information <br> 3. The system allows the user to manage the added address (Edit/Delete) | 
+| **ADDRESS-FUNCV-02** | Validate Editing an Address | High | user has a saved Address | 1. Click on the Edit button <br> 2. Edit any field <br> 3. Click on the " Save " button | 1.  1. Success operation message <br> 2. The system shows the new updated data | 
+| **ADDRESS-FUNCV-03** | Validate leaving all optional fields empty | Low | Adress fields loaded | 1. Fill all mandatory fields with valid data <br> 2. Leave all optional fields |The system accepts the request and saves the address successfully |
 --- 
 
 # Address - Validation 
