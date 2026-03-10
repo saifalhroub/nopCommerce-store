@@ -321,17 +321,17 @@ Then:
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **Fun-01** | Validate updating any field in the customer info's | High | Customer info fields loaded | 1. Edit the data of the required field <br> 2. Click on the save button | 1. Data is updated successfully <br> 2. Success change info message: (The customer info has been updated successfully.) <br> 3. The system placed the new data inside the fields <br> user is allowed to  log in using the new data |
-| **Fun-02** | Validate no cange made o customer info | low | Customer info fields loaded | 1. Keep the same old data without modifications <br> 2. Click on the save button | 1. Data is updated successfully <br> 2. Success change info message: (The customer info has been updated successfully.) |
+| **CUSINFO-Fun-01** | Validate updating any field in the customer info's | High | Customer info fields loaded | 1. Edit the data of the required field <br> 2. Click on the save button | 1. Data is updated successfully <br> 2. Success change info message: (The customer info has been updated successfully.) <br> 3. The system placed the new data inside the fields <br> user is allowed to  log in using the new data |
+| **CUSINFO-Fun-02** | Validate no cange made o customer info | low | Customer info fields loaded | 1. Keep the same old data without modifications <br> 2. Click on the save button | 1. Data is updated successfully <br> 2. Success change info message: (The customer info has been updated successfully.) |
 --- 
 
 # Customer Info - Validation
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Results | 
 | --- | --- | --- | --- | --- | --- |
-| **CUSINFO--Val-01** | Validate leaving a mandatory field empty | Medium | Customer info fields loaded | 1. Erase any mandatory field data <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears near the empty required field | 
-| **CUSINFO--Val-02** | Validate using a wrong format email | High | Customer info fields loaded | 1. Fill the email field with a wrong format email (saas@asas) <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears indicating that (Wrong Email) is used | 
-| **CUSINFO--Val-03** | Validate leaving a required field empty | High | Customer info fields loaded | 1. Leave only one mandatory field empty <br> 2. Fill the rest mandatory fields with valid data <br> 3. Click on the " Save " button <br> 4. Repeat these steps for every field | 1. Request is rejected <br> 2. A validation error message appears near the empty mandatory| field
+| **CUSINFO-Val-01** | Validate leaving a mandatory field empty | Medium | Customer info fields loaded | 1. Erase any mandatory field data <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears near the empty required field | 
+| **CUSINFO-Val-02** | Validate using a wrong format email | High | Customer info fields loaded | 1. Fill the email field with a wrong format email (saas@asas) <br> 2. Click on the " Save " button | 1. Request is rejected <br> 2. A validation error message appears indicating that (Wrong Email) is used | 
+| **CUSINFO-Val-03** | Validate leaving a required field empty | High | Customer info fields loaded | 1. Leave only one mandatory field empty <br> 2. Fill the rest mandatory fields with valid data <br> 3. Click on the " Save " button <br> 4. Repeat these steps for every field | 1. Request is rejected <br> 2. A validation error message appears near the empty mandatory| field
 ---
 
 # Customer Info - Edge
