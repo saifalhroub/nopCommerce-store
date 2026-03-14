@@ -311,42 +311,88 @@ And allows safe retry if needed
 
 ---
 
+# Payment — Credit Card Core Functional
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **Payment.CC-FUNC-01** | Validate using credit card as a payment method | High | User is on the Credit card information form | 1. Select the type of credit card <br> 2. Fill in its credentials fields <br> 3. Click on Continue | Confirm Order shown |
+
 # Payment — Credit Card Validation
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
 |---|---|---|---|---|---|
-| TC-CC-01 | Valid card flow | High | Confirm Order shown |
-| TC-CC-02 | Expired card | High | Validation error |
-| TC-CC-03 | Invalid number | High | Validation error |
-| TC-CC-04 | Invalid CVV length | High | CVV error |
-| TC-CC-05 | Luhn failure | High | Card rejected |
+| **Payment.CC-VAL-01** | Validate using an expired credit card | High | User is on the Credit card information form | 1. Select the type of credit card <br> 2. Fill in its credentials fields with an expired card credentials <br> 3. Click on Continue | System prevents the user from proceeding, and a Validation error appears |
+| **Payment.CC-VAL-02** | Validate using an invalid card number | High | User is on the Credit card information form | 1. Select the type of credit card <br> 2. Fill in its credentials fields with <br> 3. Fill the card number with an invalid number <br> 4. Click on Continue | System prevents the user from proceeding, and a card number validation error appears |
+| **Payment.CC-VAL-03** | Invalid CVV length | High | User is on the Credit card information form | 1. Select the type of credit card <br> 2. Fill in its credentials fields with <br> 3. Fill the CVV with an invalid number <br> 4. Click on Continue | System prevents the user from proceeding, and a CVV validation error appears |
 
 ---
 
-# Confirm Order
+# Confirm Order - Core Functional & Navigation
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
 |---|---|---|---|---|---|
-| TC-CONF-01 | Totals accuracy | High | Totals calculated correctly |
-| TC-CONF-02 | Back preserves data | High | No data loss |
-| TC-CONF-03 | Double confirm click | High | Single order created |
-| TC-CONF-04 | Stock changed before confirm | High | Order blocked |
-| TC-CONF-05 | Price changed before confirm | High | Updated total shown |
+| **CONF-FUNC-01** | Finalize Order Success | High | Valid items in summary | 1. Click on "CONFIRM" button | User is redirected to "Order Success" page with a valid Order ID |
+| **CONF-FUNC-02** | Return to Previous Step | Medium | User is on Confirm Order screen | 1. Click on "Back" link | System returns to the previous step (Payment/Shipping) with all data preserved |
+| **CONF-FUNC-03** | Prevent Double Submission | High | User is on Confirm Order screen | 1. Click "CONFIRM" button multiple times rapidly | System processes the order only once; second click is disabled or ignored |
 
 ---
+
+# Confirm Order - Data Integrity 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **CONF-DATA-01** | Address Consistency Check | High | Address data entered in previous steps | 1. Compare "Billing Address" & "Shipping Address" with user's previous input | All details (Name, Email, Phone, Country, Zip) must match exactly |
+| **CONF-DATA-02** | Product Attributes Display | High | Product has specific variants | 1. Verify "Product(s)" section for SKU, Size, and Color | SKU (AD_C80_RS), Size (8), and Color (Red) must be displayed correctly |
+| **CONF-DATA-03** | Methods Display Verification | Medium | Payment/Shipping methods selected previously | 1. Verify "Payment" section <br> 2. Verify "Shipping" section | Displays "Credit Card" and "Ground" as per the user's selection |
+
+
+---
+
+# Confirm Order - Data Integrity & UI (Validation)
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **CONF-UI-01** | Product Image Visibility | Low | Product has an image assigned | 1. Check the product thumbnail image | Image is loaded correctly and matches the item (adidas Consortium Campus 80s) |
+
+---
+
+# Confirm Order - Calculations & Totals
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **CONF-CALC-01** | Line Item Total Validation | High | Qty > 1 (if applicable) | 1. Multiply Price by Quantity | Total per line must be mathematically correct (Price * Qty) |
+| **CONF-CALC-02** | Grand Total Calculation | High | Sub-total, Shipping, and Tax are present | 1. Sum up (Sub-Total + Shipping + Tax) | The final "Total" must equal the sum ($27.56 + $0.00 + $0.00 = $27.56) |
+| **CONF-CALC-03** | Reward Points Accuracy | Low | Loyalty system is active | 1. Check "You will earn" section | Points (e.g., 2 points) are calculated based on the business rules for the total amount |
+
+---
+
+# Confirm Order - Edge Cases & Error Handling (Negative Testing)
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **CONF-ERR-01** | Session Timeout during Confirm | Medium | User stays on page until session expires | 1. Wait for session timeout <br> 2. Click "CONFIRM" | System redirects to login or shows "Session Expired" error; no order is created |
+| **CONF-ERR-02** | Item Out of Stock (Race Condition) | High | Item stock becomes 0 while user is on this page | 1. Reduce stock to 0 in DB/Admin <br> 2. Click "CONFIRM" | System shows error "Item no longer available" and prevents order completion |
+
+
+---
+
 # Usability
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
 |---|---|---|---|---|---|
-| | Validate copy and paste data to the billing address form fields |
+| **USAB-01** | Validate copy and paste data to the checkout's form fields | Medium | User has valid data copied to the clipboard | 1. Navigate to the Billing Address fields <br> 2. Try to paste the data into the fields (Name, Street, etc.) | Data is pasted correctly and accepted by the fields without errors |
+| **USAB-02** | Clarity of "Confirm" button action | High | User is on the final step | 1. Observe the "CONFIRM" button design and placement | The button is visually distinct, and its function is clear to the user |
+
+---
 
 # Accessibility
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
 |---|---|---|---|---|---|
-| TC-A11Y-01 | Keyboard navigation | Medium | Full flow accessible via keyboard |
-| TC-A11Y-02 | Screen reader labels | Medium | Fields properly labeled |
-| TC-A11Y-03 | Tab order | Medium | Logical tab sequence |
+| **ACCESS-01** | Validate Keyboard navigation | High | User is on the Confirm Order page | 1. Use the "Tab" key to move through all elements <br> 2. Use "Enter" to trigger the Confirm button | All interactive elements (links, buttons) are reachable and functional via keyboard only |
+| **ACCESS-02** | Validate Screen reader labels | High | Screen reader (e.g., NVDA/VoiceOver) is active | 1. Navigate through the page elements using the screen reader | Each field and button (like "Confirm" and "Back") has a descriptive label read aloud |
+| **ACCESS-03** | Validate tab order | Medium | User is at the top of the page | 1. Press "Tab" repeatedly to navigate the entire page | The focus moves in a logical sequence (from top to bottom, left to right) matching the visual layout |
+| **ACCESS-04** | Validate color contrast for text and buttons | Medium | User is on the Confirm Order page | 1. Check the contrast between text color and background (especially for the Total and Buttons) | All text is readable and meets standard contrast ratios (WCAG) |
 
 ---
 
@@ -354,9 +400,9 @@ And allows safe retry if needed
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
 |---|---|---|---|---|---|
-| TC-PERF-01 | Step transition speed | High | < 3 seconds |
-| TC-PERF-02 | Validation speed | Medium | Instant response |
-| TC-PERF-03 | Concurrent users | High | No crash |
+| **PERF-01** | Validate Step transition speed | High | User is navigating between the Checkout steps | 1. Click the button to proceed to the next step <br> 2. Measure the time taken to load the summary | The page and all order details should load fully in less than 3 seconds |
+| **PERF-02** | Valdiate order processing response time | High | User clicks the "CONFIRM" button | 1. Click on "CONFIRM" <br> 2. Observe the time until the loading spinner or success message appears | System should provide an instant response/feedback (e.g., loading state) within 1 second to avoid double clicks |
+| **PERF-03** | Validate heavy data load stability | Low | Order contains 20+ different items | 1. Load the "Confirm Order" page with a large number of products | The page should render the list without lagging or crashing the browser |
 
 ---
 
@@ -364,8 +410,9 @@ And allows safe retry if needed
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
 |---|---|---|---|---|---|
-| TC-COMP-01 | Browser compatibility | High | Same behavior across browsers |
-| TC-COMP-02 | Mobile responsiveness | High | Fully responsive |
-| TC-COMP-03 | Different resolutions | Medium | No layout breaking |
+| **COMP-01** | Validate cross-browser compatibility | High | Access to multiple browsers (Chrome, Firefox, Safari, Edge) | 1. Open the Check out page on each browser <br> 2. Verify UI and "Confirm" button functionality | The page behaves and looks consistent across all major browsers with no functional discrepancies |
+| **COMP-02** | Validate mobile responsiveness | High | Access to mobile device or browser DevTools | 1. Open the Check out page on a mobile view <br> 2. Check the "Order Summary" table and "Confirm" button | Layout should be fully responsive; no horizontal scrolling; buttons must be easily clickable with a thumb |
+| **COMP-03** | Validate different screen resolutions | Medium | Access to Tablet and Desktop (HD/4K) resolutions | 1. Resize the window to various resolutions (e.g., 1024x768, 1920x1080) | Content should scale appropriately; address blocks and tables should not overlap or break |
+| **COMP-04** | Validate OS Compatibility | Medium | Access to Windows, macOS, and Android/iOS | 1. Perform the full confirmation flow on different operating systems | The checkout process should be completed successfully regardless of the OS |
 
 ---
