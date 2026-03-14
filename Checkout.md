@@ -256,40 +256,40 @@ And allows safe retry if needed
 
 ---
 
-# Billing Address — Core Functional
+# Billing Address & Shipping Address — Core Functional
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
 |---|---|---|---|---|---|
-| **BILL-FUNC-01** | Validate adding billing address without checking the Ship to the same address option | High | Checkout page loaded | 1. Navigate to the Billing address form <br> 2. Fill the address field form <br> 3. Do not check the Ship to the same address option <br> 4.Click on Continue | The user is redirected to Shipping Address |
+| **BILL-FUNC-01** | Validate adding billing address without checking the Ship to the same address option | High | Checkout page loaded | 1. Navigate to the Billing address form <br> 2. Fill its fields <br> 3. Do not check the Ship to the same address option <br> 4.Click on Continue | The user is redirected to Shipping Address |
 | **BILL-FUNC-02** | Valid billing + same shipping | High | Checkout page loaded | 1. Navigate to the Billing address form <br> 2. Fill the address field form <br> 3. Check the Ship to the same address checkbox <br> 4. Click on Continue | The user will be redirected to the shipping method form |
-| **BILL-FUNC-03** | Validate leaving optional fields empty | low | Checkout page loaded | 1. Navigate to the Billing address form <br> 2. Fill all mandatory fields <br> 3. Leave the optional fields empty <br> 3. Click on Continue | The user is redirected to Shipping Address/Shipping Method |
+| **BILL.SHPP-FUNC-03** | Validate leaving optional fields empty | low | Checkout page loaded | 1. Navigate to the Billing/Shipping address form <br> 2. Fill all mandatory fields <br> 3. Leave the optional fields empty <br> 3. Click on Continue | The user is redirected to Shipping Address/Shipping Method |
 
 ---
 
-# Billing Address - Integration
+# Billing & Shipping Address - Integration
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
 |---|---|---|---|---|---|
-| **BILL-INT-01** | Validate using a saved address | High | the checkout page has loaded and the user has a saved address from my account page | 1. Navigate to the billing address form <br> 2. Select the suggested address | The saved address appears, and the system allows the user to select it |
-| **BILL-INT-02** | Validate changing the country on the state/province  list options | Medium | The user is on the billing form screen | 1. Select the country <br> 2. Observe the state/province <br> 3. Change the country <br> 4. Check the state/province list options | Region list updates dynamically |
+| **BILL.SHPP-INT-01** | Validate using a saved address | High | the user is on the billing/shipping page, and has a saved address from my account page | 1. Navigate to the billing address form <br> 2. Select the suggested address | The saved address appears, and the system allows the user to select it |
+| **BILL.SHPP-INT-02** | Validate changing the country on the state/province  list options | Medium | The user is on the billing/shipping form screen | 1. Select the country <br> 2. Observe the state/province <br> 3. Change the country <br> 4. Check the state/province list options | Region list updates dynamically |
 
 ---
 
-# Billing — Validation
+# Billing & Shipping address — Validation
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
 |---|---|---|---|---|---|
-| **BILL-VAL-01** | Validate submitting empty form | High | The user is on the billing address form | 1. Leave all fields empty <br> 2. Click on the continue button | The system prevents the user from continuing and displays a validation error message for each mandatory field |
-| **BILL-VAL-02** | Validate using an Invalid email format (e.g., sd.com)| High |  The user is on the billing address form | 1. Fill all required fields <br> 2. Use a wrong formatted email <br> 3. Click on Continue | Email validation error displayed |
-| **BILL-VAL-03** | Validate using Spaces-only input | Medium | The user is on the billing address form | 1. Fill fields with only spaces <br> 2. Click on the continue button |  The system prevents the user from continuing and displays a validation error message for each mandatory field |
+| **BILL.SHPP-VAL-01** | Validate submitting empty form | High | The user is on the billing/shipping address form | 1. Leave all fields empty <br> 2. Click on the continue button | The system prevents the user from continuing and displays a validation error message for each mandatory field |
+| **BILL.SHPP-VAL-02** | Validate using an Invalid email format (e.g., sd.com)| High |  The user is on the billing/shipping address form | 1. Fill all required fields <br> 2. Use a wrong formatted email <br> 3. Click on Continue | Email validation error displayed |
+| **BILL.SHPP-VAL-03** | Validate using Spaces-only input | Medium | The user is on the billing/shipping address form | 1. Fill fields with only spaces <br> 2. Click on the continue button |  The system prevents the user from continuing and displays a validation error message for each mandatory field |
 
 ---
 
-# Billing — Edge
+# Billing Address & Shipping address — Edge
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
 |---|---|---|---|---|---|
-| **BILL-Edge-01** | Valdiate rapid continue clicks for a valid address form | Medium | Billing address fields are filled with valid data | 1. Spam Clicking on Continue |  No duplicate submission & No Crash occurs |
+| **BILL.SHPP-Edge-01** | Validate rapid clicks on the continue button for a valid address form | Medium | Billing/Shipping address fields are filled with valid data | 1. Spam Clicking on Continue |  No duplicate submission & No Crash occurs |
 
 ---
 
