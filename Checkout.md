@@ -258,49 +258,63 @@ And allows safe retry if needed
 
 # Billing Address — Core Functional
 
-| TC ID | Title | Priority | Expected Result |
-|---|---|---|---|
-| TC-BILL-01 | Valid billing + different shipping | High | Redirect to Shipping Address |
-| TC-BILL-02 | Valid billing + same shipping | High | Skip Shipping step |
-| TC-BILL-03 | Use saved address | High | Address applied correctly |
-| TC-BILL-04 | Country change updates region list | Medium | Region list updates dynamically |
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **BILL-FUNC-01** | Validate adding billing address without checking the Ship to the same address option | High | Checkout page loaded | 1. Navigate to the Billing address form <br> 2. Fill the address field form <br> 3. Do not check the Ship to the same address option <br> 4.Click on Continue | The user is redirected to Shipping Address |
+| **BILL-FUNC-02** | Valid billing + same shipping | High | Checkout page loaded | 1. Navigate to the Billing address form <br> 2. Fill the address field form <br> 3. Check the Ship to the same address checkbox <br> 4. Click on Continue | The user will be redirected to the shipping method form |
+| **BILL-FUNC-03** | Validate leaving optional fields empty | low | Checkout page loaded | 1. Navigate to the Billing address form <br> 2. Fill all mandatory fields <br> 3. Leave the optional fields empty <br> 3. Click on Continue | The user is redirected to Shipping Address/Shipping Method |
+
+---
+
+# Billing Address - Integration
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **BILL-INT-01** | Validate using a saved address | High | the checkout page has loaded and the user has a saved address from my account page | 1. Navigate to the billing address form <br> 2. Select the suggested address | The saved address appears, and the system allows the user to select it |
+| **BILL-INT-02** | Validate changing the country on the state/province  list options | Medium | The user is on the billing form screen | 1. Select the country <br> 2. Observe the state/province <br> 3. Change the country <br> 4. Check the state/province list options | Region list updates dynamically |
 
 ---
 
 # Billing — Validation
 
-| TC ID | Title | Priority | Expected Result |
-|---|---|---|---|
-| TC-BILL-VAL-01 | Submit empty form | High | All required errors shown |
-| TC-BILL-VAL-02 | Invalid email | High | Email error displayed |
-| TC-BILL-VAL-03 | Spaces-only input | Medium | Field rejected |
-| TC-BILL-VAL-04 | Missing field | High | Submission blocked |
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **BILL-VAL-01** | Validate submitting empty form | High | The user is on the billing address form | 1. Leave all fields empty <br> 2. Click on the continue button | The system prevents the user from continuing and displays a validation error message for each mandatory field |
+| **BILL-VAL-02** | Validate using an Invalid email format (e.g., sd.com)| High |  The user is on the billing address form | 1. Fill all required fields <br> 2. Use a wrong formatted email <br> 3. Click on Continue | Email validation error displayed |
+| **BILL-VAL-03** | Validate using Spaces-only input | Medium | The user is on the billing address form | 1. Fill fields with only spaces <br> 2. Click on the continue button |  The system prevents the user from continuing and displays a validation error message for each mandatory field |
 
 ---
 
-# Billing — Security & Robustness
+# Billing — Edge
 
-| TC ID | Title | Priority | Expected Result |
-|---|---|---|---|
-| TC-BILL-ROB-01 | Rapid continue clicks | Medium | No duplicate submission |
-| TC-BILL-SEC-01 | SQL injection attempt | High | Input sanitized |
-| TC-BILL-SEC-02 | Script injection attempt | High | Script escaped or blocked |
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **BILL-Edge-01** | Valdiate rapid continue clicks for a valid address form | Medium | Billing address fields are filled with valid data | 1. Spam Clicking on Continue |  No duplicate submission & No Crash occurs |
 
 ---
 
-# Shipping Method
+# Shipping Method - Core functional
 
-| TC ID | Title | Priority | Expected Result |
-|---|---|---|---|
-| TC-SM-01 | Select shipping option | High | Payment step displayed |
-| TC-SM-02 | Continue without selection | High | Blocked with message |
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **SM-FUNC-01** | Validate selecting shipping method to be "Ground" | High | Shipping method options loaded | 1. Select Ground shipping method <br> 2. Click on Continue | User is redirected to the Payment method form |
+| **SM-FUNC-02** | Validate selecting shipping method to be "Next Day Air" | High | Shipping method options loaded | 1. Select Next Day Air shipping method <br> 2. Click on Continue | User is redirected to the Payment method form |
+| **SM-FUNC-03** | Validate selecting shipping method to be "2nd Day Air" | High | Shipping method options loaded | 1. Select 2nd Day Air shipping method <br> 2. Click on Continue | User is redirected to the Payment method form |
+
+---
+
+# Shipping Method - Validation
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **SM-VAL-01** | Validate Continue without selection a shipping method | High | 1. Uncheck the shipping method | Radio box can not be unchecked |
 
 ---
 
 # Payment — Credit Card Validation
 
-| TC ID | Title | Priority | Expected Result |
-|---|---|---|---|
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
 | TC-CC-01 | Valid card flow | High | Confirm Order shown |
 | TC-CC-02 | Expired card | High | Validation error |
 | TC-CC-03 | Invalid number | High | Validation error |
@@ -311,8 +325,8 @@ And allows safe retry if needed
 
 # Confirm Order
 
-| TC ID | Title | Priority | Expected Result |
-|---|---|---|---|
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
 | TC-CONF-01 | Totals accuracy | High | Totals calculated correctly |
 | TC-CONF-02 | Back preserves data | High | No data loss |
 | TC-CONF-03 | Double confirm click | High | Single order created |
@@ -320,11 +334,16 @@ And allows safe retry if needed
 | TC-CONF-05 | Price changed before confirm | High | Updated total shown |
 
 ---
+# Usability
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| | Validate copy and paste data to the billing address form fields |
 
 # Accessibility
 
-| TC ID | Title | Priority | Expected Result |
-|---|---|---|---|
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
 | TC-A11Y-01 | Keyboard navigation | Medium | Full flow accessible via keyboard |
 | TC-A11Y-02 | Screen reader labels | Medium | Fields properly labeled |
 | TC-A11Y-03 | Tab order | Medium | Logical tab sequence |
@@ -333,8 +352,8 @@ And allows safe retry if needed
 
 # Performance
 
-| TC ID | Title | Priority | Expected Result |
-|---|---|---|---|
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
 | TC-PERF-01 | Step transition speed | High | < 3 seconds |
 | TC-PERF-02 | Validation speed | Medium | Instant response |
 | TC-PERF-03 | Concurrent users | High | No crash |
@@ -343,8 +362,8 @@ And allows safe retry if needed
 
 # Compatibility
 
-| TC ID | Title | Priority | Expected Result |
-|---|---|---|---|
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
 | TC-COMP-01 | Browser compatibility | High | Same behavior across browsers |
 | TC-COMP-02 | Mobile responsiveness | High | Fully responsive |
 | TC-COMP-03 | Different resolutions | Medium | No layout breaking |
