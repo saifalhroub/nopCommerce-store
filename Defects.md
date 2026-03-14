@@ -116,12 +116,6 @@
 
 ---
 
-## TC :
-
-- Validate leaving all optional fields empty
-
----
-
 ## Defect Title:
  My account --> Address --> state/province --> The State/Province field is not marked as required but the system blocks address submission
  
@@ -165,7 +159,7 @@
 **Defect ID:** DF-03
 **Application Name:* nopCommerce  
 **Functionality:** Checkout --> Billing Adress
-**TC-ID:** 
+**TC-ID:** BILL.SHPP-FUNC-03
 **Defect Type:** UI, Functional
 **Severity:**  low  
 **Priority:**  low
@@ -176,19 +170,15 @@
 
 ## TC :
 
-- Validate leaving all optional fields empty
-
----
-
 ## Defect Title:
- Checkout --> Billing Address --> state/province --> The State/Province field is not marked as required but the system blocks address submission
+ Checkout --> Billing Address --> state/province --> The State/Province field is not marked as required, but the system blocks address submission
  
 ---
 
 ## Steps to Reproduce:
 
 1. Navigate to the checkout page
-2. Add new billing address
+2. Add a new billing address
 3. Fill all mandatory fields with valid data
 4. Select a country where the State/Province has options. (e.g., USA / Armenia )
 5. Leave all optional fields empty
@@ -204,7 +194,7 @@
 ## Actual Result:
 
  - The system rejects the request to add the new address.
- - The user remains on the billing address form and a validation error message appears indicating:
+ - The user remains on the billing address form, and a validation error message appears indicating:
 --> “State/Province is required”.
 
 ---
@@ -223,7 +213,7 @@
 **Defect ID:** DF-04
 **Application Name:* nopCommerce  
 **Functionality:** Checkout --> Shipping Adress
-**TC-ID:** 
+**TC-ID:** BILL.SHPP-FUNC-03
 **Defect Type:** UI, Functional
 **Severity:**  low  
 **Priority:**  low
@@ -232,11 +222,6 @@
 
 ---
 
-## TC :
-
-- Validate leaving all optional fields empty
-
----
 
 ## Defect Title:
  Checkout --> Shipping Address --> state/province --> The State/Province field is not marked as required but the system blocks address submission
