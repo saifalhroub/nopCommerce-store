@@ -266,44 +266,50 @@
 
 **Defect ID:**  DF-05
 **Application Name:* nopCommerce  
-**Functionality:**  
-**TC-ID:**  
-**Defect Type:**  
-**Severity:**  
-**Priority:**  
+**Functionality:** Login --> Forgot Password
+**TC-ID:**  **Login-UI-04**
+**Defect Type:** UI
+**Severity:** Low
+**Priority:** Low
 **Status:** Open  
 **Reporter:** Saifullah Abdullah Mohammad Alhroub  
-**Reported Date:**  
 
 ---
 
 ## Defect Title:
 
+Login Page – "Forgot password?" link is misaligned with other login elements
+
 ---
 
 ## Steps to Reproduce:
 
-1.
-2.
-3.
+1. Navigate to https://demo.nopcommerce.com/login?returnUrl=%2F
+2. Observe the form's elements' alignment
+
 
 ---
 
 ## Expected Result:
 
----
+   - All elements aligned correctly
+   - No overlapping between the login elements
+     
+ ---
 
 ## Actual Result:
 
+   - The forgot password link is not aligned correctly
+     
 ---
 
 ## Environment:
 
-- OS:
-- Browser:
-- Device:
-- Environment URL:
-- Build Version (if available):
+- OS: Windows 10
+- Browser: Chrome
+- Device: Laptop HP 
+- Environment URL: https://demo.nopcommerce.com/login?returnUrl=%2F
+- Build Version (if available): 
 
 
 --------------------------------------------------------
