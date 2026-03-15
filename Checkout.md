@@ -285,11 +285,20 @@ And allows safe retry if needed
 
 ---
 
-# Billing Address & Shipping address — Edge
+# Billing & Shipping address — Edge
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
 |---|---|---|---|---|---|
 | **BILL.SHPP-Edge-01** | Validate rapid clicks on the continue button for a valid address form | Medium | Billing/Shipping address fields are filled with valid data | 1. Spam Clicking on Continue |  No duplicate submission & No Crash occurs |
+
+---
+
+# Billing & Shipping address - UI 
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **BILL.SHPP-UI-01** | Verify mandator fields are indicated with visual markers (e.g., *) | Medium | The user is on the billing/shipping address form | Observe the billing/shipping address form fields | Mandatory fields should be clearly indicated to the user (e.g., using * symbol or another visual indicator) |  
+| **BILL.SHPP-02** | Validate error message has the correct place | Medium | The user is on the billing/shipping address form | 1. Leave the first name field empty <br> 2. Observe the error message place | System previews the error message under or beside the targeted field | 
 
 ---
 
@@ -311,6 +320,15 @@ And allows safe retry if needed
 
 ---
 
+# Shipping Method - UI
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **SM-UI-01** | Validate selected method's radio box state | High | User completed shipping address step | 1. Select a shipping method <br> 2. Observe the selected method's radio box status | Selected method's radio box is filled with a bullet point, while the not selected method's radio box is empty |  
+| **SM-UI-02** | Validate shipping method's options alignment | High | User completed shipping address step | Observe the shipping method's options alignment | All options aligned correctly |
+
+---
+
 # Payment — Credit Card Core Functional
 
 | TC ID | Title | Priority | Preconditions | Steps | Expected Result |
@@ -326,6 +344,13 @@ And allows safe retry if needed
 | **Payment.CC-VAL-03** | Invalid CVV length | High | User is on the Credit card information form | 1. Select the type of credit card <br> 2. Fill in its credentials fields with <br> 3. Fill the CVV with an invalid number <br> 4. Click on Continue | System prevents the user from proceeding, and a CVV validation error appears |
 
 ---
+
+# Payment - Credit Card UI
+
+| TC ID | Title | Priority | Preconditions | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **Payment.CC-UI-01** | Verify mandatory fields are indicated with visual markers (e.g., *) | Medium | Credit card fields loaded | Observe the credit card form fields | Mandatory fields should be clearly indicated to the user (e.g., using * symbol or another visual indicator) |  
+| **Payment.CC-UI-02** | Validate error message has the correct place | Medium | Credit card information fields loaded | 1. Leave the cardholder's name empty <br> 2. Observe the error message place | System previews the error message under or beside the targeted field | 
 
 # Confirm Order - Core Functional & Navigation
 
@@ -416,3 +441,4 @@ And allows safe retry if needed
 | **COMP-04** | Validate OS Compatibility | Medium | Access to Windows, macOS, and Android/iOS | 1. Perform the full confirmation flow on different operating systems | The checkout process should be completed successfully regardless of the OS |
 
 ---
+
