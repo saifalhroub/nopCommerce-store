@@ -8,7 +8,7 @@
 
 **Defect ID:**  
 **Application Name:* nopCommerce  
-**Module:**  
+**Functionality:**  
 **TC-ID:**  
 **Defect Type:**  
 **Severity:**  
@@ -259,3 +259,51 @@
 - Device: Laptop HP
 - Environment URL: https://demo.nopcommerce.com/customer/addressadd
 - Build Version (if available): N/A
+
+-------------------------------------------------------------------------
+
+
+
+**Defect ID:**  DF-05
+**Application Name:* nopCommerce  
+**Functionality:**  
+**TC-ID:**  
+**Defect Type:**  
+**Severity:**  
+**Priority:**  
+**Status:** Open  
+**Reporter:** Saifullah Abdullah Mohammad Alhroub  
+**Reported Date:**  
+
+---
+
+## Defect Title:
+
+---
+
+## Steps to Reproduce:
+
+1.
+2.
+3.
+
+---
+
+## Expected Result:
+
+---
+
+## Actual Result:
+
+---
+
+## Environment:
+
+- OS:
+- Browser:
+- Device:
+- Environment URL:
+- Build Version (if available):
+
+
+--------------------------------------------------------
