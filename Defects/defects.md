@@ -305,7 +305,7 @@ Login Page – "Forgot password?" link is misaligned with other login elements
 - Environment URL: https://demo.nopcommerce.com/login?returnUrl=%2F
 - Build Version (if available): N/A
 
-![Forgot_Password bug](images/DF_Forgot_Password.jpg)
+![Forgot_Password bug](../images/DF_Forgot_Password.jpg)
 --------------------------------------------------------
 
 **Defect ID:** DF-06  
